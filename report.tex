@@ -55,7 +55,7 @@ in section 2, xxx will be discussed...
 
 \subsection{Design}
 
-The FA-1\cite{20212210429416} design contains three modules to perform a 1-bit full adder operation.
+The FA-1\cite{20212210429416} design, which was proposed in 2021, contains three modules to perform a 1-bit full adder operation.
 Firstly, an XOR-XNOR circuit will take original inputs \(A\) and \(B\) as its input and produce two signals,
 one is from the XNOR gate marked as \(S_{xnor\_out}\) and the other is from the XOR gate marked as \( S_{xor\_out}\).
 Then, a TG-based circuit as the second module will take both signal and the input carry \(C_{in}\) to calculate the \(Sum\)
@@ -183,27 +183,30 @@ Furthermore, this logic can reduce the carry chain delay with involving just one
 
 As for the area overhead, a total of 22 transistors are used to produce this FA, namely, 10 on module one, 4 on module 2, and 8 on module 3.
 
-According to the presenters' simulation using 45nm technique and 1 voltage supply, compare with the conventional CMOS FA\cite{weste2015cmos} and other recent FA designs\cite{9068497,18743001},
+According to the presenters' simulation using 45nm technique and 1 voltage supply on 1-bit FA,
+compare with the conventional CMOS FA\cite{weste2015cmos} and other recent FA designs\cite{9068497,18743001},
 % this design has 19.35\% improvement in Silicon area, 33.59\% improvement in Average Power, 36.15\% improvement in Propagation Delay, 56.22\% improvement in Area Delay Product, and 57.59\% improvement in Power Delay Product.
 this design achieves many improvements which can be shown in the Table \ref{tb:fa1-comparison}.
 
 \begin{table*}[!ht]
 	\renewcommand{\arraystretch}{1.3}
-	\caption{FA Performance Investigation Performed By }
+	\caption{Part Of The 1-bit FA Performance Investigation Performed By The Designers of FA-1}
 	\centering
 	\begin{tabular}{l c l l l l l l l l l l}
 		\hline
-		\bfseries FA Design            & \bfseries TC & \multicolumn{5}{ c }{\bfseries Performance} & \multicolumn{5}{ c }{\bfseries Improvements with Respect to CCMOS FA}                                                                                                                                                                  \\
-		                               &              & Area(\textmugreek\(m^2\))                   & AP(\textmugreek\(W\))                                                 & PD(ps)         & ADP(\textmugreek\(m^2\).ps) & PDP(\textalpha J) & Area($\slashdiv$) & AP($\slashdiv$) & PD($\slashdiv$) & ADP($\slashdiv$) & PDP($\slashdiv$) \\
+		\bfseries FA Cell         & \bfseries TC & \multicolumn{5}{ c }{\bfseries Performance} & \multicolumn{5}{ c }{\bfseries Improvements with Respect to CCMOS FA}                                                                                                                                                                  \\
+		                          &              & Area(\textmugreek\(m^2\))                   & AP(\textmugreek\(W\))                                                 & PD(ps)         & ADP(\textmugreek\(m^2\).ps) & PDP(\textalpha J) & Area($\slashdiv$) & AP($\slashdiv$) & PD($\slashdiv$) & ADP($\slashdiv$) & PDP($\slashdiv$) \\
 		\hline
-		CCMOS\cite{weste2015cmos}      & 28           & 10.13                                       & 1.28                                                                  & 60.3           & 610.84                      & 77.18             & 0.00              & 0.00            & 0.00            & 0.00             & 0.00             \\
-		Kandpal's\cite{9068497}        & 20           & 9.18                                        & 0.92                                                                  & 54.06          & 496.27                      & 49.74             & 9.38              & 28.13           & 10.35           & 18.76            & 35.55            \\
-		Sanapala's\cite{18743001}      & 14           & \bfseries 7.38                              & 0.75                                                                  & 56.7           & 415.45                      & 42.53             & \bfseries 27.15   & \bfseries 41.41 & 5.97            & 31.99            & 44.90            \\
-		Presented\cite{20212210429416} & 22           & 8.17                                        & 0.85                                                                  & \bfseries 38.5 & \bfseries 267.40            & \bfseries 32.73   & 19.35             & 33.59           & \bfseries 36.15 & \bfseries 56.22  & \bfseries 57.59  \\
+		CCMOS\cite{weste2015cmos} & 28           & 10.13                                       & 1.28                                                                  & 60.3           & 610.84                      & 77.18             & 0.00              & 0.00            & 0.00            & 0.00             & 0.00             \\
+		Kandpal's\cite{9068497}   & 20           & 9.18                                        & 0.92                                                                  & 54.06          & 496.27                      & 49.74             & 9.38              & 28.13           & 10.35           & 18.76            & 35.55            \\
+		Sanapala's\cite{18743001} & 14           & \bfseries 7.38                              & 0.75                                                                  & 56.7           & 415.45                      & 42.53             & \bfseries 27.15   & \bfseries 41.41 & 5.97            & 31.99            & 44.90            \\
+		FA-1\cite{20212210429416} & 22           & 8.17                                        & 0.85                                                                  & \bfseries 38.5 & \bfseries 267.40            & \bfseries 32.73   & 19.35             & 33.59           & \bfseries 36.15 & \bfseries 56.22  & \bfseries 57.59  \\
 		\hline
 	\end{tabular}
 	\label{tb:fa1-comparison}
 \end{table*}
+
+Again, based on the presenters' simulation of the word-length adder architecture\cite{20212210429416}, the FA-1 continues to rank first in these performance comparisons with its scalability advantages.
 
 \section{Design B}
 
@@ -216,16 +219,6 @@ As the designers discussed, it is a scalable and full-swing FA
 with some performance improvements compared with several existing state-of-the-art FAs.
 
 \section{Design C}
-
-An XOR-XNOR-based hybrid full adder design has been proposed\cite{20212210429416}
-which uses an XOR-XNOR module combined with the carry-generation module and the sum-generation module.
-As the designers discussed, it is a scalable and full-swing FA
-with some performance improvements compared with several existing state-of-the-art FAs.An XOR-XNOR-based hybrid full adder design has been proposed\cite{20212210429416}
-which uses an XOR-XNOR module combined with the carry-generation module and the sum-generation module.
-As the designers discussed, it is a scalable and full-swing FA
-with some performance improvements compared with several existing state-of-the-art FAs.
-
-\section{Design D}
 
 An XOR-XNOR-based hybrid full adder design has been proposed\cite{20212210429416}
 which uses an XOR-XNOR module combined with the carry-generation module and the sum-generation module.
