@@ -13,12 +13,15 @@
 \usepackage[euler]{textgreek}
 \usepackage{MnSymbol}
 
+% table footnote
+\usepackage{threeparttable}
+
 \graphicspath{{./img/}}
 
 
 \begin{document}
 
-\title{Review On Recently Various Full Adder Designs}
+\title{Survey Of Several Recent Full Adder Designs}
 
 \author{
 	\IEEEauthorblockN{Jun Huang}
@@ -31,7 +34,7 @@
 \maketitle
 
 \begin{abstract}
-	The abstract goes here.
+	% 这个paper讨论了三种近几年发布的FA设计 在xx方面和xx方面都进行了针对性的设计 并且用各个设计的论文本身提供的数据 比较三种设计的参数
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -39,6 +42,8 @@
 \end{IEEEkeywords}
 
 \section{Introduction}
+
+% fa的速度对于VLSI来说越来越重要 冒出了很多技术 在各个方面都得到了提升和优化 
 
 ...
 
@@ -189,28 +194,36 @@ Furthermore, this logic can reduce the carry chain delay with involving just one
 
 As for the area overhead, a total of 22 transistors are used to produce this FA, namely, 10 on module one, 4 on module 2, and 8 on module 3.
 
-According to the presenters' simulation using 45nm technique and 1 voltage supply on 1-bit FA,
-compare with the conventional CMOS FA \cite{weste2015cmos} and other recent FA designs \cite{9068497,18743001},
+According to the presenters' simulation on 1-bit FA,
+compare with the conventional CMOS FA \cite{weste2015cmos} and other recent FA designs \cite{15484823, 9068497,18743001},
 % this design has 19.35\% improvement in Silicon area, 33.59\% improvement in Average Power, 36.15\% improvement in Propagation Delay, 56.22\% improvement in Area Delay Product, and 57.59\% improvement in Power Delay Product.
 this design achieves many improvements which can be shown in the Table \ref{tb:fa1-comparison}.
 
 \begin{table*}[!ht]
-	\renewcommand{\arraystretch}{1.3}
-	\caption{Part Of The 1-bit FA Performance Investigation Performed By The Designers of FA-1}
-	\centering
-	\begin{tabular}{l c l l l l l *{5}{p{1cm}}}
-		\hline
-		\multicolumn{1}{c}{\bfseries FA Cell } & \bfseries TC & \multicolumn{5}{ c }{\bfseries Performance} & \multicolumn{5}{ c }{\bfseries Improvements with Respect to CCMOS FA}                                                                                                                                                                  \\
-		                                       &              & Area(\textmugreek\(m^2\))                   & AP(\textmugreek\(W\))                                                 & PD(ps)         & ADP(\textmugreek\(m^2\).ps) & PDP(\textalpha J) & Area($\slashdiv$) & AP($\slashdiv$) & PD($\slashdiv$) & ADP($\slashdiv$) & PDP($\slashdiv$) \\
-		\hline
-		\cite{weste2015cmos} CCMOS             & 28           & 10.13                                       & 1.28                                                                  & 60.3           & 610.84                      & 77.18             & 0.00              & 0.00            & 0.00            & 0.00             & 0.00             \\
-		\cite{9068497} Kandpal's               & 20           & 9.18                                        & 0.92                                                                  & 54.06          & 496.27                      & 49.74             & 9.38              & 28.13           & 10.35           & 18.76            & 35.55            \\
-		\cite{18743001} Sanapala's             & 14           & \bfseries 7.38                              & 0.75                                                                  & 56.7           & 415.45                      & 42.53             & \bfseries 27.15   & \bfseries 41.41 & 5.97            & 31.99            & 44.90            \\
-		\cite{20212210429416} FA-1             & 22           & 8.17                                        & 0.85                                                                  & \bfseries 38.5 & \bfseries 267.40            & \bfseries 32.73   & 19.35             & 33.59           & \bfseries 36.15 & \bfseries 56.22  & \bfseries 57.59  \\
-		\hline
-	\end{tabular}
-	\label{tb:fa1-comparison}
+	\begin{threeparttable}[b]
+		\renewcommand{\arraystretch}{1.3}
+		\caption{Simulations Performed By The Designers of FA-1}
+		\centering
+		\begin{tabular}{l c p{0.8cm} p{0.8cm} p{0.8cm} p{1.2cm} p{0.8cm} *{5}{p{1cm}}}
+			\hline
+			\multicolumn{1}{c}{\bfseries FA Cell } & \bfseries TC & \multicolumn{5}{ c }{\bfseries Performance} & \multicolumn{5}{ c }{\bfseries Improvements with Respect to CCMOS FA}                                                                                                                                                             \\
+			                                       &              & Area                                        & AP                                                                    & PD             & ADP                      & PDP             &                   &                 &                 &                  &                  \\
+			                                       &              & (\textmugreek\(m^2\))                       & (\textmugreek\(W\))                                                   & (ps)           & (\textmugreek\(m^2\).ps) & (\textalpha J)  & Area($\slashdiv$) & AP($\slashdiv$) & PD($\slashdiv$) & ADP($\slashdiv$) & PDP($\slashdiv$) \\
+			\hline
+			\cite{weste2015cmos} CCMOS             & 28           & 10.13                                       & 1.28                                                                  & 60.3           & 610.84                   & 77.18           & 0.00              & 0.00            & 0.00            & 0.00             & 0.00             \\
+			\cite{15484823} Bhattacharyya's        & 16           & 7.58                                        & \bfseries 0.62                                                        & 98.7           & 748.15                   & 61.19           & 25.17             & \bfseries 51.56 & -63.68          & -22.48           & 20.72            \\
+			\cite{9068497} Kandpal's               & 20           & 9.18                                        & 0.92                                                                  & 54.06          & 496.27                   & 49.74           & 9.38              & 28.13           & 10.35           & 18.76            & 35.55            \\
+			\cite{18743001} Sanapala's             & 14           & \bfseries 7.38                              & 0.75                                                                  & 56.7           & 415.45                   & 42.53           & \bfseries 27.15   & 41.41           & 5.97            & 31.99            & 44.90            \\
+			\cite{20212210429416} FA-1             & 22           & 8.17                                        & 0.85                                                                  & \bfseries 38.5 & \bfseries 267.40         & \bfseries 32.73 & 19.35             & 33.59           & \bfseries 36.15 & \bfseries 56.22  & \bfseries 57.59  \\
+			\hline
+		\end{tabular}
+		\begin{tablenotes}
+			\item Performed in 1V for 45nm technology
+		\end{tablenotes}
+		\label{tb:fa1-comparison}
+	\end{threeparttable}
 \end{table*}
+
 
 Again, based on the presenters' simulations of the word-length adder architecture \cite{20212210429416}, the FA-1 continues to rank first in these performance comparisons with its scalability advantages, , especially on 16-bit and 32-bit.
 
@@ -293,23 +306,28 @@ As simulations performed by the designers which presented in Table \ref{tb:fa2-c
 FA-2 shows its advantages on speed and PDP aspects compared with one old hybrid CMOS FA cell and one hybrid FA.
 
 \begin{table}[!ht]
-	\renewcommand{\arraystretch}{1.3}
-	\caption{Simulations Performed By The Designers of FA-2 \\ in 90{\upshape nm} 1.2V}
-	\centering
-	\begin{tabular}{l c *{3}{p{1.2cm}}}
-		\hline
-		\multicolumn{1}{c}{\bfseries FA Cell } & \bfseries TC & \multicolumn{3}{ c }{\bfseries Performance}                                      \\
-		                                       &              & AP(\textmugreek\(W\))                       & PD(ps)          & PDP(fJ)          \\
-		\hline
-		\cite{9262027} Hybrid CCMOS            & 24           & 6.21                                        & 143             & 0.888            \\
-		\cite{15484823} New Hybrid             & 16           & 1.1766                                      & 91.3            & 0.107            \\
-		\cite{9339799} FA-2                    & 18           & \bfseries 1.104                             & \bfseries 85.22 & \bfseries 0.0941 \\
-		\hline
-	\end{tabular}
-	\label{tb:fa2-comparison}
+	\begin{threeparttable}[b]
+		\renewcommand{\arraystretch}{1.3}
+		\caption{Simulations Performed By The Designers of FA-2}
+		\centering
+		\begin{tabular}{l c *{3}{p{1.2cm}}}
+			\hline
+			\multicolumn{1}{c}{\bfseries FA Cell } & \bfseries TC & \multicolumn{3}{ c }{\bfseries Performance}                                      \\
+			                                       &              & AP(\textmugreek\(W\))                       & PD(ps)          & PDP(fJ)          \\
+			\hline
+			\cite{9262027} Hybrid CCMOS            & 24           & 6.21                                        & 143             & 0.888            \\
+			\cite{15484823} Bhattacharyya's        & 16           & 1.1766                                      & 91.3            & 0.107            \\
+			\cite{9339799} FA-2                    & 18           & \bfseries 1.104                             & \bfseries 85.22 & \bfseries 0.0941 \\
+			\hline
+		\end{tabular}
+		\begin{tablenotes}
+			\item Performed in 1.2V for 90nm technology
+		\end{tablenotes}
+		\label{tb:fa2-comparison}
+	\end{threeparttable}
 \end{table}
 
-\section{Design C}
+\section{FA-3: GDI-based hybrid FA}
 
 An XOR-XNOR-based hybrid full adder design has been proposed\cite{20212210429416}
 which uses an XOR-XNOR module combined with the carry-generation module and the sum-generation module.
