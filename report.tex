@@ -38,7 +38,7 @@
 	Those designs are involved in techniques such as XOR-XNOR gate, CMOS, Gate Diffusion Input(GDI), Transmission Gate(TG), and multi-threshold-voltage(MTV).
 	For every design, detail of the FA circuit, the goal of the designers, performance simulation results performed by the designers are presented.
 	After comparing three designs in terms of power consumption, propagation delay, and transistor count or area overhead,
-	After comparing three designs in terms of power consumption, propagation delay, and transistor count or area overhead,
+	an XOR-XNOR-based hybrid FA is promising and applicable in future development.
 	% FA-x shows 
 \end{abstract}
 
@@ -78,7 +78,7 @@ After that, in section \ref{sec:5}, the overall comparison of three FA design is
 Section \ref{sec:6} gives the conclusion.
 
 Two particular FAs are used as the middle subject since they are all included in the simulations of FA-1, 2, and 3.
-One is a conventional CMOS FA proposed in 2010\cite{weste2010cmos}, which realizes the NMOS pull-down network and PMOS pull-up network.
+One is a conventional CMOS FA proposed in 2010\cite{weste2010cmos}, which realizes the nMOS pull-down network and pMOS pull-up network.
 In this paper, it is marked as FA-a.
 Another one is a 16T hybrid FA proposed in 2015\cite{15484823}, which uses the XOR-XNOR logic design.
 In this paper, it is marked as FA-b.
@@ -277,7 +277,7 @@ The expressions of those outcomes can be:
 
 The structure of module 1 is presented in Fig. \ref{fig:fa2-m1}.
 To avoid the lack of voltage level, a feedback loop is attached to the XOR output and XNOR output
-for reaching the power required to drive the next two modules. So it use a PMOS transistor as Mpf, a NMOS transistor as Mnf.
+for reaching the power required to drive the next two modules. So it use a pMOS transistor as Mpf, a nMOS transistor as Mnf.
 Any weak logic signal produced by the XOR gate or the XNOR gate (when \(A=B\))
 will be handle by the feedback loop and obtains perfect logic signal at the \(H\) or $\overline{H}$ output.
 For example, if \(A = B = 0\), weak logic 0 will be produce at the XOR gate as \(H\),
@@ -308,7 +308,7 @@ But since it retrieves such signal from module 1, the implementation of this mod
 \subsubsection{Module 3} Carry Generation Circuit
 
 The structure of module 3 is presented in Fig. \ref{fig:fa2-m3}.
-The circuit is a 4 pass transistors(PT) 2-to-1 MUX, and it will provide a full swing output by a PMOS and an NMOS conducted in each of the input patterns.
+The circuit is a 4 pass transistors(PT) 2-to-1 MUX, and it will provide a full swing output by a pMOS and an nMOS conducted in each of the input patterns.
 For instance, when \(H = A = 0\), Mp1 and Mn2 turn on, a logic 0 goes through these transistors, \(C_{out}\) obtains perfect 0.
 
 \begin{figure}[!ht]
@@ -468,23 +468,60 @@ Notice that the simulation was conducted at ULV condition, FA-3 has the best per
 	\label{tb:fa3-func-pattern-in}
 \end{table*}
 
+\begin{table*}[!ht]
+	\centering
+	\begin{threeparttable}[b]
+		\renewcommand{\arraystretch}{1.3}
+		\caption{The Combination Of the Results Of Simulation Of FA-1,2,3}
+		\centering
+		\begin{tabular}{ c c | *{3}{l} | *{3}{l} | *{3}{l}}
+			\hline
+			\bfseries FA                & \bfseries TC & \multicolumn{3}{c |}{Table \ref{tb:fa3-comparison}: \textbf{45nm-0.2V} } & \multicolumn{3}{c|}{Table \ref{tb:fa1-comparison}: \textbf{45nm-1V} } & \multicolumn{3}{c}{Table \ref{tb:fa2-comparison}: \textbf{90nm-1.2V}}                                                                                                                           \\
+			                            &              & AP(p\(W\))                                                               & Delay(\textmugreek s)                                                 & Energy(\textalpha J)                                                  & AP(\textmugreek\(W\)) & PD(ps)         & PDP(\textalpha J) & AP(\textmugreek\(W\)) & PD(ps)          & PDP(fJ)          \\
+			\hline
+			\cite{weste2010cmos}   FA-a & 28           & 2.523                                                                    & 1.534                                                                 & 3.87                                                                  & 1.28                  & 60.3           & 77.18             & -                     & -               & -                \\
+			\cite{15484823}        FA-b & 16           & \bfseries 2.506                                                          & 0.978                                                                 & 2.541                                                                 & \bfseries 0.62        & 98.7           & 61.19             & 1.1766                & 91.3            & 0.107            \\
+			\cite{20212210429416}  FA-1 & 22           & -                                                                        & -                                                                     & -                                                                     & 0.85                  & \bfseries 38.5 & \bfseries 32.73   & -                     & -                                  \\
+			\cite{9339799}         FA-2 & 18           & -                                                                        & -                                                                     & -                                                                     & -                     & -              & -                 & \bfseries 1.104       & \bfseries 85.22 & \bfseries 0.0941 \\
+			\cite{18743001}        FA-3 & \bfseries 14 & 3.053                                                                    & \bfseries 0.344                                                       & \bfseries 1.05                                                        & 0.75                  & 56.7           & 42.53             & -                     & -               & -                \\
+			\hline
+		\end{tabular}
+		\label{tb:combine}
+	\end{threeparttable}
+\end{table*}
+
 \newpage
 
 \section{Comparison}
 \label{sec:5}
 
+By combining the simulation results conducted by designers of FA-1, 2, and 3 in Table \ref{tb:fa1-comparison}, \ref{tb:fa2-comparison}, and \ref{tb:fa3-comparison},
+the new comparison result is presented in Table \ref{tb:combine}.
 
+From Table \ref{tb:combine}, FA-3 shows 77.57\% and 72.87\% of improvements on Delay(\textmugreek s) and Energy(\textalpha J), while -21.00\% on AP(p\(W\)) compared with FA-a.
+
+FA-2 achieves small improvements with 37.49\%, 6.66\%, and 12.06\% on AP, PD, and PDP respectively compared with FA-b.
+
+FA-1 manage to get better performance up to 32.10\% and 23.04\% on PD and PDP respectively compared with FA-3.
 
 \section{Conclusion}
 \label{sec:6}
 
-An XOR-XNOR-based hybrid full adder design has been proposed\cite{20212210429416}
-which uses an XOR-XNOR module combined with the carry-generation module and the sum-generation module.
-As the designers discussed, it is a scalable and full-swing FA
-with some performance improvements compared with several existing state-of-the-art FAs.An XOR-XNOR-based hybrid full adder design has been proposed\cite{20212210429416}
-which uses an XOR-XNOR module combined with the carry-generation module and the sum-generation module.
-As the designers discussed, it is a scalable and full-swing FA
-with some performance improvements compared with several existing state-of-the-art FAs.
+It can be concluded that, regarding the area overhead,
+FA-3 occupies the least area where FA-1 needs the most place to be assembled by simply comparing their transistors count(TC)
+since the difference between them is relatively large.
+
+As for the average power(AP) consumption, both FA-1 and FA-3 were consuming more power than FA-b in simulation 1 and 2
+while FA-2 need less power averagely than FA-b in simulation 3, but not less more.
+
+Then in propagation delay(PD) performance, FA-1 shown a great advantage above all comparatives which, meanwhile, benefits its power delay produce performance(PDP).
+
+Other than these common performance dimensions, FA-1 contains well capability of scalability in wide word-length adders aspect
+while FA-3 is more focused on the stability at ULV scenario.
+
+Without high requirement on area overhead, FA-1 is the most potential design due to its simulation data.
+
+\newpage
 
 \bibliographystyle{ieeetr}
 \bibliography{bibliographies}
