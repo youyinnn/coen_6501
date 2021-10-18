@@ -34,39 +34,57 @@
 \maketitle
 
 \begin{abstract}
-	% 这个paper讨论了三种近几年发布的FA设计 在xx方面和xx方面都进行了针对性的设计 并且用各个设计的论文本身提供的数据 比较三种设计的参数
+	This paper presents three hybrid full adder designs respectively proposed from 2021, 2020, and 2018.
+	Those designs are involved in techniques such as XOR-XNOR gate, CMOS, Gate Diffusion Input(GDI), Transmission Gate(TG), and multi-threshold-voltage(MTV).
+	For every design, detail of the FA circuit, the goal of the designers, performance simulation results performed by the designers are presented.
+	After comparing three designs in terms of power consumption, propagation delay, and transistor count or area overhead,
+	After comparing three designs in terms of power consumption, propagation delay, and transistor count or area overhead,
+	% FA-x shows 
 \end{abstract}
 
 \begin{IEEEkeywords}
-	Full Adder, 1-bit Adder, Hybrid Adder, CMOS,
+	Full Adder, 1-bit Adder, Hybrid, CMOS, MVT, GDI
 \end{IEEEkeywords}
 
 \section{Introduction}
 
 % fa的速度对于VLSI来说越来越重要 冒出了很多技术 在各个方面都得到了提升和优化 
 
-...
+Addition operation plays an important role in very-large-scale integration(VLSI) since it is most common and frequently used in arithmetic operations.
+With the development of modern technology, more and more techniques and design have emerged,
+to pursue a goal of making the chips less performance delay, less silicon area overhead, and less power consumption.
+As is discovered that hybrid logic full design has many merits than the single logic design, circuit designers are more interested in hybrid logic.
 
-A 22T XOR-XNOR-based hybrid full adder design \cite{20212210429416} has been proposed in 2021
-which uses an XOR-XNOR module combined with the sum-generation module which uses TG technique and the carry-generation module which use CCMOS technique.
+Recently in 2021, a 22T XOR-XNOR-based hybrid full adder design \cite{20212210429416} was proposed
+which uses an XOR-XNOR module combined with the sum-generation module which uses TG technique
+and the carry-generation module which use CCMOS technique.
 % As the designers discussed, it is a scalable and full-swing FA
 % with some performance improvements compared with several existing state-of-the-art FAs.
 
-A 18T hybrid full adder design \cite{9339799} has been  proposed in 2020.
+Back in 2020, an 18T hybrid full adder design \cite{9339799} came out.
 This design is also a three modules cell based on a XOR-XNOR circuit.
 With this fundamental circuit, two 4T circuits, which use the GDI technique and TG technique respectively, are driven to generate sum and carry.
 
-In section \ref{sec:b}, the 22T XOR-XNOR-based hybrid FA is discussed as FA-1;
-Then in section \ref{sec:c}, the 18T hybrid FA is discussed as FA-2;
+Further move backward to 2018, a 14T MVT-GDI-based hybrid full adder design was proposed \cite{18743001}.
+This 5 modules FA cell adopts GDI logic and MTV transistor logic and also swing restoring gate.
+
+This paper presents all three FA designs in a fixed order
+from module design detail to the purpose of FAs designers, and FAs performance simulation results performed by the designers.
+
+In section \ref{sec:2}, the 22T XOR-XNOR-based hybrid FA is discussed as FA-1.
+Then in section \ref{sec:3}, the 18T hybrid FA is discussed as FA-2.
+Section \ref{sec:4}, the 14T MVT-GDI-based hybrid FA is discussed as FA-3.
+After that, in section \ref{sec:5}, the overall comparison of three FA design is presents.
+Section \ref{sec:6} gives the conclusion.
 
 % 列举其他找到的设计 但是并不在报告里讨论 因为设计的论文本身提供的信息在不做模拟的情况下难以放在同一个标准下进行比较 或者论文本身缺失了参数信息
 
 \section{FA-1: XOR-XNOR-based Hybrid FA}
-\label{sec:b}
+\label{sec:2}
 
 \subsection{Design}
 
-The FA-1 \cite{20212210429416} design contains three modules to perform a 1-bit full adder operation.
+The FA-1 \cite{20212210429416} design contains three modules to realize a 1-bit full adder.
 Firstly, an XOR-XNOR circuit will take original inputs \(A\) and \(B\) as its input and produce two signals,
 one is from the XNOR gate marked as \(S_{xnor\_out}\) and the other is from the XOR gate marked as \( S_{xor\_out}\).
 Then, a TG-based circuit as the second module will take both signal and the input carry \(C_{in}\) to calculate the \(Sum\)
@@ -133,11 +151,6 @@ when \(C_{in} = 0\):
 	Sum = A \oplus B
 \]
 
-when \(C_{in} = 1\):
-\[
-	Sum = A \varodot B
-\]
-
 \begin{table}[!ht]
 	\renewcommand{\arraystretch}{1.3}
 	\caption{True-False Table of FA}
@@ -159,6 +172,12 @@ when \(C_{in} = 1\):
 	\end{tabular}
 	\label{tb:fa-tf}
 \end{table}
+
+when \(C_{in} = 1\):
+\[
+	Sum = A \varodot B
+\]
+
 
 For input selection, a 2:1 Multiplexer(2:1 MUX) based on Transmission Gate(TG) has been used for figuring the \(Sum\).
 
@@ -183,7 +202,7 @@ since the design of the carry generation logic is the most important factor of t
 \subsection{Discussion}
 
 FA-1 shows impressive improvements compared to many other FAs.
-The presenters are intended to solve the voltage degradation issue with the hybrid logic-based design,
+The designers are intended to solve the voltage degradation issue with the hybrid logic-based design,
 hence they design the XOR-XNOR-based circuit to produce full swing output for its next stage
 and choose TG for implementing the sum generation circuit.
 
@@ -194,10 +213,10 @@ Furthermore, this logic can reduce the carry chain delay with involving just one
 
 As for the area overhead, a total of 22 transistors are used to produce this FA, namely, 10 on module one, 4 on module 2, and 8 on module 3.
 
-According to the presenters' simulation on 1-bit FA,
+According to the designers' simulation in terms of average power(AP), propagation delay(PD), area delay product(ADP), power delay product(PDP) on 1-bit FA,
 compare with the conventional CMOS FA \cite{weste2015cmos} and other recent FA designs \cite{15484823, 9068497,18743001},
 % this design has 19.35\% improvement in Silicon area, 33.59\% improvement in Average Power, 36.15\% improvement in Propagation Delay, 56.22\% improvement in Area Delay Product, and 57.59\% improvement in Power Delay Product.
-this design achieves many improvements which can be shown in the Table \ref{tb:fa1-comparison}.
+this design achieves many improvements which can be shown in Table \ref{tb:fa1-comparison}.
 
 \begin{table*}[!ht]
 	\begin{threeparttable}[b]
@@ -225,14 +244,16 @@ this design achieves many improvements which can be shown in the Table \ref{tb:f
 \end{table*}
 
 
-Again, based on the presenters' simulations of the word-length adder architecture \cite{20212210429416}, the FA-1 continues to rank first in these performance comparisons with its scalability advantages, , especially on 16-bit and 32-bit.
+Again, based on the presenters' simulations of the word-length adder architecture \cite{20212210429416},
+the FA-1 continues to rank first in these performance comparisons with its scalability advantages,
+especially on 16-bit and 32-bit.
 
 \section{FA-2: 18T Hybrid FA}
-\label{sec:c}
+\label{sec:3}
 
 \subsection{Design}
 
-The FA-2 \cite{9339799} design contains three module. Same as FA-1 \cite{20212210429416},
+The FA-2 \cite{9339799} design contains three modules. Same as FA-1 \cite{20212210429416},
 the module 1 of the FA-2 is an XOR-XNOR circuit that sending out two signals to drive Module 2 and Module 3 for the calculation of \(Sum\) and \(Carry\).
 
 Module 1 from FA-2 first take \(A\) and \(B\) and produce signal \(H\) (result of $A \oplus B$) and signal $\overline{H}$ (result of $A \varodot B$).
@@ -241,12 +262,12 @@ Module 3 finally figure the \(C_{out}\) out from the input \(A\) and \(C_{in}\) 
 
 The expressions of those outcomes can be:
 
-\begin{equation}
+\[
 	Sum = H\overline{C_{in}} + \overline{H}C_{in} = A \oplus B \oplus C_{in}
-\end{equation}
-\begin{equation}
+\]
+\[
 	C_{out} = HC_{in} + \overline{H}A
-\end{equation}
+\]
 
 \subsubsection{Module 1}XOR-XNOR Circuit
 
@@ -258,9 +279,9 @@ will be handle by the feedback loop and obtains perfect logic signal at the \(H\
 For example, if \(A = B = 0\), weak logic 0 will be produce at the XOR gate as \(H\),
 but it still turns ON the Mpf and then logic 1 passes to the Mnf, thus a perfect logic 0 is taken at the \(H\).
 
-\begin{figure}[!ht]
+\begin{figure}[!hb]
 	\centering
-	\includegraphics[width=2.8in]{fa2-m1.png}
+	\includegraphics[width=2.7in]{fa2-m1.png}
 	\caption{Module 1 of FA-2}
 	\label{fig:fa2-m1}
 \end{figure}
@@ -275,7 +296,7 @@ But since it retrieves such signal from module 1, the implementation of this mod
 
 \begin{figure}[!hb]
 	\centering
-	\includegraphics[width=2.8in]{fa2-m2.png}
+	\includegraphics[width=2.4in]{fa2-m2.png}
 	\caption{Module 2 of FA-2}
 	\label{fig:fa2-m2}
 \end{figure}
@@ -286,9 +307,9 @@ The structure of module 3 is presented in Fig. \ref{fig:fa2-m3}.
 The circuit is a 4 pass transistors(PT) 2-to-1 MUX, and it will provide a full swing output by a pMOS and an nMOS conducted in each of the input patterns.
 For instance, when \(H = A = 0\), Mp1 and Mn2 turn on, a logic 0 goes through these transistors, \(C_{out}\) obtains perfect 0.
 
-\begin{figure}[!ht]
+\begin{figure}[!hb]
 	\centering
-	\includegraphics[width=2.8in]{fa2-m3.png}
+	\includegraphics[width=2.4in]{fa2-m3.png}
 	\caption{Module 3 of FA-2}
 	\label{fig:fa2-m3}
 \end{figure}
@@ -303,20 +324,20 @@ The design combined feedback loop design, GDI design, and PT technique all toget
 With respect of area overhead, 18 transistors are used to bulid this cell. 10 on module 1, 4 on module 2, and 4 on module 3.
 
 As simulations performed by the designers which presented in Table \ref{tb:fa2-comparison},
-FA-2 shows its advantages on speed and PDP aspects compared with one old hybrid CMOS FA cell and one hybrid FA.
+FA-2 shows its advantages on power consumption, speed, and PDP aspects compared with one old hybrid CMOS FA \cite{9262027} and one hybrid FA \cite{15484823}.
 
 \begin{table}[!ht]
 	\begin{threeparttable}[b]
+		\centering
 		\renewcommand{\arraystretch}{1.3}
 		\caption{Simulations Performed By The Designers of FA-2}
-		\centering
 		\begin{tabular}{l c *{3}{p{1.2cm}}}
 			\hline
 			\multicolumn{1}{c}{\bfseries FA Cell } & \bfseries TC & \multicolumn{3}{ c }{\bfseries Performance}                                      \\
 			                                       &              & AP(\textmugreek\(W\))                       & PD(ps)          & PDP(fJ)          \\
 			\hline
 			\cite{9262027} Hybrid CCMOS            & 24           & 6.21                                        & 143             & 0.888            \\
-			\cite{15484823} Bhattacharyya's        & 16           & 1.1766                                      & 91.3            & 0.107            \\
+			\cite{15484823} New Hybrid             & 16           & 1.1766                                      & 91.3            & 0.107            \\
 			\cite{9339799} FA-2                    & 18           & \bfseries 1.104                             & \bfseries 85.22 & \bfseries 0.0941 \\
 			\hline
 		\end{tabular}
@@ -328,6 +349,121 @@ FA-2 shows its advantages on speed and PDP aspects compared with one old hybrid 
 \end{table}
 
 \section{FA-3: GDI-based hybrid FA}
+\label{sec:4}
+
+\subsection{Design}
+
+The FA-3 \cite{18743001} design, whose structure is illustrated in Fig. \ref{fig:fa3-circuit}, consists of five logic modules.
+One XOR/XNOR circuit, two MUX circuits, one Swing Restored Transmission Gate(SRTG) circuit, and one Swing Restored Pass Transistor(SRPT) circuit.
+
+\begin{figure}[!hb]
+	\centering
+	\includegraphics[width=3in]{fa3-circuit.png}
+	\caption{FA-3 Circuit}
+	\label{fig:fa3-circuit}
+\end{figure}
+
+The first module, a XOR/XNOR block, is assembled using GDI design style.
+Different from FA-2, module 1 of FA-3 needs a series of inverters to cope with voltage drop issues and, thus, to work with standard \(V_T\)(threshold voltage) devices.
+
+The second module, a GID MUX-1 block, handles the output from both XOR gate and XNOR by a control input \(C_{in}\) then figures the sum out.
+So the function can be represented as:
+
+\[
+	Sum = \overline{C_{in}}(A \oplus B) + C_{in}(A \varodot B)
+\]
+
+The third module, another GID MUX-2 block handles the inputs \(C_{in}\) and \(B\) by control line from the output(\(A \varodot B\)) of XNOR logic.
+The function can be represented as:
+
+\[
+	C_{out} = (\overline{A \varodot B})C_{in} + (A \varodot B)B
+\]
+
+The rest of the two modules are used for full swing logic generation which means a SRTG at the output of the sum and two SRPTs at the carry output.
+
+The functional pattern of the overall circuit is shown in Table \ref{tb:fa3-func-pattern-in} and Table \ref{tb:fa3-func-pattern-out}.
+
+\begin{table}[!ht]
+	\renewcommand{\arraystretch}{1.3}
+	\caption{The Outputs of The Function table of FA-3}
+	\centering
+	\begin{tabular}{ c c c }
+		\hline
+		Input Patterns & Sum                    & \(C_{out}\) \\
+		\hline
+		1              & 0                      & 0           \\
+		2              & 1                      & 0           \\
+		3              & 1                      & 0           \\
+		4              & 0                      & 1           \\
+		5              & \(V_{DD}\)-\(V_T\)(M4) & 0           \\
+		6              & 0                      & 1           \\
+		7              & 0                      & 1           \\
+		8              & 1                      & 1           \\
+		\hline
+	\end{tabular}
+	\label{tb:fa3-func-pattern-out}
+\end{table}
+
+\subsection{Discussion}
+
+FA-3 design focuses on providing a full logic swing at ultra-low-voltage(ULV) situation also considering the area overhead and power saving.
+To achieve those purposes, the designers choose techniques like multi-threshold voltage(MTV) transistors(in the threshold drop paths),
+GDI design style(to reduce the occupied area), and swing restoring gates at the output(for full swing output and faster speed).
+
+Three of the five modules are using GDI technique so that the cell require less transistors to perform the function.
+
+Overall, 14 transistors are used in consists of FA-3, briefly saying, 6 in module 1, rest of each module needs 2 transistors.
+
+The designers perform simulations on FA-3 which can be shown in Table \ref{tb:fa3-comparison}.
+Notice that the simulation was conducted at ULV condition, FA-3 has the best performance in terms of delay, energy, and energy delay product(EPD).
+
+\begin{table}[!ht]
+	\centering
+	\begin{threeparttable}[b]
+		\renewcommand{\arraystretch}{1.3}
+		\caption{Simulations Performed By The Designers of FA-3}
+		\begin{tabular}{l c *{5}{l}}
+			\hline
+			\multicolumn{1}{c}{\bfseries FA Cell } & \bfseries TC & Area                  & AP             & Delay            & Energy         & EDP             \\
+			                                       &              & (\textmugreek\(m^2\)) & (p\(W\))       & (\textmugreek s) & (\textalpha J) & (yJs)           \\
+			\hline
+			\cite{weste2015cmos} CCMOS             & 28           & 8.536                 & 2.523          & 1.534            & 3.87           & 5.937           \\
+			\cite{15484823} 16T Hybrid             & 16           & 7.27                  & 2.506          & 0.978            & 2.451          & 2.397           \\
+			\cite{20194307582820} 10-T             & 10           & \bfseries 5.12        & \bfseries 2.34 & 5.95             & 13.923         & 82.84           \\
+			\cite{18743001} FA-3                   & 14           & 6.32                  & 3.053          & \bfseries 0.344  & \bfseries 1.05 & \bfseries 0.361 \\
+			\hline
+		\end{tabular}
+		\begin{tablenotes}
+			\item Performed in \textbf{ULV of 0.2V} for 45nm technology
+		\end{tablenotes}
+		\label{tb:fa3-comparison}
+	\end{threeparttable}
+\end{table}
+
+\begin{table*}[!ht]
+	\renewcommand{\arraystretch}{1.3}
+	\caption{The Inputs And Signals Of The Function table of FA-3}
+	\centering
+	\begin{tabular}{ c *{16}{c}}
+		\hline
+		A B \(C_{in}\) & M1  & M2  & M3  & M4  & \(A \oplus B\)         & M5  & M6  & \(A \varodot B\) & M7  & M8  & M9  & M10 & M11 & M12 & M13 & M14 \\
+		\hline
+		1: 0 0 0       & ON  & OFF & ON  & OFF & \(V_{T}\)(M3)          & ON  & OFF & 1                & ON  & OFF & OFF & ON  & ON  & ON  & OFF & ON  \\
+		2: 0 0 1       & ON  & OFF & ON  & OFF & \(V_{T}\)-\(V_T\)(M3)  & ON  & OFF & 1                & OFF & ON  & OFF & ON  & ON  & ON  & OFF & ON  \\
+		3: 0 1 0       & OFF & ON  & ON  & OFF & 1                      & OFF & ON  & 0                & ON  & OFF & ON  & OFF & OFF & OFF & ON  & OFF \\
+		4: 0 1 1       & OFF & ON  & ON  & OFF & 1                      & OFF & ON  & 0                & OFF & ON  & ON  & OFF & OFF & OFF & ON  & OFF \\
+		5: 1 0 0       & ON  & OFF & OFF & ON  & \(V_{DD}\)-\(V_T\)(M4) & OFF & ON  & 0                & OFF & ON  & ON  & OFF & OFF & OFF & ON  & OFF \\
+		6: 1 0 1       & ON  & OFF & OFF & ON  & \(V_{DD}\)-\(V_T\)(M4) & OFF & ON  & 0                & OFF & ON  & ON  & OFF & OFF & OFF & ON  & OFF \\
+		7: 1 1 0       & OFF & ON  & OFF & ON  & 0                      & ON  & OFF & 1                & ON  & ON  & OFF & ON  & ON  & ON  & OFF & ON  \\
+		8: 1 1 1       & OFF & ON  & OFF & ON  & 0                      & ON  & OFF & 1                & OFF & ON  & OFF & ON  & ON  & ON  & OFF & ON  \\
+		\hline
+	\end{tabular}
+	\label{tb:fa3-func-pattern-in}
+\end{table*}
+
+\section{Comparison}
+\label{sec:5}
 
 An XOR-XNOR-based hybrid full adder design has been proposed\cite{20212210429416}
 which uses an XOR-XNOR module combined with the carry-generation module and the sum-generation module.
@@ -337,7 +473,13 @@ which uses an XOR-XNOR module combined with the carry-generation module and the 
 As the designers discussed, it is a scalable and full-swing FA
 with some performance improvements compared with several existing state-of-the-art FAs.
 
-\section{Comparison}
+An XOR-XNOR-based hybrid full adder design has been proposed\cite{20212210429416}
+which uses an XOR-XNOR module combined with the carry-generation module and the sum-generation module.
+As the designers discussed, it is a scalable and full-swing FA
+with some performance improvements compared with several existing state-of-the-art FAs.An XOR-XNOR-based hybrid full adder design has been proposed\cite{20212210429416}
+which uses an XOR-XNOR module combined with the carry-generation module and the sum-generation module.
+As the designers discussed, it is a scalable and full-swing FA
+with some performance improvements compared with several existing state-of-the-art FAs.
 
 An XOR-XNOR-based hybrid full adder design has been proposed\cite{20212210429416}
 which uses an XOR-XNOR module combined with the carry-generation module and the sum-generation module.
@@ -348,6 +490,7 @@ As the designers discussed, it is a scalable and full-swing FA
 with some performance improvements compared with several existing state-of-the-art FAs.
 
 \section{Conclusion}
+\label{sec:6}
 
 An XOR-XNOR-based hybrid full adder design has been proposed\cite{20212210429416}
 which uses an XOR-XNOR module combined with the carry-generation module and the sum-generation module.
