@@ -18,7 +18,7 @@ architecture Behavioural of tri_multiplier_tb is
     signal r_input_b_slv   : std_logic_vector(7 downto 0)  := (OTHERS => '0');    
     
     -- std_logic_vector pd
-    signal r_output_p_slv       : std_logic_vector(23 downto 0)  := (OTHERS => '0');
+    signal r_output_pd_slv       : std_logic_vector(23 downto 0)  := (OTHERS => '0');
 
     -- booth multiplier implementation
     component tri_multiplier is
@@ -50,7 +50,7 @@ begin
         port map (
             a => r_input_a_slv,
             b => r_input_b_slv,
-            p => r_output_p_slv
+            p => r_output_pd_slv
         );
 
         r_input_a <=
@@ -78,12 +78,12 @@ begin
         ;
 
 
-        as_1: assert_output_24b port map(r_output_p_slv, r_output_pd, 501 ns);
-        as_2: assert_output_24b port map(r_output_p_slv, r_output_pd, 1001 ns);
-        as_3: assert_output_24b port map(r_output_p_slv, r_output_pd, 1501 ns);
-        as_4: assert_output_24b port map(r_output_p_slv, r_output_pd, 2001 ns);
-        as_5: assert_output_24b port map(r_output_p_slv, r_output_pd, 2501 ns);
-        as_f: assert_output_24b port map(r_output_p_slv, r_output_pd, 10001 ns);
+        as_1: assert_output_24b port map(r_output_pd_slv, r_output_pd, 501 ns);
+        as_2: assert_output_24b port map(r_output_pd_slv, r_output_pd, 1001 ns);
+        as_3: assert_output_24b port map(r_output_pd_slv, r_output_pd, 1501 ns);
+        as_4: assert_output_24b port map(r_output_pd_slv, r_output_pd, 2001 ns);
+        as_5: assert_output_24b port map(r_output_pd_slv, r_output_pd, 2501 ns);
+        as_f: assert_output_24b port map(r_output_pd_slv, r_output_pd, 10001 ns);
 
 
 end Behavioural;
