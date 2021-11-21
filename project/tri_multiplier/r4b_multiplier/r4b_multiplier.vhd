@@ -23,6 +23,11 @@ architecture arch of r4b_multiplier is
     signal signal_p3            : std_logic_vector(15 downto 0);
     signal signal_p4            : std_logic_vector(15 downto 0);
 
+    signal sum_1 : std_logic_vector(15 downto 0);
+    signal sum_2 : std_logic_vector(15 downto 0);
+    signal sum_3 : std_logic_vector(15 downto 0);
+    signal sum_4 : std_logic_vector(15 downto 0);
+
     component nine_bit_negation_in_2c is
         port(
             x   : in  std_logic_vector(7 downto 0);
@@ -78,6 +83,15 @@ architecture arch of r4b_multiplier is
             p_next  : out std_logic_vector(15 downto 0)
         );
     end component booth_stage_4;
+
+    component CSA_16bit is
+        port(
+          in_a : in std_logic_vector (15 downto 0);
+          in_b : in std_logic_vector (15 downto 0);
+          sum : out std_logic_vector (15 downto 0);
+          carryout : out std_logic);
+    end component CSA_16bit;
+
 begin
 
     neg: nine_bit_negation_in_2c
@@ -125,7 +139,35 @@ begin
         p_next => signal_p4
     );
 
+    s_1: CSA_16bit
+    port map(
+        in_a => signal_p0,
+        in_b => signal_p1,
+        sum => sum_1
+    );    
+    
+    s_2: CSA_16bit
+    port map(
+        in_a => sum_1,
+        in_b => signal_p2,
+        sum => sum_2
+    );    
+    
+    s_3: CSA_16bit
+    port map(
+        in_a => sum_2,
+        in_b => signal_p3,
+        sum => sum_3
+    );    
+    
+    s_4: CSA_16bit
+    port map(
+        in_a => sum_3,
+        in_b => signal_p4,
+        sum => sum_4
+    );
 
-    p <= std_logic_vector(unsigned(signal_p0) + unsigned(signal_p1) + unsigned(signal_p2) + unsigned(signal_p3) + unsigned(signal_p4));
+    -- p <= std_logic_vector(unsigned(signal_p0) + unsigned(signal_p1) + unsigned(signal_p2) + unsigned(signal_p3) + unsigned(signal_p4));
+    p <= sum_4;
 
 end arch;
