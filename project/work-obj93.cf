@@ -1,82 +1,106 @@
 v 4
-file . "tri_multiplier/r4b_multiplier/complement/nine_bit_negation_in_2c.vhd" "5df06d6aae028be87e70201537be2b86741de4a7" "20211121035132.410":
-  entity nine_bit_negation_in_2c at 1( 0) + 0 on 279;
-  architecture arch of nine_bit_negation_in_2c at 14( 263) + 0 on 280;
-file . "tri_multiplier/r4b_multiplier/booth_stage/booth_stage_4.vhd" "7439c212e225ec27b762ffbe0f8c14c9652b63be" "20211121035132.409":
-  entity booth_stage_4 at 1( 0) + 0 on 277;
-  architecture arch of booth_stage_4 at 14( 257) + 0 on 278;
-file . "tri_multiplier/r4b_multiplier/booth_stage/booth_stage_3.vhd" "3c9dabe1736d08453bb317a5033fa4df5682fbd2" "20211121035132.409":
-  entity booth_stage_3 at 1( 0) + 0 on 275;
-  architecture arch of booth_stage_3 at 16( 334) + 0 on 276;
-file . "tri_multiplier/r4b_multiplier/booth_stage/booth_stage_2.vhd" "39ca87c37e98f34c3243ae27220b2b3d6940d056" "20211121035132.408":
-  entity booth_stage_2 at 1( 0) + 0 on 273;
-  architecture arch of booth_stage_2 at 16( 334) + 0 on 274;
-file . "tri_multiplier/r4b_multiplier/booth_stage/booth_stage_1.vhd" "594835550b021934952d96e83b626085a4648937" "20211121035132.408":
-  entity booth_stage_1 at 1( 0) + 0 on 271;
-  architecture arch of booth_stage_1 at 16( 334) + 0 on 272;
-file . "tri_multiplier/r4b_multiplier/booth_stage/booth_stage_0.vhd" "1a977682c21f9c09952146bbb9f099d1f1ad7583" "20211121035132.407":
-  entity booth_stage_0 at 1( 0) + 0 on 269;
-  architecture arch of booth_stage_0 at 16( 334) + 0 on 270;
-file . "tri_multiplier/r4b_multiplier/r4b_multiplier.vhd" "07cf11a7a8b477893c7d46050a1b9e632c9e8c87" "20211121035132.406":
-  entity r4b_multiplier at 1( 0) + 0 on 267;
-  architecture arch of r4b_multiplier at 16( 325) + 0 on 268;
-file . "16b_carry_select_adder/components/xor_logic.vhd" "aee90de35b8dbd6ea4588214e797885770427563" "20211121035132.405":
-  entity xor_logic at 1( 0) + 0 on 265;
-  architecture or_logic_behavior of xor_logic at 10( 150) + 0 on 266;
-file . "16b_carry_select_adder/components/two_to_one_mux.vhd" "d2325ae2eb202727ddb9e42767a0f4e7d616635a" "20211121035132.404":
-  entity two_to_one_mux at 1( 0) + 0 on 263;
-  architecture rtl of two_to_one_mux at 10( 153) + 0 on 264;
-file . "16b_carry_select_adder/components/or_logic.vhd" "791e328a0fc9ebe5f7dc38a2706478f8e6c327f5" "20211121035132.404":
-  entity or_logic at 1( 0) + 0 on 261;
-  architecture or_logic_behavior of or_logic at 10( 148) + 0 on 262;
-file . "16b_carry_select_adder/components/not_logic.vhd" "1fa396139dfc24b7084979ddc34d0dd3db57ec8a" "20211121035132.403":
-  entity not_logic at 1( 0) + 0 on 259;
-  architecture not_logic_behavior of not_logic at 10( 146) + 0 on 260;
-file . "16b_carry_select_adder/components/and_logic.vhd" "f0a436686abb6a61c3cbd53d5d58acc8d785aab1" "20211121035132.403":
-  entity and_logic at 1( 0) + 0 on 257;
-  architecture and_logic_behavior of and_logic at 10( 150) + 0 on 258;
-file . "tri_multiplier/tri_multipler.vhd" "489168b9c71e2cfa49bead73a5939425e4ba5f04" "20211121035132.402":
-  entity tri_multiplier at 1( 0) + 0 on 255;
-  architecture arch of tri_multiplier at 17( 338) + 0 on 256;
-file . "tri_multiplier/left_shifter_8b.vhd" "0dbe2aa9286b6e45981251d99934cf23c0f0bef7" "20211121035132.401":
-  entity left_shifter_8b at 1( 0) + 0 on 253;
-  architecture arch of left_shifter_8b at 13( 242) + 0 on 254;
-file . "test/tri_multiplier_tb.vhd" "3d9170880bbf7fe5ae68dbc1015f6448f3f87513" "20211121035132.401":
-  entity tri_multiplier_tb at 1( 0) + 0 on 251;
-  architecture behavioural of tri_multiplier_tb at 9( 112) + 0 on 252;
-file . "test/r4b_multiplier_tb.vhd" "6d49d8c53542778f8c10ba140fe1d55f7557efa2" "20211121035132.400":
-  entity r4b_multiplier_tb at 1( 0) + 0 on 249;
-  architecture behavioural of r4b_multiplier_tb at 9( 112) + 0 on 250;
-file . "test/nine_bit_negation_in_2c_tb.vhd" "84210085cb1e0f8560dbb285974759b1eee48b10" "20211121035132.399":
-  entity nine_bit_negation_in_2c_tb at 1( 0) + 0 on 247;
-  architecture behavioural of nine_bit_negation_in_2c_tb at 8( 95) + 0 on 248;
-file . "test/csa_16b_tb.vhd" "ddb7280aba229c9ff61f25f4ce701a716980ce44" "20211121035132.398":
-  entity csa_16b_tb at 1( 0) + 0 on 245;
-  architecture behavioural of csa_16b_tb at 9( 105) + 0 on 246;
-file . "test/booth_stage_1_tb.vhd" "6bc170730a17c2735e16d42e0b071901a8410ee5" "20211121035132.397":
-  entity booth_stage_1_tb at 1( 0) + 0 on 243;
-  architecture behavioural of booth_stage_1_tb at 8( 85) + 0 on 244;
-file . "test/booth_stage_0_tb.vhd" "a8138afae5214b129e805d32e0b11f829276a01f" "20211121035132.396":
-  entity booth_stage_0_tb at 1( 0) + 0 on 241;
-  architecture behavioural of booth_stage_0_tb at 8( 85) + 0 on 242;
-file . "test/assert_output_24b.vhd" "3cb8070d87d1ed06906bd93962c827dde11a225c" "20211121035132.395":
-  entity assert_output_24b at 1( 0) + 0 on 239;
-  architecture arch of assert_output_24b at 14( 260) + 0 on 240;
-file . "test/assert_output_16b.vhd" "e59d4646104da046370bb8e3d9d42a4a7fa6240a" "20211121035132.394":
-  entity assert_output_16b at 1( 0) + 0 on 237;
-  architecture arch of assert_output_16b at 14( 260) + 0 on 238;
-file . "test/assert_output.vhd" "644deb6e9b515225155aee33895b1ebb0440e5d9" "20211121035132.393":
-  entity assert_output at 1( 0) + 0 on 235;
-  architecture arch of assert_output at 14( 252) + 0 on 236;
-file . "16b_carry_select_adder/rca_4b.vhd" "bf4f4cbad884273c94d41429c59d085237ba3066" "20211121035132.389":
-  entity rca_4bit at 1( 0) + 0 on 233;
-  architecture rtl of rca_4bit at 13( 280) + 0 on 234;
-file . "16b_carry_select_adder/full_adder.vhd" "559e839756633fca41ec76ab73ec57bb04036d0a" "20211121035132.388":
-  entity full_adder at 1( 0) + 0 on 231;
-  architecture full_adder_arch of full_adder at 10( 162) + 0 on 232;
-file . "16b_carry_select_adder/csa_4b.vhd" "501fd674941651a82e3edc91f5af2a6732604003" "20211121035132.387":
-  entity csa_4bit at 1( 0) + 0 on 229;
-  architecture rtl of csa_4bit at 13( 287) + 0 on 230;
-file . "16b_carry_select_adder/csa_16b.vhd" "7d679e2ec02dd78212c8173bb0884e96034295bc" "20211121035132.386":
-  entity csa_16bit at 1( 0) + 0 on 227;
-  architecture rtl of csa_16bit at 12( 259) + 0 on 228;
+file . "tri_multiplier/r4b_multiplier/complement/nine_bit_negation_in_2c.vhd" "5df06d6aae028be87e70201537be2b86741de4a7" "20211122144823.867":
+  entity nine_bit_negation_in_2c at 1( 0) + 0 on 699;
+  architecture arch of nine_bit_negation_in_2c at 14( 263) + 0 on 700;
+file . "tri_multiplier/r4b_multiplier/booth_stage/booth_stage_4.vhd" "7439c212e225ec27b762ffbe0f8c14c9652b63be" "20211122144823.866":
+  entity booth_stage_4 at 1( 0) + 0 on 697;
+  architecture arch of booth_stage_4 at 14( 257) + 0 on 698;
+file . "tri_multiplier/r4b_multiplier/booth_stage/booth_stage_3.vhd" "3c9dabe1736d08453bb317a5033fa4df5682fbd2" "20211122144823.866":
+  entity booth_stage_3 at 1( 0) + 0 on 695;
+  architecture arch of booth_stage_3 at 16( 334) + 0 on 696;
+file . "tri_multiplier/r4b_multiplier/booth_stage/booth_stage_2.vhd" "39ca87c37e98f34c3243ae27220b2b3d6940d056" "20211122144823.865":
+  entity booth_stage_2 at 1( 0) + 0 on 693;
+  architecture arch of booth_stage_2 at 16( 334) + 0 on 694;
+file . "tri_multiplier/r4b_multiplier/booth_stage/booth_stage_1.vhd" "594835550b021934952d96e83b626085a4648937" "20211122144823.865":
+  entity booth_stage_1 at 1( 0) + 0 on 691;
+  architecture arch of booth_stage_1 at 16( 334) + 0 on 692;
+file . "tri_multiplier/r4b_multiplier/booth_stage/booth_stage_0.vhd" "1a977682c21f9c09952146bbb9f099d1f1ad7583" "20211122144823.864":
+  entity booth_stage_0 at 1( 0) + 0 on 689;
+  architecture arch of booth_stage_0 at 16( 334) + 0 on 690;
+file . "tri_multiplier/r4b_multiplier/r4b_multiplier.vhd" "7fd94ce1b8a40c03953e962f37ba72c05663dff9" "20211122144823.864":
+  entity r4b_multiplier at 1( 0) + 0 on 687;
+  architecture arch of r4b_multiplier at 14( 284) + 0 on 688;
+file . "16b_carry_select_adder/components/xor_logic.vhd" "aee90de35b8dbd6ea4588214e797885770427563" "20211122144823.863":
+  entity xor_logic at 1( 0) + 0 on 685;
+  architecture or_logic_behavior of xor_logic at 10( 150) + 0 on 686;
+file . "16b_carry_select_adder/components/two_to_one_mux.vhd" "d2325ae2eb202727ddb9e42767a0f4e7d616635a" "20211122144823.863":
+  entity two_to_one_mux at 1( 0) + 0 on 683;
+  architecture rtl of two_to_one_mux at 10( 153) + 0 on 684;
+file . "16b_carry_select_adder/components/or_logic.vhd" "791e328a0fc9ebe5f7dc38a2706478f8e6c327f5" "20211122144823.862":
+  entity or_logic at 1( 0) + 0 on 681;
+  architecture or_logic_behavior of or_logic at 10( 148) + 0 on 682;
+file . "16b_carry_select_adder/components/not_logic.vhd" "1fa396139dfc24b7084979ddc34d0dd3db57ec8a" "20211122144823.862":
+  entity not_logic at 1( 0) + 0 on 679;
+  architecture not_logic_behavior of not_logic at 10( 146) + 0 on 680;
+file . "16b_carry_select_adder/components/and_logic.vhd" "f0a436686abb6a61c3cbd53d5d58acc8d785aab1" "20211122144823.861":
+  entity and_logic at 1( 0) + 0 on 677;
+  architecture and_logic_behavior of and_logic at 10( 150) + 0 on 678;
+file . "tri_multiplier/tri_multipler.vhd" "ae5d32ad64a764f6a3e27530b497eb512e13b5f4" "20211122144823.860":
+  entity tri_multiplier at 1( 0) + 0 on 675;
+  architecture arch of tri_multiplier at 16( 312) + 0 on 676;
+file . "tri_multiplier/left_shifter_8b.vhd" "0dbe2aa9286b6e45981251d99934cf23c0f0bef7" "20211122144823.860":
+  entity left_shifter_8b at 1( 0) + 0 on 673;
+  architecture arch of left_shifter_8b at 13( 242) + 0 on 674;
+file . "test/tri_multiplier_tb.vhd" "091a61b6f814e7f329a1d431521805c7f801347c" "20211122144823.859":
+  entity tri_multiplier_tb at 1( 0) + 0 on 671;
+  architecture behavioural of tri_multiplier_tb at 9( 112) + 0 on 672;
+file . "test/r4b_multiplier_tb.vhd" "6d49d8c53542778f8c10ba140fe1d55f7557efa2" "20211122144823.859":
+  entity r4b_multiplier_tb at 1( 0) + 0 on 669;
+  architecture behavioural of r4b_multiplier_tb at 9( 112) + 0 on 670;
+file . "test/nine_bit_negation_in_2c_tb.vhd" "84210085cb1e0f8560dbb285974759b1eee48b10" "20211122144823.858":
+  entity nine_bit_negation_in_2c_tb at 1( 0) + 0 on 667;
+  architecture behavioural of nine_bit_negation_in_2c_tb at 8( 95) + 0 on 668;
+file . "test/csa_16b_tb.vhd" "06a97ec3a4c15b39d785d39d91637294381e28c0" "20211122144823.857":
+  entity csa_16b_tb at 1( 0) + 0 on 665;
+  architecture behavioural of csa_16b_tb at 9( 105) + 0 on 666;
+file . "test/booth_stage_1_tb.vhd" "6bc170730a17c2735e16d42e0b071901a8410ee5" "20211122144823.856":
+  entity booth_stage_1_tb at 1( 0) + 0 on 663;
+  architecture behavioural of booth_stage_1_tb at 8( 85) + 0 on 664;
+file . "test/booth_stage_0_tb.vhd" "a8138afae5214b129e805d32e0b11f829276a01f" "20211122144823.856":
+  entity booth_stage_0_tb at 1( 0) + 0 on 661;
+  architecture behavioural of booth_stage_0_tb at 8( 85) + 0 on 662;
+file . "test/assert_output_24b.vhd" "3cb8070d87d1ed06906bd93962c827dde11a225c" "20211122144823.855":
+  entity assert_output_24b at 1( 0) + 0 on 659;
+  architecture arch of assert_output_24b at 14( 260) + 0 on 660;
+file . "test/assert_output_16b.vhd" "e59d4646104da046370bb8e3d9d42a4a7fa6240a" "20211122144823.854":
+  entity assert_output_16b at 1( 0) + 0 on 657;
+  architecture arch of assert_output_16b at 14( 260) + 0 on 658;
+file . "test/assert_output.vhd" "644deb6e9b515225155aee33895b1ebb0440e5d9" "20211122144823.854":
+  entity assert_output at 1( 0) + 0 on 655;
+  architecture arch of assert_output at 14( 252) + 0 on 656;
+file . "16b_carry_select_adder/rca_4b.vhd" "bf4f4cbad884273c94d41429c59d085237ba3066" "20211122144823.847":
+  entity rca_4bit at 1( 0) + 0 on 639;
+  architecture rtl of rca_4bit at 13( 280) + 0 on 640;
+file . "16b_carry_select_adder/full_adder.vhd" "559e839756633fca41ec76ab73ec57bb04036d0a" "20211122144823.846":
+  entity full_adder at 1( 0) + 0 on 637;
+  architecture full_adder_arch of full_adder at 10( 162) + 0 on 638;
+file . "16b_carry_select_adder/csa_4b.vhd" "501fd674941651a82e3edc91f5af2a6732604003" "20211122144823.845":
+  entity csa_4bit at 1( 0) + 0 on 635;
+  architecture rtl of csa_4bit at 13( 287) + 0 on 636;
+file . "16b_carry_select_adder/csa_16b.vhd" "7d679e2ec02dd78212c8173bb0884e96034295bc" "20211122144823.843":
+  entity csa_16bit at 1( 0) + 0 on 631;
+  architecture rtl of csa_16bit at 12( 259) + 0 on 632;
+file . "16b_carry_select_adder/csa_24b.vhd" "db3e3e8f00ffbbb44f2ffcb4cf0af2441d135d21" "20211122144823.844":
+  entity csa_24bit at 1( 0) + 0 on 633;
+  architecture rtl of csa_24bit at 12( 259) + 0 on 634;
+file . "register/negative_edge_register_16b.vhd" "b1ecd22bc46cdf334694e67502cec511903f24fb" "20211122144823.848":
+  entity negative_edge_register_16b at 1( 0) + 0 on 641;
+  architecture arch of negative_edge_register_16b at 13( 268) + 0 on 642;
+file . "register/negative_edge_register_24b.vhd" "bbc50d1cb56098b966f9335637e2fac8987a3796" "20211122144823.848":
+  entity negative_edge_register_24b at 1( 0) + 0 on 643;
+  architecture arch of negative_edge_register_24b at 13( 268) + 0 on 644;
+file . "register/negative_edge_register_32b.vhd" "1798e928d53d5338390258953aa57a125a8e6b71" "20211122144823.849":
+  entity negative_edge_register_32b at 1( 0) + 0 on 645;
+  architecture arch of negative_edge_register_32b at 13( 268) + 0 on 646;
+file . "register/negative_edge_register_48b.vhd" "9ae54335da9bc3fea1caeab946c8cc740fdd5efa" "20211122144823.849":
+  entity negative_edge_register_48b at 1( 0) + 0 on 647;
+  architecture arch of negative_edge_register_48b at 13( 268) + 0 on 648;
+file . "register/negative_edge_register_8b.vhd" "dd47075ab1b140109bfcf204ca6d1819f0ed7c0f" "20211122144823.850":
+  entity negative_edge_register_8b at 1( 0) + 0 on 649;
+  architecture arch of negative_edge_register_8b at 13( 264) + 0 on 650;
+file . "shifter/right_shifter_24b.vhd" "232cd156d2c49ae27326e513389cd942edba9a06" "20211122144823.850":
+  entity right_shifter_24b at 1( 0) + 0 on 651;
+  architecture arch of right_shifter_24b at 13( 308) + 0 on 652;
+file . "shifter/right_shifter_48b.vhd" "1a3c164ec4735af65e44bdc2f3577d3b06b914a1" "20211122144823.851":
+  entity right_shifter_48b at 1( 0) + 0 on 653;
+  architecture arch of right_shifter_48b at 13( 308) + 0 on 654;

@@ -1,8 +1,6 @@
 library ieee;
 
 use ieee.std_logic_1164.all;
--- TODO: adder
-use ieee.numeric_std.all;
 
 entity r4b_multiplier is
     port(

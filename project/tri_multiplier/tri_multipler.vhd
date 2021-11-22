@@ -1,6 +1,5 @@
 library ieee;
 
-use ieee.numeric_std.all;
 use ieee.std_logic_1164.all;
 
 entity tri_multiplier is
@@ -23,8 +22,11 @@ architecture arch of tri_multiplier is
     -- product of higher aa and b
     signal product_haa_b    : std_logic_vector(15 downto 0);
     
-    -- nmiddle part product of  aa and b
+    -- middle part product of aa and b
     signal product_aab_m    : std_logic_vector(23 downto 0);
+    signal extended_product_laa_b    : std_logic_vector(23 downto 0);
+
+    signal sum_of_laa_b_and_aab_m    : std_logic_vector(23 downto 0);
 
     -- booth multiplier implementation
     component r4b_multiplier is
@@ -42,6 +44,14 @@ architecture arch of tri_multiplier is
         );
     end component left_shifter_8b;
 
+    component CSA_24bit is
+        port(
+          in_a : in std_logic_vector (23 downto 0);
+          in_b : in std_logic_vector (23 downto 0);
+          sum : out std_logic_vector (23 downto 0);
+          carryout : out std_logic);
+    end component CSA_24bit;
+
 begin
 
     aa: r4b_multiplier port map(a, a, product_aa);
@@ -51,6 +61,10 @@ begin
 
     aab_m: left_shifter_8b port map(product_haa_b, product_aab_m);
 
-    p <= std_logic_vector(unsigned(product_laa_b) + unsigned(product_aab_m));
+    extended_product_laa_b <= "00000000" & product_laa_b;
+
+    sum: CSA_24bit port map(extended_product_laa_b, product_aab_m, p);
+
+    -- p <= std_logic_vector(unsigned(product_laa_b) + unsigned(product_aab_m));
 
 end arch;

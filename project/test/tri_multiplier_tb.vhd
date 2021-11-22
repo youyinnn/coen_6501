@@ -62,6 +62,11 @@ begin
             32 after 3000 ns,
             13 after 3500 ns,
             255 after 4000 ns,
+            7 after 4500 ns,
+            29 after 5000 ns,
+            44 after 5500 ns,
+            12 after 6000 ns,
+            32 after 6500 ns,
             0 after 10000 ns    
         ;
             
@@ -74,6 +79,11 @@ begin
             64 after 3000 ns,
             77 after 3500 ns,
             255 after 4000 ns,
+            8 after 4500 ns,
+            31 after 5000 ns,
+            83 after 5500 ns,
+            53 after 6000 ns,
+            12 after 6500 ns,
             0 after 10000 ns
         ;
 
@@ -83,6 +93,14 @@ begin
         as_3: assert_output_24b port map(r_output_pd_slv, r_output_pd, 1501 ns);
         as_4: assert_output_24b port map(r_output_pd_slv, r_output_pd, 2001 ns);
         as_5: assert_output_24b port map(r_output_pd_slv, r_output_pd, 2501 ns);
+        as_6: assert_output_24b port map(r_output_pd_slv, r_output_pd, 3001 ns);
+        as_7: assert_output_24b port map(r_output_pd_slv, r_output_pd, 3501 ns);
+        as_8: assert_output_24b port map(r_output_pd_slv, r_output_pd, 4001 ns);
+        as_9: assert_output_24b port map(r_output_pd_slv, r_output_pd, 5501 ns);
+        as_10: assert_output_24b port map(r_output_pd_slv, r_output_pd, 5001 ns);
+        as_11: assert_output_24b port map(r_output_pd_slv, r_output_pd, 5501 ns);
+        as_12: assert_output_24b port map(r_output_pd_slv, r_output_pd, 6001 ns);
+        as_13: assert_output_24b port map(r_output_pd_slv, r_output_pd, 6501 ns);
         as_f: assert_output_24b port map(r_output_pd_slv, r_output_pd, 10001 ns);
 
 
