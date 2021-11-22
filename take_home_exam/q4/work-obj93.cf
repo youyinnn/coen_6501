@@ -1,0 +1,7 @@
+v 4
+file . "people_counter.vhd" "18a393a620984d27b4f1987a9f77408dc6aefa36" "20211121185117.204":
+  entity people_counter at 1( 0) + 0 on 463;
+  architecture arch of people_counter at 13( 260) + 0 on 464;
+file . "people_counter_tb.vhd" "e2804c5629ff80eb1b8433e66961d827b2252389" "20211121185117.206":
+  entity people_counter_tb at 1( 0) + 0 on 465;
+  architecture behavioural of people_counter_tb at 10( 136) + 0 on 466;

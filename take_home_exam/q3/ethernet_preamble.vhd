@@ -24,7 +24,6 @@ architecture arch of ethernet_preamble is
     -- register of the state
     signal state_reg, state_next     : state_of_circuit;
 begin
-
     -- state register
     process(clk, start)
     begin
@@ -62,6 +61,4 @@ begin
                 data_out <= SEQ;
         end case;
     end process;
-
-
 end arch;
