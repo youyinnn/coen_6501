@@ -6,31 +6,31 @@
 
 ``` bash
 /project/
-		/carry_select_adder/
-				/componments/													-- gates fa muxs
-				/csa_4b.vhd
-        /csa_16b.vhd
-        /csa_24b_incrementer.vhd
-        /csa_24b.vhd
-        /full_adder.vhd
-        /rca_4b.vhd
-    /end_flag_gen/														-- end flag generator
-    /fst/																			-- simulation wave fst file
-    /output_handle/
-        /overflow_as_negation.vhd
-        /overflow_as_separation.vhd
-        /zero_dectector_9b.vhd
-    /pipelining/															-- pipelining implementation
-      	/operating_circuit_8b.vhd
-      	/pipelining_circuit_8b.vhd
-    /register/																-- n bit negative edge register
-    /shifter/																	-- shifter for '1/4' Operation
-    /test/																		-- testbenches
-    /tri_multipler/														-- multiplier for 'a*a*b' Operation
-    		/r4b_multiplier/											-- radix 4 booth multiplier
-    				/booth_stage/											-- booth stages
-    				/complement/											-- negation complement generator
-    				/r4b_multiplier.vhd
+	/carry_select_adder/
+		/componments/					-- gates fa muxs
+		/csa_4b.vhd
+        	/csa_16b.vhd
+        	/csa_24b_incrementer.vhd
+        	/csa_24b.vhd
+        	/full_adder.vhd
+        	/rca_4b.vhd
+   	/end_flag_gen/						-- end flag generator
+    	/fst/							-- simulation wave fst file
+	/output_handle/
+        	/overflow_as_negation.vhd
+        	/overflow_as_separation.vhd
+        	/zero_dectector_9b.vhd
+    	/pipelining/						-- pipelining implementation
+      		/operating_circuit_8b.vhd
+      		/pipelining_circuit_8b.vhd
+    	/register/						-- n bit negative edge register
+    	/shifter/						-- shifter for '1/4' Operation
+    	/test/							-- testbenches
+    	/tri_multipler/						-- multiplier for 'a*a*b' Operation
+    		/r4b_multiplier/				-- radix 4 booth multiplier
+    			/booth_stage/				-- booth stages
+    			/complement/				-- negation complement generator
+    			/r4b_multiplier.vhd
     		/left_shifter_8b.vhd
     		/tri_multiplier.vhd
 ```
