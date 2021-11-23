@@ -94,7 +94,9 @@ begin
             '1' after 500 ns,
             '0' after 600 ns,            
             '1' after 700 ns,
-            '0' after 850 ns,            
+            '0' after 800 ns,
+            -- '1' after 900 ns,
+            -- '0' after 1000 ns,            
             '1' after 4010 ns,
             '0' after 4050 ns;
 

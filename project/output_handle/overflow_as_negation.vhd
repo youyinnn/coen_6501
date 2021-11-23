@@ -11,7 +11,7 @@ entity overflow_as_negation is
     );
 end overflow_as_negation;
 
-architecture structure_arch of overflow_as_negation is
+architecture arch of overflow_as_negation is
 
     constant overflow_negation : std_logic_vector(15 downto 0) := "1000000000000000";
     signal is_overflow : std_logic;
@@ -31,4 +31,4 @@ begin
 
     data_out <= overflow_negation when is_overflow = '1' else "0" & data_in(14 downto 0);
 
-end structure_arch;
+end arch;

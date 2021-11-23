@@ -75,14 +75,14 @@ begin
     r_input_a <=
             4 after 100 ns,
             -- 4 after 300 ns,
-            -- 123 after 500 ns,
+            123 after 500 ns,
             -- 12 after 681 ns,
             255 after 4000 ns;
 
     r_input_b <=
             4 after 100 ns,
             -- 59 after 300 ns,
-            -- 32 after 500 ns,
+            32 after 500 ns,
             -- 6 after 810 ns,
             255 after 4000 ns;
 
@@ -91,8 +91,8 @@ begin
             '0' after 200 ns,
             -- '1' after 300 ns,
             -- '0' after 400 ns,
-            -- '1' after 500 ns,
-            -- '0' after 600 ns,            
+            '1' after 500 ns,
+            '0' after 600 ns,            
             -- '1' after 700 ns,
             -- '0' after 850 ns,            
             -- '1' after 4010 ns,

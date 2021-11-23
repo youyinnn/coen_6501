@@ -11,10 +11,10 @@ entity overflow_as_separation is
     );
 end overflow_as_separation;
 
-architecture structure_arch of overflow_as_separation is
+architecture arch of overflow_as_separation is
 begin
 
     lower_data_out  <= "0" & data_in(14 downto 0);
     higher_data_out <= "1000000" & data_in(23 downto 15);
 
-end structure_arch;
+end arch;

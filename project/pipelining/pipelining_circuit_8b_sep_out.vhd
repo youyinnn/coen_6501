@@ -16,7 +16,7 @@ entity pipelining_circuit_8b_sep_out is
     );
 end pipelining_circuit_8b_sep_out;
 
-architecture structure_arch of pipelining_circuit_8b_sep_out is
+architecture arch of pipelining_circuit_8b_sep_out is
 
     component operating_circuit_8b is
         port(
@@ -68,7 +68,19 @@ architecture structure_arch of pipelining_circuit_8b_sep_out is
         );
     end component n_stage_end_flag_generator;
 
-    signal stage : std_logic_vector(5 downto 0);
+    constant SIX_STAGE : natural := 6;
+    signal stage : std_logic_vector(SIX_STAGE - 1 downto 0);
+
+    component display_z_separation is
+        port(
+            clk         : in std_logic;
+            clr         : in std_logic;
+            lower_data  : in    std_logic_vector(15 downto 0);
+            higher_data : in    std_logic_vector(15 downto 0);
+    
+            z_out       : out   std_logic_vector(15 downto 0)
+        );
+    end component display_z_separation;
 begin
 
     -- 3 clock cycles
@@ -92,15 +104,18 @@ begin
 
     -- end_flag generation
     end_flag_generate: n_stage_end_flag_generator 
-    generic map (5)
+    generic map (SIX_STAGE)
     port map(
         clk, load, clr, end_flag, stage
     );
 
-    z <= 
-        stage_4_lower_result_after_reg when stage(3) = '1' else
-        stage_4_higher_result_after_reg when stage(4) = '1' else
-        (others => '0');
+    -- display z higher first, then z lower
+    display_z_separately: display_z_separation port map(
+        clk, clr,
+        stage_4_lower_result_after_reg,
+        stage_4_higher_result_after_reg,
+        z
+    );
 
 
-end structure_arch;
+end arch;

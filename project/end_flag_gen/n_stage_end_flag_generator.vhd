@@ -11,15 +11,15 @@ entity n_stage_end_flag_generator is
         load : in std_logic;
         clr  : in std_logic;
 
-        five_stage_end_flag     : out std_logic;
+        stage_end_flag     : out std_logic;
         stage_vector            : out std_logic_vector(STAGE_LENGTH - 1 downto 0)
     );
 end n_stage_end_flag_generator;
 
-architecture structure_arch of n_stage_end_flag_generator is
+architecture arch of n_stage_end_flag_generator is
     constant FIRST_STAGE : std_logic_vector(STAGE_LENGTH - 1 downto 0) := (0 => '1', others => '0');
-    type state is (start, operating, done);
-    signal stage_for_operating: std_logic_vector(STAGE_LENGTH - 1 downto 0) := FIRST_STAGE;
+    type state is (idle, start, operating, done);
+    signal stage_for_operating: std_logic_vector(STAGE_LENGTH - 1 downto 0) := (others => '0');
     signal state_reg, state_next: state;
 begin
 
@@ -29,7 +29,7 @@ begin
     process(clk, clr)
     begin
         if clr = '1' then
-            state_reg <= start;
+            state_reg <= idle;
         elsif falling_edge(clk) then
             state_reg <= state_next;
         end if;
@@ -40,28 +40,30 @@ begin
     begin
         state_next <= state_reg;
         case state_reg is
-            when start =>
+            when idle =>
                 if falling_edge(load) then
-                    state_next <= operating;
-                end if;
+                    state_next <= start;
+                end if;           
+            when start =>
+                state_next <= operating;
             when operating =>
-                if stage_for_operating(STAGE_LENGTH - 1) = '1' then
+                if falling_edge(load) then
+                    state_next <= start;
+                elsif stage_for_operating(STAGE_LENGTH - 1) = '1' then
                     state_next <= done;
                 end if;
             when done =>
                 if falling_edge(load) then
-                    state_next <= operating;
+                    state_next <= start;
                 end if;
         end case;
     end process;
 
     -- datapath: register for the stage_for_operating
-    process(clk, clr, load)
+    process(clk, load)
     begin
-        if clr = '1' then
+        if falling_edge(load) then               -- load acts like a preset
             stage_for_operating <= FIRST_STAGE;
-        elsif falling_edge(load) then               -- load acts like a preset
-                stage_for_operating <= FIRST_STAGE;
         elsif falling_edge(clk) then
             if state_reg = operating then
                 stage_for_operating <= 
@@ -74,13 +76,15 @@ begin
     process(state_reg, stage_for_operating, load)
     begin
         case state_reg is
+            when idle =>
+                stage_end_flag <= '0';
             when start =>
-                five_stage_end_flag <= '0';
+                stage_end_flag <= '0';
             when operating =>
-                five_stage_end_flag <= '0';
+                stage_end_flag <= '0';
             when done =>
-                five_stage_end_flag <= '1';
+                stage_end_flag <= '1';
         end case;
     end process;
 
-end structure_arch;
+end arch;

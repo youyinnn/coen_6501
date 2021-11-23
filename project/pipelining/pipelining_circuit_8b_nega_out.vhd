@@ -16,7 +16,7 @@ entity pipelining_circuit_8b_nega_out is
     );
 end pipelining_circuit_8b_nega_out;
 
-architecture structure_arch of pipelining_circuit_8b_nega_out is
+architecture arch of pipelining_circuit_8b_nega_out is
 
     component operating_circuit_8b is
         port(
@@ -65,11 +65,11 @@ architecture structure_arch of pipelining_circuit_8b_nega_out is
 begin
 
     -- 3 clock cycles
-    operating: operating_circuit_8b port map(
+    stage_1_to_3_operating: operating_circuit_8b port map(
         clk, load, clr, a, b, stage_3_result_after_reg
     );
 
-    overflow_handling: overflow_as_negation port map(
+    stage_4_overflow_handling: overflow_as_negation port map(
         stage_3_result_after_reg, stage_4_result_before_reg
     );
 
@@ -87,4 +87,4 @@ begin
 
     z <= stage_4_result_after_reg;
 
-end structure_arch;
+end arch;

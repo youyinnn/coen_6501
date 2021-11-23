@@ -15,7 +15,7 @@ entity operating_circuit_8b is
     );
 end operating_circuit_8b;
 
-architecture structure_arch of operating_circuit_8b is
+architecture arch of operating_circuit_8b is
 
     signal a_reg : std_logic_vector(7 downto 0);
     signal b_reg : std_logic_vector(7 downto 0);
@@ -121,4 +121,4 @@ begin
 
     z <= stage_3_result_after_reg;
 
-end structure_arch;
+end arch;

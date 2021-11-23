@@ -9,7 +9,7 @@ entity zero_detector_9b is
     );
 end zero_detector_9b;
 
-architecture structure_arch of zero_detector_9b is    
+architecture arch of zero_detector_9b is    
 begin
 
     is_not_zero <= 
@@ -17,4 +17,4 @@ begin
         data(4) or data(3) or data(2) or data(1) or 
         data(0);
 
-end structure_arch;
+end arch;
