@@ -3,10 +3,10 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity pipelining_circuit_8b_tb is
+entity pipelining_circuit_8b_nega_out_tb is
 end entity;
 
-architecture Behavioural of pipelining_circuit_8b_tb is
+architecture Behavioural of pipelining_circuit_8b_nega_out_tb is
 
     signal r_input_clk  : STD_LOGIC := '0';
     signal r_input_load : std_logic := '0';
@@ -27,7 +27,7 @@ architecture Behavioural of pipelining_circuit_8b_tb is
     signal r_output_stage_3     : integer := 0;
     signal r_output_z           : integer := 0;
 
-    component pipelining_circuit_8b is
+    component pipelining_circuit_8b_nega_out is
         port(
             clk  : in std_logic;
             load : in std_logic;
@@ -39,7 +39,7 @@ architecture Behavioural of pipelining_circuit_8b_tb is
             end_flag    : out std_logic;
             z           : out std_logic_vector(15 downto 0)
         );
-    end component pipelining_circuit_8b;
+    end component pipelining_circuit_8b_nega_out;
 
 begin
 
@@ -61,7 +61,7 @@ begin
     end process;     
     
     
-    circuit : pipelining_circuit_8b
+    circuit : pipelining_circuit_8b_nega_out
     port map (
         clk => r_input_clk,
         load => r_input_load,
