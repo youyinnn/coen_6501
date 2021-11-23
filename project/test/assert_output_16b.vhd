@@ -18,7 +18,7 @@ begin
         begin
             wait for dl;
             assert to_integer(unsigned(opt)) = assert_int 
-                report "wrong value expect: " & integer'image(assert_int) & ", but: " & integer'image(to_integer(unsigned(opt)));
+                report "wrong value actually : " & integer'image(to_integer(unsigned(opt))) & ", but expected: " & integer'image(assert_int);
             wait;
         end process;
 

@@ -43,20 +43,20 @@ begin
         end if;
     end process;    
 
-    process(clk, start, n)
+    process(clk, start, state_reg)              -- process for operation
     begin        
-        if start = '0' then                 -- reset
+        if start = '0' then                     -- reset
             a <= a_in;
             n <= b_in;
             r <= "0000000000000000";
         elsif rising_edge(clk) then
             case state_reg is
                 when op => 
-                    if count_0 = '0' then   -- perform operation when count_0 = '0'
+                    if count_0 = '0' then       -- perform operation when count_0 = '0'
                         n <= std_logic_vector(unsigned(n) - 1);
                         r <= std_logic_vector(unsigned(r) + unsigned(a));
                     end if;
-                when others =>              -- default value
+                when others =>                  -- default value
                     a <= a_in;
                     n <= b_in;
                     r <= "0000000000000000";
