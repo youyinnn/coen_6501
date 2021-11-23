@@ -22,7 +22,8 @@
         	/zero_dectector_9b.vhd
     	/pipelining/						-- pipelining implementation
       		/operating_circuit_8b.vhd
-      		/pipelining_circuit_8b.vhd
+      		/pipelining_circuit_8b_nega_out.vhd
+		/pipelining_circuit_8b_sep_out.vhd
     	/register/						-- n bit negative edge register
     	/shifter/						-- shifter for '1/4' Operation
     	/test/							-- testbenches
