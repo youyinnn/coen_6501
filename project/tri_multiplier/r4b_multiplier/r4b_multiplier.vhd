@@ -1,5 +1,4 @@
 library ieee;
-
 use ieee.std_logic_1164.all;
 
 entity r4b_multiplier is
@@ -24,7 +23,6 @@ architecture arch of r4b_multiplier is
     signal sum_1 : std_logic_vector(15 downto 0);
     signal sum_2 : std_logic_vector(15 downto 0);
     signal sum_3 : std_logic_vector(15 downto 0);
-    signal sum_4 : std_logic_vector(15 downto 0);
 
     component nine_bit_negation_in_2c is
         port(
@@ -92,80 +90,27 @@ architecture arch of r4b_multiplier is
 
 begin
 
-    neg: nine_bit_negation_in_2c
+    negation_in_2_s_complement: nine_bit_negation_in_2c
     port map(
         x => mc,
         c => signal_mc_negative
     );
 
-    sg_0: booth_stage_0
-    port map(
+    booth_stage_0: booth_stage_0 port map(
         mc => mc,
         mc_neg => signal_mc_negative,
         code => mp(1 downto 0),
         p_next => signal_p0
     );    
     
-    sg_1: booth_stage_1
-    port map(
-        mc => mc,
-        mc_neg => signal_mc_negative,
-        code => mp(3 downto 1),
-        p_next => signal_p1
-    );    
-    
-    sg_2: booth_stage_2
-    port map(
-        mc => mc,
-        mc_neg => signal_mc_negative,
-        code => mp(5 downto 3),
-        p_next => signal_p2
-    );    
-    
-    sg_3: booth_stage_3
-    port map(
-        mc => mc,
-        mc_neg => signal_mc_negative,
-        code => mp(7 downto 5),
-        p_next => signal_p3
-    );    
-    
-    sg_4: booth_stage_4
-    port map(
-        mc => mc,
-        code => mp(7),
-        p_next => signal_p4
-    );
+    booth_stage_1: booth_stage_1 port map(mc, signal_mc_negative, mp(3 downto 1), signal_p1);    
+    booth_stage_2: booth_stage_2 port map(mc, signal_mc_negative, mp(5 downto 3), signal_p2);    
+    booth_stage_3: booth_stage_3 port map(mc, signal_mc_negative, mp(7 downto 5), signal_p3);    
+    booth_stage_4: booth_stage_4 port map(mc, mp(7), signal_p4);
 
-    s_1: CSA_16bit
-    port map(
-        in_a => signal_p0,
-        in_b => signal_p1,
-        sum => sum_1
-    );    
-    
-    s_2: CSA_16bit
-    port map(
-        in_a => sum_1,
-        in_b => signal_p2,
-        sum => sum_2
-    );    
-    
-    s_3: CSA_16bit
-    port map(
-        in_a => sum_2,
-        in_b => signal_p3,
-        sum => sum_3
-    );    
-    
-    s_4: CSA_16bit
-    port map(
-        in_a => sum_3,
-        in_b => signal_p4,
-        sum => sum_4
-    );
-
-    -- p <= std_logic_vector(unsigned(signal_p0) + unsigned(signal_p1) + unsigned(signal_p2) + unsigned(signal_p3) + unsigned(signal_p4));
-    p <= sum_4;
+    sum_1: CSA_16bit port map(signal_p0, signal_p1, sum_1);    
+    sum_2: CSA_16bit port map(sum_1, signal_p2, sum_2);    
+    sum_3: CSA_16bit port map(sum_2, signal_p3, sum_3);    
+    sum_4: CSA_16bit port map(sum_3, signal_p4, p);
 
 end arch;

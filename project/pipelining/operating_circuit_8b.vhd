@@ -38,13 +38,13 @@ architecture arch of operating_circuit_8b is
     end component negative_edge_register_24b;
 
     -- circuit unit for stage 1
-    component tri_multiplier is
+    component tri_multiplier_8b is
         port(
             a       : in std_logic_vector(7 downto 0);
             b       : in std_logic_vector(7 downto 0);
             p       : out std_logic_vector(23 downto 0)
         );
-    end component tri_multiplier;
+    end component tri_multiplier_8b;
 
     -- circuit unit for stage 2
     component right_2b_shifter_24b is
@@ -72,7 +72,7 @@ architecture arch of operating_circuit_8b is
 
 begin
 
-    stage_1_operation: tri_multiplier port map(
+    stage_1_operation: tri_multiplier_8b port map(
         a => a, 
         b => b, 
         p => stage_1_result_before_reg
