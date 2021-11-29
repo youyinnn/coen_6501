@@ -21,13 +21,13 @@ architecture Behavioural of r4b_multiplier_tb is
     signal r_output_p       : std_logic_vector(15 downto 0)  := (OTHERS => '0');
 
     -- booth multiplier implementation
-    component r4b_multiplier is
+    component r4b_multiplier_8b is
         port(
             mc      : in std_logic_vector(7 downto 0);
             mp      : in std_logic_vector(7 downto 0);
             p       : out std_logic_vector(15 downto 0)
         );
-    end component r4b_multiplier;    
+    end component r4b_multiplier_8b;    
 
     -- output assertion
     component assert_output is
@@ -44,7 +44,7 @@ begin
         r_input_mp_slv <= std_logic_vector(to_unsigned(r_input_mp, 8));
         r_output_pd <= r_input_mc * r_input_mp;
 
-        booth : r4b_multiplier
+        booth : r4b_multiplier_8b
         port map (
             mc => r_input_mc_slv,
             mp => r_input_mp_slv,

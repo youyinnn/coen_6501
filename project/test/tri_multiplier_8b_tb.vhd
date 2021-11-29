@@ -21,14 +21,14 @@ architecture Behavioural of tri_multiplier_tb is
     signal r_output_pd_slv       : std_logic_vector(23 downto 0)  := (OTHERS => '0');
 
     -- booth multiplier implementation
-    component tri_multiplier is
+    component tri_multiplier_8b is
         port(
             a       : in std_logic_vector(7 downto 0);
             b       : in std_logic_vector(7 downto 0);
 
             p       : out std_logic_vector(23 downto 0)
         );
-    end component tri_multiplier;    
+    end component tri_multiplier_8b;    
 
     -- output assertion
     component assert_output_24b is
@@ -46,7 +46,7 @@ begin
 
         r_output_pd <= r_input_a * r_input_a * r_input_b;
 
-        tri : tri_multiplier
+        tri : tri_multiplier_8b
         port map (
             a => r_input_a_slv,
             b => r_input_b_slv,
