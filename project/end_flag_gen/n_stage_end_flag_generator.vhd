@@ -2,6 +2,7 @@ library ieee;
 
 use ieee.std_logic_1164.all;
 
+-- TODO: response every input
 entity n_stage_end_flag_generator is
     generic (
         constant STAGE_LENGTH : natural
@@ -11,8 +12,7 @@ entity n_stage_end_flag_generator is
         load : in std_logic;
         clr  : in std_logic;
 
-        stage_end_flag     : out std_logic;
-        stage_vector            : out std_logic_vector(STAGE_LENGTH - 1 downto 0)
+        stage_end_flag          : out std_logic
     );
 end n_stage_end_flag_generator;
 
@@ -22,8 +22,6 @@ architecture arch of n_stage_end_flag_generator is
     signal stage_for_operating: std_logic_vector(STAGE_LENGTH - 1 downto 0) := (others => '0');
     signal state_reg, state_next: state;
 begin
-
-    stage_vector <= stage_for_operating;
 
     -- control path: register for state
     process(clk, clr)
@@ -47,24 +45,21 @@ begin
             when start =>
                 state_next <= operating;
             when operating =>
-                if falling_edge(load) then
-                    state_next <= start;
-                elsif stage_for_operating(STAGE_LENGTH - 1) = '1' then
+                if stage_for_operating(STAGE_LENGTH - 2) = '1' then
                     state_next <= done;
                 end if;
             when done =>
-                if falling_edge(load) then
-                    state_next <= start;
-                end if;
+                state_next <= done;
         end case;
     end process;
 
     -- datapath: register for the stage_for_operating
     process(clk, load)
     begin
-        if falling_edge(load) then               -- load acts like a preset
-            stage_for_operating <= FIRST_STAGE;
-        elsif falling_edge(clk) then
+        if falling_edge(clk) then
+            if state_reg = start then
+                stage_for_operating <= FIRST_STAGE;
+            end if;
             if state_reg = operating then
                 stage_for_operating <= 
                     stage_for_operating(STAGE_LENGTH - 2 downto 0) & stage_for_operating(STAGE_LENGTH - 1);

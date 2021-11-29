@@ -77,14 +77,14 @@ begin
             4 after 300 ns,
             123 after 500 ns,
             12 after 681 ns,
-            255 after 4000 ns;
+            255 after 3000 ns;
 
     r_input_b <=
             4 after 100 ns,
             59 after 300 ns,
             32 after 500 ns,
             6 after 810 ns,
-            255 after 4000 ns;
+            255 after 3000 ns;
 
     r_input_load <=
             '1',
@@ -97,11 +97,11 @@ begin
             '0' after 800 ns,
             -- '1' after 900 ns,
             -- '0' after 1000 ns,            
-            '1' after 4010 ns,
-            '0' after 4050 ns;
+            '1' after 3010 ns,
+            '0' after 3050 ns;
 
-    -- r_input_clr <=
-    --         '1' after 1420 ns,
-    --         '1' after 1430 ns;
+    r_input_clr <=
+            '1' after 1800 ns,
+            '0' after 3000 ns;
 
 end Behavioural;

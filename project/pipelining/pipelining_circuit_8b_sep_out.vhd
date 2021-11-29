@@ -39,6 +39,14 @@ architecture arch of pipelining_circuit_8b_sep_out is
         );
     end component overflow_as_separation;
 
+    component negative_edge_register_8b is
+        port(
+           clr, clk     : in std_logic;
+           d            : in std_logic_vector(7 downto 0);
+           q            : out std_logic_vector(7 downto 0)
+        );
+    end component negative_edge_register_8b;
+
     component negative_edge_register_16b is
         port(
            clr, clk     : in std_logic;
@@ -47,6 +55,8 @@ architecture arch of pipelining_circuit_8b_sep_out is
         );
     end component negative_edge_register_16b;
 
+    signal a_reg : std_logic_vector(7 downto 0);
+    signal b_reg : std_logic_vector(7 downto 0);
     signal stage_3_result_after_reg     : std_logic_vector(23 downto 0);
 
     signal stage_4_higher_result_before_reg    : std_logic_vector(15 downto 0);
@@ -63,13 +73,9 @@ architecture arch of pipelining_circuit_8b_sep_out is
             load : in std_logic;
             clr  : in std_logic;
     
-            five_stage_end_flag     : out std_logic;
-            stage_vector            : out std_logic_vector(STAGE_LENGTH - 1 downto 0)
+            stage_end_flag          : out std_logic
         );
     end component n_stage_end_flag_generator;
-
-    constant SIX_STAGE : natural := 6;
-    signal stage : std_logic_vector(SIX_STAGE - 1 downto 0);
 
     component display_z_separation is
         port(
@@ -83,9 +89,17 @@ architecture arch of pipelining_circuit_8b_sep_out is
     end component display_z_separation;
 begin
 
+    a_register: negative_edge_register_8b port map(
+        clr, load, a, a_reg
+    );    
+    
+    b_register: negative_edge_register_8b port map(
+        clr, load, b, b_reg
+    );
+
     -- 3 clock cycles
     operating: operating_circuit_8b port map(
-        clk, load, clr, a, b, stage_3_result_after_reg
+        clk, load, clr, a_reg, b_reg, stage_3_result_after_reg
     );
 
     overflow_handling: overflow_as_separation port map(
@@ -104,9 +118,9 @@ begin
 
     -- end_flag generation
     end_flag_generate: n_stage_end_flag_generator 
-    generic map (SIX_STAGE)
+    generic map (4)
     port map(
-        clk, load, clr, end_flag, stage
+        clk, load, clr, end_flag
     );
 
     -- display z higher first, then z lower

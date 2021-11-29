@@ -18,16 +18,18 @@ begin
 
     process(clk)
     begin
-        if clr = '1' then
-            z_out <= (others => '0');
-        elsif falling_edge(clk) then
+        if falling_edge(clk) then
             if display_higher = '0' then
-                z_out <= lower_data;
                 display_higher <= '1';
             else
-                z_out <= higher_data;
                 display_higher <= '0';
             end if;
         end if;
     end process;
+    
+    z_out <= 
+        (others => '0') when clr = '1' else
+        higher_data     when display_higher = '1' else
+        lower_data;
+
 end arch;

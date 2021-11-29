@@ -18,6 +18,8 @@ end pipelining_circuit_8b_nega_out;
 
 architecture arch of pipelining_circuit_8b_nega_out is
 
+
+    -- register for input a and b
     component operating_circuit_8b is
         port(
             clk  : in std_logic;
@@ -37,6 +39,14 @@ architecture arch of pipelining_circuit_8b_nega_out is
         );
     end component overflow_as_negation;
 
+    component negative_edge_register_8b is
+        port(
+           clr, clk     : in std_logic;
+           d            : in std_logic_vector(7 downto 0);
+           q            : out std_logic_vector(7 downto 0)
+        );
+    end component negative_edge_register_8b;
+
     component negative_edge_register_16b is
         port(
            clr, clk     : in std_logic;
@@ -45,6 +55,8 @@ architecture arch of pipelining_circuit_8b_nega_out is
         );
     end component negative_edge_register_16b;
 
+    signal a_reg : std_logic_vector(7 downto 0);
+    signal b_reg : std_logic_vector(7 downto 0);
     signal stage_3_result_after_reg     : std_logic_vector(23 downto 0);
     signal stage_4_result_before_reg    : std_logic_vector(15 downto 0);
     signal stage_4_result_after_reg     : std_logic_vector(15 downto 0);
@@ -58,15 +70,22 @@ architecture arch of pipelining_circuit_8b_nega_out is
             load : in std_logic;
             clr  : in std_logic;
     
-            five_stage_end_flag     : out std_logic;
-            stage_vector            : out std_logic_vector(STAGE_LENGTH - 1 downto 0)
+            stage_end_flag          : out std_logic
         );
     end component n_stage_end_flag_generator;
 begin
 
+    a_register: negative_edge_register_8b port map(
+        clr, load, a, a_reg
+    );    
+    
+    b_register: negative_edge_register_8b port map(
+        clr, load, b, b_reg
+    );
+
     -- 3 clock cycles
     stage_1_to_3_operating: operating_circuit_8b port map(
-        clk, load, clr, a, b, stage_3_result_after_reg
+        clk, load, clr, a_reg, b_reg, stage_3_result_after_reg
     );
 
     stage_4_overflow_handling: overflow_as_negation port map(

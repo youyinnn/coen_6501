@@ -17,10 +17,7 @@ end operating_circuit_8b;
 
 architecture arch of operating_circuit_8b is
 
-    signal a_reg : std_logic_vector(7 downto 0);
-    signal b_reg : std_logic_vector(7 downto 0);
-
-    -- stage 1 : a * a * a
+    -- stage 1 : a * a * b
     signal stage_1_result_before_reg   : std_logic_vector(23 downto 0);
     signal stage_1_result_after_reg    : std_logic_vector(23 downto 0);
 
@@ -31,14 +28,6 @@ architecture arch of operating_circuit_8b is
     -- stage 3 : (stage 2) + 1
     signal stage_3_result_before_reg   : std_logic_vector(23 downto 0);
     signal stage_3_result_after_reg    : std_logic_vector(23 downto 0);
-
-    component negative_edge_register_8b is
-        port(
-           clr, clk     : in std_logic;
-           d            : in std_logic_vector(7 downto 0);
-           q            : out std_logic_vector(7 downto 0)
-        );
-    end component negative_edge_register_8b;
     
     component negative_edge_register_24b is
         port(
@@ -83,17 +72,9 @@ architecture arch of operating_circuit_8b is
 
 begin
 
-    a_register: negative_edge_register_8b port map(
-        clr, load, a, a_reg
-    );    
-    
-    b_register: negative_edge_register_8b port map(
-        clr, load, b, b_reg
-    );
-
-    stage_1: tri_multiplier port map(
-        a => a_reg, 
-        b => b_reg, 
+    stage_1_operation: tri_multiplier port map(
+        a => a, 
+        b => b, 
         p => stage_1_result_before_reg
     );
 
@@ -101,7 +82,7 @@ begin
         clr, clk, stage_1_result_before_reg, stage_1_result_after_reg
     );
 
-    stage_2: right_2b_shifter_24b port map(
+    stage_2_operation: right_2b_shifter_24b port map(
         data    => stage_1_result_after_reg, 
         result  => stage_2_result_before_reg
     );
@@ -110,7 +91,7 @@ begin
         clr, clk, stage_2_result_before_reg, stage_2_result_after_reg
     );
 
-    stage_3: csa_24bit_incrementer port map(
+    stage_3_operation: csa_24bit_incrementer port map(
         in_a    => stage_2_result_after_reg, 
         sum     => stage_3_result_before_reg
     );
