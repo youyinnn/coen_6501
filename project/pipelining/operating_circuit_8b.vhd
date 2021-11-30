@@ -62,14 +62,6 @@ architecture arch of operating_circuit_8b is
           carryout : out std_logic);
     end component csa_24b_incrementer;
 
-    -- circuit unit for stage 4
-    component overflow_as_negation is
-        port(
-            data_in      : in    std_logic_vector(23 downto 0);
-            data_out     : out   std_logic_vector(15 downto 0)
-        );
-    end component overflow_as_negation;
-
 begin
 
     stage_1_operation: tri_multiplier_8b port map(

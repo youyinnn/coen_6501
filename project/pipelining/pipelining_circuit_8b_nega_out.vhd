@@ -32,12 +32,12 @@ architecture arch of pipelining_circuit_8b_nega_out is
     end component operating_circuit_8b;
 
     -- overflow handling circuit
-    component overflow_as_negation is
+    component overflow_as_negation_16b is
         port(
             data_in      : in    std_logic_vector(23 downto 0);
             data_out     : out   std_logic_vector(15 downto 0)
         );
-    end component overflow_as_negation;
+    end component overflow_as_negation_16b;
 
     component negative_edge_register_8b is
         port(
@@ -88,7 +88,7 @@ begin
         clk, load, clr, a_reg, b_reg, stage_3_result_after_reg
     );
 
-    stage_4_overflow_handling: overflow_as_negation port map(
+    stage_4_overflow_handling: overflow_as_negation_16b port map(
         stage_3_result_after_reg, stage_4_result_before_reg
     );
 
