@@ -3,10 +3,10 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity r4b_multiplier_tb is
+entity r4b_multiplier_8b_tb is
 end entity;
 
-architecture Behavioural of r4b_multiplier_tb is
+architecture Behavioural of r4b_multiplier_8b_tb is
 
     -- integer mc & mp & pd
     signal r_input_mc   : integer  := 0;
@@ -30,13 +30,13 @@ architecture Behavioural of r4b_multiplier_tb is
     end component r4b_multiplier_8b;    
 
     -- output assertion
-    component assert_output is
+    component assert_output_16b is
         port(
             opt         : in std_logic_vector(15 downto 0);
             assert_int  : in integer;
             dl          : in time
         );
-    end component assert_output;
+    end component assert_output_16b;
 
 begin
 
@@ -73,13 +73,13 @@ begin
             0 after 10000 ns
         ;
 
-        as_1: assert_output port map(r_output_p, r_output_pd, 501 ns);
-        as_2: assert_output port map(r_output_p, r_output_pd, 1001 ns);
-        as_3: assert_output port map(r_output_p, r_output_pd, 1501 ns);
-        as_4: assert_output port map(r_output_p, r_output_pd, 2001 ns);
-        as_5: assert_output port map(r_output_p, r_output_pd, 2501 ns);
-        as_6: assert_output port map(r_output_p, r_output_pd, 3001 ns);
-        as_7: assert_output port map(r_output_p, r_output_pd, 3501 ns);
-        as_final: assert_output port map(r_output_p, r_output_pd, 10001 ns);
+        as_1: assert_output_16b port map(r_output_p, r_output_pd, 501 ns);
+        as_2: assert_output_16b port map(r_output_p, r_output_pd, 1001 ns);
+        as_3: assert_output_16b port map(r_output_p, r_output_pd, 1501 ns);
+        as_4: assert_output_16b port map(r_output_p, r_output_pd, 2001 ns);
+        as_5: assert_output_16b port map(r_output_p, r_output_pd, 2501 ns);
+        as_6: assert_output_16b port map(r_output_p, r_output_pd, 3001 ns);
+        as_7: assert_output_16b port map(r_output_p, r_output_pd, 3501 ns);
+        as_final: assert_output_16b port map(r_output_p, r_output_pd, 10001 ns);
 
 end Behavioural;
