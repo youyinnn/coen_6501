@@ -11,7 +11,7 @@ architecture Behavioural of r4b_multiplier_16b_tb is
     -- integer mc & mp & pd
     signal r_input_mc   : integer  := 0;
     signal r_input_mp   : integer  := 0;
-    signal r_output_pd   : integer  := 0;
+    signal r_output_pd   : unsigned(31 downto 0)  := (others => '0');
     
     -- std_logic_vector mc & mp
     signal r_input_mc_slv   : std_logic_vector(15 downto 0)  := (OTHERS => '0');
@@ -33,7 +33,7 @@ architecture Behavioural of r4b_multiplier_16b_tb is
     component assert_output_32b is
         port(
             opt         : in std_logic_vector(31 downto 0);
-            assert_int  : in integer;
+            assert_unsigned  : in unsigned(31 downto 0);
             dl          : in time
         );
     end component assert_output_32b;
@@ -42,7 +42,10 @@ begin
 
         r_input_mc_slv <= std_logic_vector(to_unsigned(r_input_mc, 16));
         r_input_mp_slv <= std_logic_vector(to_unsigned(r_input_mp, 16));
-        r_output_pd <= r_input_mc * r_input_mp;
+
+        r_output_pd <= 
+            to_unsigned(r_input_mc, 16) * 
+            to_unsigned(r_input_mp, 16) ;
 
         booth : r4b_multiplier_16b
         port map (

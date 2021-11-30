@@ -3,10 +3,10 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity tri_multiplier_tb is
+entity tri_multiplier_8b_tb is
 end entity;
 
-architecture Behavioural of tri_multiplier_tb is
+architecture Behavioural of tri_multiplier_8b_tb is
 
     -- integer mc & mp & pd
     signal r_input_a   : integer  := 0;
