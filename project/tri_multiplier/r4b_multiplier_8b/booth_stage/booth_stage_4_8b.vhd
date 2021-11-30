@@ -2,16 +2,16 @@ library ieee;
 
 use ieee.std_logic_1164.all;
 
-entity booth_stage_4 is
+entity booth_stage_4_8b is
     port(
         mc          : in  std_logic_vector(7  downto 0);
         code        : in  std_logic;
 
         p_next      : out std_logic_vector(15 downto 0)
     );
-end booth_stage_4;
+end booth_stage_4_8b;
 
-architecture arch of booth_stage_4 is
+architecture arch of booth_stage_4_8b is
 begin
 
     with code select

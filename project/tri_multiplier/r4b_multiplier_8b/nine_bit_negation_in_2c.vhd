@@ -1,8 +1,6 @@
 library ieee;
 
 use ieee.std_logic_1164.all;
--- TODO: adder
-use ieee.numeric_std.all;
 
 entity nine_bit_negation_in_2c is
     port(
@@ -12,21 +10,32 @@ entity nine_bit_negation_in_2c is
 end nine_bit_negation_in_2c;
 
 architecture arch of nine_bit_negation_in_2c is
-    signal the_sign : std_logic;
+    signal sign_bit : std_logic;
+    signal flip_x      : std_logic_vector(7 downto 0);
     signal tmp      : std_logic_vector(7 downto 0);
+
+    component csa_8b_incrementer is
+      port(
+        in_a : in std_logic_vector (7 downto 0);
+        sum : out std_logic_vector (7 downto 0);
+        carryout : out std_logic
+    );
+    end component csa_8b_incrementer;
 begin
 
     process(x)
     begin
         if (x = "00000000") then
-            the_sign <= '0';
-            tmp <= x;
+            sign_bit <= '0';
         else
-            the_sign <= '1';
-            tmp <= std_logic_vector(unsigned(not x) + 1);
+            sign_bit <= '1';
         end if;
     end process;
- 
-    c <= the_sign & tmp;
+
+    flip_x <= not x;
+
+    inc: csa_8b_incrementer port map(flip_x, tmp);
+    
+    c <= sign_bit & x when x = "00000000" else sign_bit & tmp;
 
 end arch;

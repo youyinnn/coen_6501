@@ -2,7 +2,7 @@ library ieee;
 
 use ieee.std_logic_1164.all;
 
-entity booth_stage_3 is
+entity booth_stage_1_8b is
     port(
         mc          : in  std_logic_vector(7  downto 0);
         mc_neg      : in  std_logic_vector(8  downto 0);
@@ -11,9 +11,10 @@ entity booth_stage_3 is
 
         p_next      : out std_logic_vector(15 downto 0)
     );
-end booth_stage_3;
+end booth_stage_1_8b;
 
-architecture arch of booth_stage_3 is
+architecture arch of booth_stage_1_8b is
+    signal msb_of_select        : std_logic;
     signal partical_product     : std_logic_vector(9 downto 0);
 begin
 
@@ -25,6 +26,8 @@ begin
             mc_neg & "0"        when "100",             -- 100
             mc_neg(8) & mc_neg  when others;            -- 110 | 101 (will only be
 
-    p_next <= partical_product & "000000";
+    msb_of_select <= partical_product(9);
+
+    p_next <= msb_of_select & msb_of_select & msb_of_select & msb_of_select & partical_product & "00";
 
 end arch;

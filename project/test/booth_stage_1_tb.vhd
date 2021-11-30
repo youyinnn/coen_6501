@@ -13,7 +13,7 @@ architecture Behavioural of booth_stage_1_tb is
 
     signal r_output_p_next  : std_logic_vector(15 downto 0)  := (OTHERS => '0');
 
-    component booth_stage_1 is
+    component booth_stage_1_8b is
         port(
             mc      : in std_logic_vector(7 downto 0);
             mc_neg  : in std_logic_vector(8 downto 0);
@@ -22,7 +22,7 @@ architecture Behavioural of booth_stage_1_tb is
     
             p_next  : out std_logic_vector(15 downto 0)
         );
-    end component booth_stage_1;
+    end component booth_stage_1_8b;
 
     component nine_bit_negation_in_2c is
         port(
@@ -39,7 +39,7 @@ architecture Behavioural of booth_stage_1_tb is
             c => r_mc_neg
         );
 
-        st_0 : booth_stage_1
+        st_0 : booth_stage_1_8b
         port map (
             mc => r_input_mc,
             mc_neg => r_mc_neg,

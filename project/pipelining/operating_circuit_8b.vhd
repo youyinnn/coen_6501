@@ -55,12 +55,12 @@ architecture arch of operating_circuit_8b is
     end component right_2b_shifter_24b;
 
     -- circuit unit for stage 3
-    component csa_24bit_incrementer is
+    component csa_24b_incrementer is
         port(
           in_a : in std_logic_vector (23 downto 0);
           sum : out std_logic_vector (23 downto 0);
           carryout : out std_logic);
-    end component csa_24bit_incrementer;
+    end component csa_24b_incrementer;
 
     -- circuit unit for stage 4
     component overflow_as_negation is
@@ -91,7 +91,7 @@ begin
         clr, clk, stage_2_result_before_reg, stage_2_result_after_reg
     );
 
-    stage_3_operation: csa_24bit_incrementer port map(
+    stage_3_operation: csa_24b_incrementer port map(
         in_a    => stage_2_result_after_reg, 
         sum     => stage_3_result_before_reg
     );

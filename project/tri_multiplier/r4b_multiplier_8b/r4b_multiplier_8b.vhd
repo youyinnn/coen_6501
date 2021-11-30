@@ -31,7 +31,7 @@ architecture arch of r4b_multiplier_8b is
         );
     end component nine_bit_negation_in_2c;
 
-    component booth_stage_0 is
+    component booth_stage_0_8b is
         port(
             mc      : in std_logic_vector(7 downto 0);
             mc_neg  : in std_logic_vector(8 downto 0);
@@ -39,9 +39,9 @@ architecture arch of r4b_multiplier_8b is
     
             p_next  : out std_logic_vector(15 downto 0)
         );
-    end component booth_stage_0;
+    end component booth_stage_0_8b;
 
-    component booth_stage_1 is
+    component booth_stage_1_8b is
         port(
             mc      : in std_logic_vector(7 downto 0);
             mc_neg  : in std_logic_vector(8 downto 0);
@@ -49,9 +49,9 @@ architecture arch of r4b_multiplier_8b is
     
             p_next  : out std_logic_vector(15 downto 0)
         );
-    end component booth_stage_1;
+    end component booth_stage_1_8b;
 
-    component booth_stage_2 is
+    component booth_stage_2_8b is
         port(
             mc      : in std_logic_vector(7 downto 0);
             mc_neg  : in std_logic_vector(8 downto 0);
@@ -59,9 +59,9 @@ architecture arch of r4b_multiplier_8b is
     
             p_next  : out std_logic_vector(15 downto 0)
         );
-    end component booth_stage_2;
+    end component booth_stage_2_8b;
 
-    component booth_stage_3 is
+    component booth_stage_3_8b is
         port(
             mc      : in std_logic_vector(7 downto 0);
             mc_neg  : in std_logic_vector(8 downto 0);
@@ -69,16 +69,16 @@ architecture arch of r4b_multiplier_8b is
     
             p_next  : out std_logic_vector(15 downto 0)
         );
-    end component booth_stage_3;    
+    end component booth_stage_3_8b;    
     
-    component booth_stage_4 is
+    component booth_stage_4_8b is
         port(
             mc      : in std_logic_vector(7 downto 0);
             code    : in std_logic;
     
             p_next  : out std_logic_vector(15 downto 0)
         );
-    end component booth_stage_4;
+    end component booth_stage_4_8b;
 
     component CSA_16bit is
         port(
@@ -96,17 +96,17 @@ begin
         c => signal_mc_negative
     );
 
-    stage_0: booth_stage_0 port map(
+    stage_0: booth_stage_0_8b port map(
         mc => mc,
         mc_neg => signal_mc_negative,
         code => mp(1 downto 0),
         p_next => signal_p0
     );    
     
-    stage_1: booth_stage_1 port map(mc, signal_mc_negative, mp(3 downto 1), signal_p1);    
-    stage_2: booth_stage_2 port map(mc, signal_mc_negative, mp(5 downto 3), signal_p2);    
-    stage_3: booth_stage_3 port map(mc, signal_mc_negative, mp(7 downto 5), signal_p3);    
-    stage_4: booth_stage_4 port map(mc, mp(7), signal_p4);
+    stage_1: booth_stage_1_8b port map(mc, signal_mc_negative, mp(3 downto 1), signal_p1);    
+    stage_2: booth_stage_2_8b port map(mc, signal_mc_negative, mp(5 downto 3), signal_p2);    
+    stage_3: booth_stage_3_8b port map(mc, signal_mc_negative, mp(7 downto 5), signal_p3);    
+    stage_4: booth_stage_4_8b port map(mc, mp(7), signal_p4);
 
     s_1: CSA_16bit port map(signal_p0, signal_p1, sum_1);    
     s_2: CSA_16bit port map(sum_1, signal_p2, sum_2);    
