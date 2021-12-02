@@ -37,7 +37,7 @@ architecture arch of r4b_multiplier_8b is
             mc_neg  : in std_logic_vector(8 downto 0);
             code    : in std_logic_vector(1 downto 0);
     
-            p_next  : out std_logic_vector(15 downto 0)
+            extended_pp  : out std_logic_vector(15 downto 0)
         );
     end component booth_stage_0_8b;
 
@@ -47,7 +47,7 @@ architecture arch of r4b_multiplier_8b is
             mc_neg  : in std_logic_vector(8 downto 0);
             code    : in std_logic_vector(2 downto 0);
     
-            p_next  : out std_logic_vector(15 downto 0)
+            extended_pp  : out std_logic_vector(15 downto 0)
         );
     end component booth_stage_1_8b;
 
@@ -57,7 +57,7 @@ architecture arch of r4b_multiplier_8b is
             mc_neg  : in std_logic_vector(8 downto 0);
             code    : in std_logic_vector(2 downto 0);
     
-            p_next  : out std_logic_vector(15 downto 0)
+            extended_pp  : out std_logic_vector(15 downto 0)
         );
     end component booth_stage_2_8b;
 
@@ -67,7 +67,7 @@ architecture arch of r4b_multiplier_8b is
             mc_neg  : in std_logic_vector(8 downto 0);
             code    : in std_logic_vector(2 downto 0);
     
-            p_next  : out std_logic_vector(15 downto 0)
+            extended_pp  : out std_logic_vector(15 downto 0)
         );
     end component booth_stage_3_8b;    
     
@@ -76,7 +76,7 @@ architecture arch of r4b_multiplier_8b is
             mc      : in std_logic_vector(7 downto 0);
             code    : in std_logic;
     
-            p_next  : out std_logic_vector(15 downto 0)
+            extended_pp  : out std_logic_vector(15 downto 0)
         );
     end component booth_stage_4_8b;
 
@@ -100,7 +100,7 @@ begin
         mc => mc,
         mc_neg => signal_mc_negative,
         code => mp(1 downto 0),
-        p_next => signal_p0
+        extended_pp => signal_p0
     );    
     
     stage_1: booth_stage_1_8b port map(mc, signal_mc_negative, mp(3 downto 1), signal_p1);    

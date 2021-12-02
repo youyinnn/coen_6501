@@ -9,7 +9,7 @@ entity booth_stage_7_16b is
 
         code        : in  std_logic_vector(2 downto 0);
 
-        p_next      : out std_logic_vector(31 downto 0)
+        extended_pp      : out std_logic_vector(31 downto 0)
     );
 end booth_stage_7_16b;
 
@@ -25,7 +25,7 @@ begin
             mc_neg & "0"        when "100",             -- 100
             mc_neg(16) & mc_neg  when others;           -- 110 | 101 (will only be
 
-    p_next <= 
+    extended_pp <= 
         partical_product & "00000000000000";
 
 end arch;

@@ -20,7 +20,7 @@ architecture Behavioural of booth_stage_1_tb is
 
             code    : in std_logic_vector(2 downto 0);
     
-            p_next  : out std_logic_vector(15 downto 0)
+            extended_pp  : out std_logic_vector(15 downto 0)
         );
     end component booth_stage_1_8b;
 
@@ -44,7 +44,7 @@ architecture Behavioural of booth_stage_1_tb is
             mc => r_input_mc,
             mc_neg => r_mc_neg,
             code => r_input_code,
-            p_next => r_output_p_next
+            extended_pp => r_output_p_next
         );
 
         r_input_mc <= "01001001" after 100 ns;

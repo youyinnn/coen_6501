@@ -9,12 +9,12 @@ entity booth_stage_1_8b is
 
         code        : in  std_logic_vector(2 downto 0);
 
-        p_next      : out std_logic_vector(15 downto 0)
+        extended_pp      : out std_logic_vector(15 downto 0)
     );
 end booth_stage_1_8b;
 
 architecture arch of booth_stage_1_8b is
-    signal msb_of_select        : std_logic;
+    signal extended_sign_bits   : std_logic_vector(3 downto 0);
     signal partical_product     : std_logic_vector(9 downto 0);
 begin
 
@@ -26,8 +26,7 @@ begin
             mc_neg & "0"        when "100",             -- 100
             mc_neg(8) & mc_neg  when others;            -- 110 | 101 (will only be
 
-    msb_of_select <= partical_product(9);
-
-    p_next <= msb_of_select & msb_of_select & msb_of_select & msb_of_select & partical_product & "00";
+    extended_sign_bits <= (others => partical_product(9));
+    extended_pp <= extended_sign_bits & partical_product & "00";
 
 end arch;

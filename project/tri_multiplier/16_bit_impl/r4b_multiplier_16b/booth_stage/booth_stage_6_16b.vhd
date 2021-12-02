@@ -9,7 +9,7 @@ entity booth_stage_6_16b is
 
         code        : in  std_logic_vector(2 downto 0);
 
-        p_next      : out std_logic_vector(31 downto 0)
+        extended_pp      : out std_logic_vector(31 downto 0)
     );
 end booth_stage_6_16b;
 
@@ -28,7 +28,7 @@ begin
 
     msb_of_select <= partical_product(17);
     
-    p_next <= 
+    extended_pp <= 
         msb_of_select & msb_of_select &
         partical_product & "000000000000";
 

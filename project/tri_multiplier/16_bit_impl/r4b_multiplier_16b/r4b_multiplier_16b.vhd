@@ -46,7 +46,7 @@ architecture arch of r4b_multiplier_16b is
     
             code        : in  std_logic_vector(1 downto 0);
     
-            p_next      : out std_logic_vector(31 downto 0)
+            extended_pp      : out std_logic_vector(31 downto 0)
         );
     end component booth_stage_0_16b;
 
@@ -57,7 +57,7 @@ architecture arch of r4b_multiplier_16b is
     
             code        : in  std_logic_vector(2 downto 0);
     
-            p_next      : out std_logic_vector(31 downto 0)
+            extended_pp      : out std_logic_vector(31 downto 0)
         );
     end component booth_stage_1_16b;
 
@@ -68,7 +68,7 @@ architecture arch of r4b_multiplier_16b is
     
             code        : in  std_logic_vector(2 downto 0);
     
-            p_next      : out std_logic_vector(31 downto 0)
+            extended_pp      : out std_logic_vector(31 downto 0)
         );
     end component booth_stage_2_16b;
 
@@ -79,7 +79,7 @@ architecture arch of r4b_multiplier_16b is
     
             code        : in  std_logic_vector(2 downto 0);
     
-            p_next      : out std_logic_vector(31 downto 0)
+            extended_pp      : out std_logic_vector(31 downto 0)
         );
     end component booth_stage_3_16b;
 
@@ -90,7 +90,7 @@ architecture arch of r4b_multiplier_16b is
     
             code        : in  std_logic_vector(2 downto 0);
     
-            p_next      : out std_logic_vector(31 downto 0)
+            extended_pp      : out std_logic_vector(31 downto 0)
         );
     end component booth_stage_4_16b;
 
@@ -101,7 +101,7 @@ architecture arch of r4b_multiplier_16b is
     
             code        : in  std_logic_vector(2 downto 0);
     
-            p_next      : out std_logic_vector(31 downto 0)
+            extended_pp      : out std_logic_vector(31 downto 0)
         );
     end component booth_stage_5_16b;
 
@@ -112,7 +112,7 @@ architecture arch of r4b_multiplier_16b is
     
             code        : in  std_logic_vector(2 downto 0);
     
-            p_next      : out std_logic_vector(31 downto 0)
+            extended_pp      : out std_logic_vector(31 downto 0)
         );
     end component booth_stage_6_16b;
 
@@ -123,7 +123,7 @@ architecture arch of r4b_multiplier_16b is
     
             code        : in  std_logic_vector(2 downto 0);
     
-            p_next      : out std_logic_vector(31 downto 0)
+            extended_pp      : out std_logic_vector(31 downto 0)
         );
     end component booth_stage_7_16b;
 
@@ -132,7 +132,7 @@ architecture arch of r4b_multiplier_16b is
             mc          : in  std_logic_vector(15  downto 0);
             code        : in  std_logic;
     
-            p_next      : out std_logic_vector(31 downto 0)
+            extended_pp      : out std_logic_vector(31 downto 0)
         );
     end component booth_stage_8_16b;
 
@@ -156,7 +156,7 @@ begin
         mc => mc,
         mc_neg => signal_mc_negative,
         code => mp(1 downto 0),
-        p_next => signal_p0
+        extended_pp => signal_p0
     );    
     
     stage_1: booth_stage_1_16b port map(mc, signal_mc_negative, mp(3 downto 1), signal_p1);    
