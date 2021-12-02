@@ -10,7 +10,6 @@ entity nine_bit_negation_in_2c is
 end nine_bit_negation_in_2c;
 
 architecture arch of nine_bit_negation_in_2c is
-    signal sign_bit : std_logic;
     signal flip_x      : std_logic_vector(7 downto 0);
     signal tmp      : std_logic_vector(7 downto 0);
 
@@ -23,19 +22,10 @@ architecture arch of nine_bit_negation_in_2c is
     end component csa_8b_incrementer;
 begin
 
-    process(x)
-    begin
-        if (x = "00000000") then
-            sign_bit <= '0';
-        else
-            sign_bit <= '1';
-        end if;
-    end process;
-
     flip_x <= not x;
 
     inc: csa_8b_incrementer port map(flip_x, tmp);
     
-    c <= sign_bit & x when x = "00000000" else sign_bit & tmp;
+    c <= '0' & x when x = "00000000" else '1' & tmp;
 
 end arch;

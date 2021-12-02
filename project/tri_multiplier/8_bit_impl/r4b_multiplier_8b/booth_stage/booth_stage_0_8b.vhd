@@ -27,6 +27,9 @@ begin
 
     msb_of_select <= partical_product(9);
 
-    p_next <= msb_of_select & msb_of_select & msb_of_select & msb_of_select & msb_of_select & msb_of_select & partical_product;
+    p_next <= 
+        msb_of_select & msb_of_select & msb_of_select & msb_of_select & 
+        msb_of_select & msb_of_select & 
+        partical_product;
 
 end arch;
