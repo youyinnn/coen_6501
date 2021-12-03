@@ -1,0 +1,100 @@
+%
+% Formatting documents in APA style (7th Edition) with the apa7 LATEX class. https://ctan.math.washington.edu/tex-archive/macros/latex/contrib/apa7/apa7.pdf @COPYLEFT
+
+\documentclass[stu, floatsintext, 12pt, a4paper, donotrepeattitle, natbib]{apa7}
+\usepackage[utf8]{inputenc}
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+% Times New Roman
+\usepackage{mathptmx}
+
+\usepackage{import}
+
+% \usepackage{subfig}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+% \usepackage{stfloats}
+
+\definecolor{black}{rgb}{0, 0, 0}
+\definecolor{arsenic}{rgb}{0.23, 0.27, 0.29}
+\definecolor{cadet}{rgb}{0.33, 0.41, 0.47}
+
+\hypersetup{
+	colorlinks,
+	breaklinks,
+    urlcolor=cadet,
+    linkcolor=cadet,
+    citecolor=cadet
+}
+
+% table center the p
+\usepackage{array}
+
+\usepackage{amsmath}
+\usepackage{csquotes}
+
+\newcommand{\figref}[1]{\hyperref[#1]{Figure \ref{#1}}}
+\newcommand{\tbref}[1]{\hyperref[#1]{Table \ref{#1}}}
+\newcommand{\expref}[1]{\hyperref[#1]{Expression (\ref{#1})}}
+
+
+\title{COEN 6501 Project Fall 2021 Specification}
+\author{Jun Huang, Dawei Zuo, Yuelin Yao, and Xuesi Feng}
+\authorsaffiliations{{Department of Electrical and Computer Engineering, Concordia University}}
+\course{COEN 6501: Digital Design and Synthesis}
+\professor{Dr. Marwan Ammar}
+\duedate{December 6th, 2021}
+
+\begin{document}
+\maketitle
+
+\renewcommand\contentsname{Table of Conetnts}
+\tableofcontents
+\setcounter{tocdepth}{5}
+
+\newpage
+% Figures
+\renewcommand{\listfigurename}{List of Figures}
+\listoffigures
+\newpage
+% Figures
+\renewcommand{\listtablename}{List of Tables}
+\listoftables
+
+
+\newpage
+\import{./section/}{intro.tex}
+
+\newpage
+\import{./section/}{project_req.tex}
+
+\newpage
+\import{./section/}{overview_design.tex}
+
+\newpage
+\import{./section/}{multiplier.tex}
+
+\newpage
+\import{./section/}{csa.tex}
+
+\newpage
+\import{./section/}{overflow.tex}
+
+\newpage
+\import{./section/}{nonpip.tex}
+
+\newpage
+\import{./section/}{pip.tex}
+
+\newpage
+\import{./section/}{syn.tex}
+
+\newpage
+\renewcommand\refname{\textbf{References}}
+\bibliography{ref}
+
+\end{document}

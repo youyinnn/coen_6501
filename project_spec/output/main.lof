@@ -1,0 +1,9 @@
+\contentsline {figure}{\numberline {1}{\ignorespaces The decoded code clocks of the signed multiplier\relax }}{10}{figure.caption.22}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Process of the algorithm for signed number\relax }}{11}{figure.caption.24}%
+\contentsline {figure}{\numberline {3}{\ignorespaces The decoded code blocks of the unsigned multiplier\relax }}{11}{figure.caption.26}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Process of the algorithm for unisgned number\relax }}{11}{figure.caption.27}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Synthesized RTL Diagram of Radix-4 Booth Multiplier\relax }}{12}{figure.caption.30}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Synthesized RTL Diagram of Complement Generator\relax }}{13}{figure.caption.33}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Synthesized RTL Diagram of Booth Stage 0 Block\relax }}{14}{figure.caption.35}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Synthesized RTL Diagram of Booth Stage 1 Block\relax }}{15}{figure.caption.37}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Synthesized RTL Diagram of Triple Operands Multiplier Circuit\relax }}{16}{figure.caption.40}%
