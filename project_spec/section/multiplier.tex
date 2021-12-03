@@ -35,7 +35,7 @@ which is presented in \tbref{tb:code_table}.
 % do not use figure* here otherwise the picture willl postpone after the references list 
 \begin{figure}[!ht]
 	\centering
-	\caption{The decoded code clocks of the signed multiplier}
+	\caption{The Decoded Code Blocks of the Signed Multiplier}
 	\includegraphics[width=2.7in]{../img/booth_code_1.png}
 	\figurenote{The blue bit is an extra bit which is added on the right of the LSB of the multiplier for completing the first code block.}
 	\label{fig:booth_code_1}
@@ -64,7 +64,7 @@ Then perform the addition. The process of the algorithm is described in \figref{
 
 \begin{figure}[!ht]
 	\centering
-	\caption{Process of the algorithm for signed number}
+	\caption{Process of the Algorithm for Signed Number}
 	\includegraphics[width=5.7in]{../img/r4b_process_1.png}
 	\figurenote{Bits in green color represent the product is extended to 16 bits. Bits in red color represent the shifted 2 bits leftward.}
 	\label{fig:r4b_process_1}
@@ -84,7 +84,7 @@ which is 204 in decimal can be operated in the process as \figref{fig:r4b_proces
 
 \begin{figure}[!ht]
 	\centering
-	\caption{The decoded code blocks of the unsigned multiplier}
+	\caption{The Decoded Code Blocks of the Unsigned Multiplier}
 	\includegraphics[width=3in]{../img/booth_code_2.png}
 	\figurenote{Two “0” are added to the MSB to complete the last code block. The second zero represent the sign bit of the operand which in this case will always be positive number.}
 	\label{fig:booth_code_2}
@@ -92,7 +92,7 @@ which is 204 in decimal can be operated in the process as \figref{fig:r4b_proces
 
 \begin{figure}[!ht]
 	\centering
-	\caption{Process of the algorithm for unisgned number}
+	\caption{Process of the Slgorithm for Unisgned Number}
 	\includegraphics[width=5.7in]{../img/r4b_process_2.png}
 	\figurenote{Bits in green color represent the product is extended to 16 bits. Bits in red color represent the shifted 2 bits leftward.}
 	\label{fig:r4b_process_2}
@@ -126,6 +126,7 @@ the 16-bit CSA will be discussed in Section “Carry Select Adder”.
 Since the circuit uses negation addition to represent the subtraction, a complement generator should be introduced.
 The RTL diagram of the generator is shown in \figref{fig:complementor_rtl}.
 The logic of the generator that uses a 2-to-1 mux is straightforward as \expref{exp:complementor_exp} described.
+The simulation result is shown in \figref{fig:complementor_sim}.
 
 \begin{equation}
 	c =
@@ -143,10 +144,18 @@ The logic of the generator that uses a 2-to-1 mux is straightforward as \expref{
 	\label{fig:complementor_rtl}
 \end{figure}
 
+\begin{figure}[!ht]
+	\centering
+	\caption{Simulation Wave Diagram of Complement Generator}
+	\includegraphics[width=\textwidth]{../img/complementor_sim.png}
+	\label{fig:complementor_sim}
+\end{figure}
+
 \paragraph{Booth Stage 0}
 \figref{fig:booth_stage_0_rtl} and \expref{exp:booth_stage_0} present the hardware implementation and the logic expression of the block.
 As the figure suggested, a booth stage block takes the 8-bit operand multiplicand and its 9-bit negation and two of the right most bits of the operand multiplier
 as input, and composes the 16-bit extended partial product as output by a 4-to-1 mux. The width of the \(extended\_sign\_bits\) will be 6.
+The simulation result is shown in \figref{fig:booth_stage_0_sim}.
 
 \begin{figure}[!ht]
 	\centering
@@ -170,11 +179,20 @@ as input, and composes the 16-bit extended partial product as output by a 4-to-1
 	\label{exp:booth_stage_0}
 \end{equation}
 
+\begin{figure}[!ht]
+	\centering
+	\caption{Simulation Wave Diagram of Booth Stage 0 Block}
+	\includegraphics[width=\textwidth]{../img/booth_stage_0_sim.png}
+	\figurenote{Four code values were provided to simulate the \(extended\_pp\).}
+	\label{fig:booth_stage_0_sim}
+\end{figure}
+
 \paragraph{Booth Stage 1}
 \figref{fig:booth_stage_1_rtl} and \expref{exp:booth_stage_1} present the hardware implementation and the logic expression of the block.
 Different from booth stage 0 block, this stage takes 3 bits from the operand multiplier.
 With considering the right shift during the algorithm, the width of the \(extended\_sign\_bits\) will be 4,
 and \textquote{00} will be added to the end.
+The simulation result is shown in \figref{fig:booth_stage_1_sim}.
 
 \begin{figure}[!ht]
 	\centering
@@ -198,6 +216,18 @@ and \textquote{00} will be added to the end.
 	\end{array}
 	\label{exp:booth_stage_1}
 \end{equation}
+
+\begin{figure}[!ht]
+	\centering
+	\caption{Simulation Wave Diagram of Booth Stage 1 Block}
+
+	\subfloat[With Code Values: 000/001/010/011]{\includegraphics[width=\textwidth]{./img/booth_stage_1_sim_1.png}}
+	\hspace{0.5cm}
+	\subfloat[With Code Values: 100/101/110/111]{\includegraphics[width=\textwidth]{./img/booth_stage_1_sim_2.png}}
+
+	\figurenote{Eight code values were provided to simulate the \(extended\_pp\).}
+	\label{fig:booth_stage_1_sim}
+\end{figure}
 
 \paragraph{Booth Stage 2, 3, and 4}
 Booth stage 2 and 3 blocks share the same idea of booth stage 1 except they shift more bit to the right.
@@ -224,7 +254,7 @@ The product of multiplying the lower 8-bit of \(product\_aa\) and \(B\) will be 
 Then adds those two extended 24-bit number together will be the result of \textbf{\(A^2 \ast B\)}.
 \figref{fig:tri_rtl} presents the RTL description of the circuit.
 
-\begin{figure}[!htp]
+\begin{figure}[!ht]
 	\centering
 	\caption{Synthesized RTL Diagram of Triple Operands Multiplier Circuit}
 	\includegraphics[width=\textwidth]{../img/tri_rtl.png}

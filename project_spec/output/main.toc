@@ -21,33 +21,33 @@
 \contentsline {subsubsection}{Overall Circuit Design and RTL Description}{12}{section*.29}%
 \contentsline {subsubsection}{Blocks Design}{12}{section*.31}%
 \contentsline {paragraph}{The 9-bit Complement Generator for the Negation of the Multiplier}{12}{section*.32}%
-\contentsline {paragraph}{Booth Stage 0}{13}{section*.34}%
-\contentsline {paragraph}{Booth Stage 1}{13}{section*.36}%
-\contentsline {paragraph}{Booth Stage 2, 3, and 4}{14}{section*.38}%
-\contentsline {subsection}{Triple Operands Multiplier Circuit Implementation}{15}{section*.39}%
-\contentsline {section}{Carry Select Adder}{16}{section*.41}%
-\contentsline {subsection}{Heading II}{16}{section*.42}%
-\contentsline {subsubsection}{Heading III}{16}{section*.43}%
-\contentsline {paragraph}{Heading IV}{16}{section*.44}%
-\contentsline {subparagraph}{\relax }{16}{section*.45}%
-\contentsline {section}{Overflow Handling}{17}{section*.46}%
-\contentsline {subsection}{Heading II}{17}{section*.47}%
-\contentsline {subsubsection}{Heading III}{17}{section*.48}%
-\contentsline {paragraph}{Heading IV}{17}{section*.49}%
-\contentsline {subparagraph}{\relax }{17}{section*.50}%
-\contentsline {section}{Non-pipelining Implementation}{18}{section*.51}%
-\contentsline {subsection}{Heading II}{18}{section*.52}%
-\contentsline {subsubsection}{Heading III}{18}{section*.53}%
-\contentsline {paragraph}{Heading IV}{18}{section*.54}%
-\contentsline {subparagraph}{\relax }{18}{section*.55}%
-\contentsline {section}{Pipelining Implementation}{19}{section*.56}%
-\contentsline {subsection}{Heading II}{19}{section*.57}%
-\contentsline {subsubsection}{Heading III}{19}{section*.58}%
-\contentsline {paragraph}{Heading IV}{19}{section*.59}%
-\contentsline {subparagraph}{\relax }{19}{section*.60}%
-\contentsline {section}{Synthesis and Analysis of the Arithmetic Circuit}{20}{section*.61}%
-\contentsline {subsection}{Heading II}{20}{section*.62}%
-\contentsline {subsubsection}{Heading III}{20}{section*.63}%
-\contentsline {paragraph}{Heading IV}{20}{section*.64}%
-\contentsline {subparagraph}{\relax }{20}{section*.65}%
-\contentsline {section}{\textbf {References}}{21}{section*.66}%
+\contentsline {paragraph}{Booth Stage 0}{13}{section*.35}%
+\contentsline {paragraph}{Booth Stage 1}{14}{section*.38}%
+\contentsline {paragraph}{Booth Stage 2, 3, and 4}{16}{section*.41}%
+\contentsline {subsection}{Triple Operands Multiplier Circuit Implementation}{16}{section*.42}%
+\contentsline {section}{Carry Select Adder}{17}{section*.44}%
+\contentsline {subsection}{Heading II}{17}{section*.45}%
+\contentsline {subsubsection}{Heading III}{17}{section*.46}%
+\contentsline {paragraph}{Heading IV}{17}{section*.47}%
+\contentsline {subparagraph}{\relax }{17}{section*.48}%
+\contentsline {section}{Overflow Handling}{18}{section*.49}%
+\contentsline {subsection}{Heading II}{18}{section*.50}%
+\contentsline {subsubsection}{Heading III}{18}{section*.51}%
+\contentsline {paragraph}{Heading IV}{18}{section*.52}%
+\contentsline {subparagraph}{\relax }{18}{section*.53}%
+\contentsline {section}{Non-pipelining Implementation}{19}{section*.54}%
+\contentsline {subsection}{Heading II}{19}{section*.55}%
+\contentsline {subsubsection}{Heading III}{19}{section*.56}%
+\contentsline {paragraph}{Heading IV}{19}{section*.57}%
+\contentsline {subparagraph}{\relax }{19}{section*.58}%
+\contentsline {section}{Pipelining Implementation}{20}{section*.59}%
+\contentsline {subsection}{Heading II}{20}{section*.60}%
+\contentsline {subsubsection}{Heading III}{20}{section*.61}%
+\contentsline {paragraph}{Heading IV}{20}{section*.62}%
+\contentsline {subparagraph}{\relax }{20}{section*.63}%
+\contentsline {section}{Synthesis and Analysis of the Arithmetic Circuit}{21}{section*.64}%
+\contentsline {subsection}{Heading II}{21}{section*.65}%
+\contentsline {subsubsection}{Heading III}{21}{section*.66}%
+\contentsline {paragraph}{Heading IV}{21}{section*.67}%
+\contentsline {subparagraph}{\relax }{21}{section*.68}%
+\contentsline {section}{\textbf {References}}{22}{section*.69}%
