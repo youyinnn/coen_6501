@@ -5,7 +5,6 @@ use ieee.std_logic_1164.all;
 entity operating_circuit_8b is
     port(
         clk  : in std_logic;
-        load : in std_logic;
         clr  : in std_logic;
 
         a           : in std_logic_vector(7 downto 0);
@@ -49,7 +48,7 @@ architecture arch of operating_circuit_8b is
     -- circuit unit for stage 2
     component right_2b_shifter_24b is
         port(
-           data          : in std_logic_vector(23 downto 0);
+           data          : in std_logic_vector(21 downto 0);
            result        : out std_logic_vector(23 downto 0)
         );
     end component right_2b_shifter_24b;
@@ -75,7 +74,7 @@ begin
     );
 
     stage_2_operation: right_2b_shifter_24b port map(
-        data    => stage_1_result_after_reg, 
+        data    => stage_1_result_after_reg(23 downto 2), 
         result  => stage_2_result_before_reg
     );
 
