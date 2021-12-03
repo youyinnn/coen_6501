@@ -2,7 +2,7 @@
 \contentsline {figure}{\numberline {2}{\ignorespaces Process of the Algorithm for Signed Number\relax }}{10}{figure.caption.24}%
 \contentsline {figure}{\numberline {3}{\ignorespaces The Decoded Code Blocks of the Unsigned Multiplier\relax }}{11}{figure.caption.26}%
 \contentsline {figure}{\numberline {4}{\ignorespaces Process of the Slgorithm for Unisgned Number\relax }}{11}{figure.caption.27}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Synthesized RTL Diagram of Radix-4 Booth Multiplier\relax }}{12}{figure.caption.30}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Synthesized RTL Diagram of 8-bit Radix-4 Booth Multiplier\relax }}{12}{figure.caption.30}%
 \contentsline {figure}{\numberline {6}{\ignorespaces Synthesized RTL Diagram of Complement Generator\relax }}{12}{figure.caption.33}%
 \contentsline {figure}{\numberline {7}{\ignorespaces Simulation Wave Diagram of Complement Generator\relax }}{13}{figure.caption.34}%
 \contentsline {figure}{\numberline {8}{\ignorespaces Synthesized RTL Diagram of Booth Stage 0 Block\relax }}{13}{figure.caption.36}%
@@ -11,5 +11,8 @@
 \contentsline {figure}{\numberline {11}{\ignorespaces Simulation Wave Diagram of Booth Stage 1 Block\relax }}{15}{figure.caption.40}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {With Code Values: 000/001/010/011}}}{15}{subfigure.11.1}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {With Code Values: 100/101/110/111}}}{15}{subfigure.11.2}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Synthesized RTL Diagram of Triple Operands Multiplier Circuit\relax }}{16}{figure.caption.43}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Simulation Wave Diagram of Triple Operands Multiplier Circuit\relax }}{16}{figure.caption.44}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Synthesized RTL Diagram of Triple 8-bit Operands Multiplier Circuit\relax }}{16}{figure.caption.43}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Simulation Wave Diagram of Triple 8-bit Operands Multiplier Circuit\relax }}{16}{figure.caption.44}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Synthesized RTL Diagram of Triple 16-bit Operands Multiplier Circuit\relax }}{17}{figure.caption.46}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Simulation Wave Diagram of Triple 16-bit Operands Multiplier Circuit\relax }}{17}{figure.caption.47}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Synthesized RTL Diagram of 16-bit Radix-4 Booth Multiplier\relax }}{24}{figure.caption.74}%

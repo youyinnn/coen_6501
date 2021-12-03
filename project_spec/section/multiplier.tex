@@ -98,7 +98,7 @@ which is 204 in decimal can be operated in the process as \figref{fig:r4b_proces
 	\label{fig:r4b_process_2}
 \end{figure}
 
-\subsection{Radix-4 Booth Multiplier Circuit Implementation}
+\subsection{8-bit Radix-4 Booth Multiplier Circuit Implementation}
 \subsubsection{Overall Circuit Design and RTL Description}
 
 As previous discussion, the booth multiplier component should contain the following blocks: 1.
@@ -109,7 +109,7 @@ A 9-bit complementor for the negation of the multiplicand;
 
 \begin{figure}[!ht]
 	\centering
-	\caption{Synthesized RTL Diagram of Radix-4 Booth Multiplier}
+	\caption{Synthesized RTL Diagram of 8-bit Radix-4 Booth Multiplier}
 	\includegraphics[width=\textwidth]{../img/overview_booth_rtl.png}
 	\label{fig:overview_booth_rtl}
 \end{figure}
@@ -246,7 +246,7 @@ As for booth stage 4 block, it only takes the MSB from the operand multiplier. \
 	\label{exp:booth_stage_4}
 \end{equation}
 
-\subsection{Triple Operands Multiplier Circuit Implementation}
+\subsection{8-bit Triple Operands Multiplier Circuit Implementation}
 
 Once the 16-bit product of \textbf{\(A^2\)} which marked as \(product\_aa\) is calculated, it will then multiply with the 8-bit input \(B\).
 To perform multiplication with a 16-bit operand and a 8-bit operand, the circuit divides the 16-bit operand into two 8-bit operands.
@@ -273,18 +273,48 @@ Then adds those two extended 24-bit number together will be the result of \textb
 
 \begin{figure}[!ht]
 	\centering
-	\caption{Synthesized RTL Diagram of Triple Operands Multiplier Circuit}
+	\caption{Synthesized RTL Diagram of Triple 8-bit Operands Multiplier Circuit}
 	\includegraphics[width=\textwidth]{../img/tri_rtl.png}
 	\label{fig:tri_rtl}
 \end{figure}
 
 \begin{figure}[!ht]
 	\centering
-	\caption{Simulation Wave Diagram of Triple Operands Multiplier Circuit}
+	\caption{Simulation Wave Diagram of Triple 8-bit Operands Multiplier Circuit}
 	\includegraphics[width=\textwidth]{../img/tri_sim.png}
 	\label{fig:tri_sim}
 \end{figure}
 
+\newpage
+\subsection{16-bit Triple Operands Multiplier Circuit Implementation}
 
+Like the 8-bit version, the 16-bit implementation of the booth multiplier will need 9 blocks of booth stage to calculate 9 partial products.
+Because of the characteristic of the algorithm, the 16-bit version can not reuse or extend from the 8-bit version circuit designed before.
+Hence the circuit will need to bulid every block from scratch.
+\textbf{This is one of the drawbacks of the booth algorithm: lack of expandability.}
+
+\figref{fig:tri_16b_rtl} presents the RTL description of the triple 16-bit operands multiplier circuit
+and \figref{fig:tri_16b_sim} presents the simulation result. \figref{fig:overview_booth_16b_rtl} presents the RTL description of the 16-bit booth multiplier circuit.
+
+\begin{figure*}[!ht]
+	\centering
+	\caption{Synthesized RTL Diagram of 16-bit Radix-4 Booth Multiplier}
+	\includegraphics[width=\textwidth]{../img/overview_booth_16b_rtl.png}
+	\label{fig:overview_booth_16b_rtl}
+\end{figure*}
+
+\begin{figure}[!ht]
+	\centering
+	\caption{Synthesized RTL Diagram of Triple 16-bit Operands Multiplier Circuit}
+	\includegraphics[width=\textwidth]{../img/tri_16b_rtl.png}
+	\label{fig:tri_16b_rtl}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\caption{Simulation Wave Diagram of Triple 16-bit Operands Multiplier Circuit}
+	\includegraphics[width=\textwidth]{../img/tri_16b_sim.png}
+	\label{fig:tri_16b_sim}
+\end{figure}
 
 \clearpage

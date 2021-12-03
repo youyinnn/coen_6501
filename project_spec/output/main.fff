@@ -1,14 +1,6 @@
 \begin{figure*}[!ht]
 \centering
-\caption{Synthesized RTL Diagram of Booth Stage 0 Block}
-\includegraphics[width=\textwidth]{../img/booth_stage_0_rtl.png}
-\label{fig:booth_stage_0_rtl}
-\end{figure*}
-\efloatseparator
- 
-\begin{figure*}[!ht]
-\centering
-\caption{Synthesized RTL Diagram of Booth Stage 1 Block}
-\includegraphics[width=\textwidth]{../img/booth_stage_1_rtl.png}
-\label{fig:booth_stage_1_rtl}
+\caption{Synthesized RTL Diagram of 16-bit Radix-4 Booth Multiplier}
+\includegraphics[width=\textwidth]{../img/overview_booth_16b_rtl.png}
+\label{fig:overview_booth_16b_rtl}
 \end{figure*}
