@@ -1,54 +1,42 @@
-\contentsline {section}{Introduction}{6}{section*.4}%
-\contentsline {subsection}{Heading II}{6}{section*.5}%
-\contentsline {subsubsection}{Heading III}{6}{section*.6}%
-\contentsline {paragraph}{Heading IV}{6}{section*.7}%
-\contentsline {subparagraph}{\relax }{6}{section*.8}%
-\contentsline {section}{Project Requirement}{7}{section*.9}%
-\contentsline {subsection}{Heading II}{7}{section*.10}%
-\contentsline {subsubsection}{Heading III}{7}{section*.11}%
-\contentsline {paragraph}{Heading IV}{7}{section*.12}%
-\contentsline {subparagraph}{\relax }{7}{section*.13}%
-\contentsline {section}{Overview of the Design}{8}{section*.14}%
-\contentsline {subsection}{Heading II}{8}{section*.15}%
-\contentsline {subsubsection}{Heading III}{8}{section*.16}%
-\contentsline {paragraph}{Heading IV}{8}{section*.17}%
-\contentsline {subparagraph}{\relax }{8}{section*.18}%
-\contentsline {section}{Multiplication in Three Operands}{9}{section*.19}%
-\contentsline {subsection}{Radix-4 Booth Algorithm Logic in Details}{9}{section*.20}%
-\contentsline {subsubsection}{Example in Signed Number Multiplication}{9}{section*.21}%
-\contentsline {subsubsection}{Example in Unsigned Number Multiplication}{10}{section*.25}%
-\contentsline {subsection}{8-bit Radix-4 Booth Multiplier Circuit Implementation}{11}{section*.28}%
-\contentsline {subsubsection}{Overall Circuit Design and RTL Description}{11}{section*.29}%
-\contentsline {subsubsection}{Blocks Design}{11}{section*.31}%
-\contentsline {paragraph}{The 9-bit Complement Generator for the Negation of the Multiplier}{11}{section*.32}%
-\contentsline {paragraph}{Booth Stage 0}{12}{section*.35}%
-\contentsline {paragraph}{Booth Stage 1}{14}{section*.38}%
-\contentsline {paragraph}{Booth Stage 2, 3, and 4}{15}{section*.41}%
-\contentsline {subsection}{8-bit Triple Operands Multiplier Circuit Implementation}{15}{section*.42}%
-\contentsline {subsection}{16-bit Triple Operands Multiplier Circuit Implementation}{17}{section*.45}%
-\contentsline {section}{Carry Select Adder}{18}{section*.48}%
-\contentsline {subsection}{Heading II}{18}{section*.49}%
-\contentsline {subsubsection}{Heading III}{18}{section*.50}%
-\contentsline {paragraph}{Heading IV}{18}{section*.51}%
-\contentsline {subparagraph}{\relax }{18}{section*.52}%
-\contentsline {section}{Overflow Handling}{19}{section*.53}%
-\contentsline {subsection}{Heading II}{19}{section*.54}%
-\contentsline {subsubsection}{Heading III}{19}{section*.55}%
-\contentsline {paragraph}{Heading IV}{19}{section*.56}%
-\contentsline {subparagraph}{\relax }{19}{section*.57}%
-\contentsline {section}{Non-pipelining Implementation}{20}{section*.58}%
-\contentsline {subsection}{Heading II}{20}{section*.59}%
-\contentsline {subsubsection}{Heading III}{20}{section*.60}%
-\contentsline {paragraph}{Heading IV}{20}{section*.61}%
-\contentsline {subparagraph}{\relax }{20}{section*.62}%
-\contentsline {section}{Pipelining Implementation}{21}{section*.63}%
-\contentsline {subsection}{Heading II}{21}{section*.64}%
-\contentsline {subsubsection}{Heading III}{21}{section*.65}%
-\contentsline {paragraph}{Heading IV}{21}{section*.66}%
-\contentsline {subparagraph}{\relax }{21}{section*.67}%
-\contentsline {section}{Synthesis and Analysis of the Arithmetic Circuit}{22}{section*.68}%
-\contentsline {subsection}{Heading II}{22}{section*.69}%
-\contentsline {subsubsection}{Heading III}{22}{section*.70}%
-\contentsline {paragraph}{Heading IV}{22}{section*.71}%
-\contentsline {subparagraph}{\relax }{22}{section*.72}%
-\contentsline {section}{\textbf {References}}{23}{section*.73}%
+\contentsline {section}{Introduction}{5}{section*.4}%
+\contentsline {subsection}{Heading II}{5}{section*.5}%
+\contentsline {subsubsection}{Heading III}{5}{section*.6}%
+\contentsline {paragraph}{Heading IV}{5}{section*.7}%
+\contentsline {subparagraph}{\relax }{5}{section*.8}%
+\contentsline {section}{Project Requirement}{6}{section*.9}%
+\contentsline {subsection}{Heading II}{6}{section*.10}%
+\contentsline {subsubsection}{Heading III}{6}{section*.11}%
+\contentsline {paragraph}{Heading IV}{6}{section*.12}%
+\contentsline {subparagraph}{\relax }{6}{section*.13}%
+\contentsline {section}{Overview of the Design}{7}{section*.14}%
+\contentsline {subsection}{Heading II}{7}{section*.15}%
+\contentsline {subsubsection}{Heading III}{7}{section*.16}%
+\contentsline {paragraph}{Heading IV}{7}{section*.17}%
+\contentsline {subparagraph}{\relax }{7}{section*.18}%
+\contentsline {section}{Carry Select Adder}{8}{section*.19}%
+\contentsline {subsection}{Heading II}{8}{section*.20}%
+\contentsline {subsubsection}{Heading III}{8}{section*.21}%
+\contentsline {paragraph}{Heading IV}{8}{section*.22}%
+\contentsline {subparagraph}{\relax }{8}{section*.23}%
+\contentsline {section}{Overflow Handling}{9}{section*.24}%
+\contentsline {subsection}{Heading II}{9}{section*.25}%
+\contentsline {subsubsection}{Heading III}{9}{section*.26}%
+\contentsline {paragraph}{Heading IV}{9}{section*.27}%
+\contentsline {subparagraph}{\relax }{9}{section*.28}%
+\contentsline {section}{End Flag Generator}{10}{section*.29}%
+\contentsline {section}{Non-pipelining Implementation}{11}{section*.31}%
+\contentsline {subsection}{Heading II}{11}{section*.32}%
+\contentsline {subsubsection}{Heading III}{11}{section*.33}%
+\contentsline {paragraph}{Heading IV}{11}{section*.34}%
+\contentsline {subparagraph}{\relax }{11}{section*.35}%
+\contentsline {section}{Pipelining Implementation}{12}{section*.36}%
+\contentsline {subsection}{Heading II}{12}{section*.37}%
+\contentsline {subsubsection}{Heading III}{12}{section*.38}%
+\contentsline {paragraph}{Heading IV}{12}{section*.39}%
+\contentsline {subparagraph}{\relax }{12}{section*.40}%
+\contentsline {section}{Synthesis and Analysis of the Arithmetic Circuit}{13}{section*.41}%
+\contentsline {subsection}{Heading II}{13}{section*.42}%
+\contentsline {subsubsection}{Heading III}{13}{section*.43}%
+\contentsline {paragraph}{Heading IV}{13}{section*.44}%
+\contentsline {subparagraph}{\relax }{13}{section*.45}%
+\contentsline {section}{\textbf {References}}{14}{section*.46}%
