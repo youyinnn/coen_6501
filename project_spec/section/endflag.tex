@@ -2,9 +2,9 @@
 
 To generate a valid \(end\_flag\) signal for the ALU, a Timed Mealy State Machine is introduced into the circuit.
 For pipelining circuit, the \(end\_flag\) will result in the output after counting 4 synchronized clock cycles
-when the \textquote{load} signal goes from high to low. The counting of the clock cycle is implemented by rotating a
+when the \(load\) signal goes from high to low. The counting of the clock cycle is implemented by rotating a
 vector signal to avoid inrtoducing extra addition circuit.
-For non-pipelining circuit, the \(end\_flag\) will result in the output a clock later after the \textquote{load} signal goes from high to low.
+For non-pipelining circuit, the \(end\_flag\) will result in the output a clock later after the \(load\) signal goes from high to low.
 
 The ASMD charts are presented in \figref{fig:asmd}.
 % And the RTL description of the generator is presented in \figref{fig:end_flag_gen_rtl}.
