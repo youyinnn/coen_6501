@@ -9,13 +9,13 @@ end entity;
 architecture Behavioural of non_pipelining_circuit_8b_nega_out_tb is
 
     signal r_input_clk  : STD_LOGIC := '0';
-    signal r_input_load : std_logic := '0';
+    signal r_input_load : std_logic := '1';
     signal r_input_clr  : std_logic := '0';
 
     signal r_input_a_slv    : std_logic_vector(7 downto 0)  := (OTHERS => '0');
     signal r_input_b_slv    : std_logic_vector(7 downto 0)  := (OTHERS => '0');
 
-    signal r_output_end_flag        : std_logic := '1';
+    signal r_output_end_flag        : std_logic := '0';
     signal r_output_z_slv           : std_logic_vector(15 downto 0)  := (OTHERS => '0');
 
     -- decimal signal
@@ -53,13 +53,39 @@ begin
 
     -- clock
     clock: process is
+        constant period: time := 100 ns;
         begin
-            wait for 100 ns;
+            wait for period;
             r_input_clk <= '1';
-            wait for 100 ns;
+            wait for period;
             r_input_clk <= '0';
-    end process;     
+    end process; 
     
+    clock2: process is
+        constant period: time := 100 ns;
+        begin
+            wait for period;
+            wait for period;
+            r_input_load <= '0';
+            wait for period;
+            r_input_load <= '1';
+            wait for period;
+            r_input_load <= '0';
+            wait for period;
+            r_input_load <= '1';
+            wait for period;
+            r_input_load <= '0';
+            wait for period;
+            r_input_load <= '1';
+            wait for period;
+            r_input_load <= '0';
+
+            wait for period * 22;
+            r_input_load <= '1';
+            wait for period;
+            r_input_load <= '0';
+            wait;
+    end process;
     
     circuit : nonpipeline_circuit_8b_nega_out
     port map (
@@ -85,20 +111,6 @@ begin
             32 after 500 ns,
             6 after 810 ns,
             255 after 3000 ns;
-
-    r_input_load <=
-            '1',
-            '0' after 200 ns,
-            '1' after 300 ns,
-            '0' after 400 ns,
-            '1' after 500 ns,
-            '0' after 600 ns,            
-            '1' after 700 ns,
-            '0' after 800 ns,
-            -- '1' after 900 ns,
-            -- '0' after 1000 ns,            
-            '1' after 3010 ns,
-            '0' after 3050 ns;
 
     r_input_clr <=
             '1' after 1800 ns,
