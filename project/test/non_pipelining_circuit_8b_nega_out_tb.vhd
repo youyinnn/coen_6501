@@ -3,10 +3,10 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity pipelining_circuit_8b_nega_out_tb is
+entity non_pipelining_circuit_8b_nega_out_tb is
 end entity;
 
-architecture Behavioural of pipelining_circuit_8b_nega_out_tb is
+architecture Behavioural of non_pipelining_circuit_8b_nega_out_tb is
 
     signal r_input_clk  : STD_LOGIC := '0';
     signal r_input_load : std_logic := '0';
@@ -27,7 +27,7 @@ architecture Behavioural of pipelining_circuit_8b_nega_out_tb is
     signal r_output_stage_3     : integer := 0;
     signal r_output_z           : integer := 0;
 
-    component pipelining_circuit_8b_nega_out is
+    component nonpipeline_circuit_8b_nega_out is
         port(
             clk  : in std_logic;
             load : in std_logic;
@@ -39,7 +39,7 @@ architecture Behavioural of pipelining_circuit_8b_nega_out_tb is
             end_flag    : out std_logic;
             z           : out std_logic_vector(15 downto 0)
         );
-    end component pipelining_circuit_8b_nega_out;
+    end component nonpipeline_circuit_8b_nega_out;
 
 begin
 
@@ -61,7 +61,7 @@ begin
     end process;     
     
     
-    circuit : pipelining_circuit_8b_nega_out
+    circuit : nonpipeline_circuit_8b_nega_out
     port map (
         clk => r_input_clk,
         load => r_input_load,
@@ -73,32 +73,32 @@ begin
     );
     
     r_input_a <=
-            4 after 100 ns;
-            -- 4 after 300 ns,
-            -- 123 after 500 ns,
-            -- 12 after 681 ns,
-            -- 255 after 3000 ns;
+            4 after 100 ns,
+            4 after 300 ns,
+            123 after 500 ns,
+            12 after 681 ns,
+            255 after 3000 ns;
 
     r_input_b <=
-            4 after 100 ns;
-            -- 59 after 300 ns,
-            -- 32 after 500 ns,
-            -- 6 after 810 ns,
-            -- 255 after 3000 ns;
+            4 after 100 ns,
+            59 after 300 ns,
+            32 after 500 ns,
+            6 after 810 ns,
+            255 after 3000 ns;
 
     r_input_load <=
             '1',
-            '0' after 200 ns;
-            -- '1' after 300 ns,
-            -- '0' after 400 ns,
-            -- '1' after 500 ns,
-            -- '0' after 600 ns,            
-            -- '1' after 700 ns,
-            -- '0' after 800 ns,
-            -- -- '1' after 900 ns,
-            -- -- '0' after 1000 ns,            
-            -- '1' after 3010 ns,
-            -- '0' after 3050 ns;
+            '0' after 200 ns,
+            '1' after 300 ns,
+            '0' after 400 ns,
+            '1' after 500 ns,
+            '0' after 600 ns,            
+            '1' after 700 ns,
+            '0' after 800 ns,
+            -- '1' after 900 ns,
+            -- '0' after 1000 ns,            
+            '1' after 3010 ns,
+            '0' after 3050 ns;
 
     r_input_clr <=
             '1' after 1800 ns,
