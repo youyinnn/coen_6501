@@ -1,2 +1,35 @@
-\contentsline {figure}{\numberline {1}{\ignorespaces ASMD Chart of the FSM of the 4 Stage End Flag Generator\relax }}{10}{figure.caption.30}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Synthesized RTL Diagram of End Flag Generator for 4 Operation Stages\relax }}{15}{figure.caption.47}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Synthesized RTL Diagram of Full Adder Block\relax }}{9}{figure.caption.17}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Simulation Wave Diagram of Full Adder Block\relax }}{9}{figure.caption.18}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Synthesized RTL Diagram of 2-to-1 Multiplexer Block\relax }}{10}{figure.caption.21}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Simulation Wave Diagram of 2-to-1 Multiplexer Block\relax }}{10}{figure.caption.22}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Synthesized RTL Diagram of 4-bit Ripple Carry Adder Block\relax }}{11}{figure.caption.24}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Simulation Wave Diagram of 4-bit Ripple Carry Adder Block\relax }}{11}{figure.caption.25}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Synthesized RTL Diagram of 4-bit Carry Select Adder Block\relax }}{12}{figure.caption.27}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Simulation Wave Diagram of 4-bit Carry Select Adder Block\relax }}{13}{figure.caption.28}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Synthesized RTL Diagram of 16-bit Carry Select Adder Block\relax }}{13}{figure.caption.30}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Simulation Wave Diagram of 16-bit Carry Select Adder Block\relax }}{14}{figure.caption.31}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Synthesized RTL Diagram of 24-bit Carry Select Adder Block\relax }}{14}{figure.caption.33}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Simulation Wave Diagram of 24-bit Carry Select Adder Block\relax }}{15}{figure.caption.34}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Synthesized RTL Diagram of 24-bit Incrementor Block\relax }}{15}{figure.caption.36}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Simulation Wave Diagram of 24-bit Incrementor Block\relax }}{15}{figure.caption.37}%
+\contentsline {figure}{\numberline {15}{\ignorespaces The Decoded Code Blocks of the Signed Multiplier\relax }}{17}{figure.caption.41}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Process of the Algorithm for Signed Number\relax }}{17}{figure.caption.43}%
+\contentsline {figure}{\numberline {17}{\ignorespaces The Decoded Code Blocks of the Unsigned Multiplier\relax }}{18}{figure.caption.45}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Process of the Slgorithm for Unisgned Number\relax }}{18}{figure.caption.46}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Synthesized RTL Diagram of 8-bit Radix-4 Booth Multiplier\relax }}{19}{figure.caption.49}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Synthesized RTL Diagram of Complement Generator\relax }}{19}{figure.caption.52}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Simulation Wave Diagram of Complement Generator\relax }}{20}{figure.caption.53}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Synthesized RTL Diagram of Booth Stage 0 Block\relax }}{20}{figure.caption.55}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Simulation Wave Diagram of Booth Stage 0 Block\relax }}{21}{figure.caption.56}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Synthesized RTL Diagram of Booth Stage 1 Block\relax }}{21}{figure.caption.58}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Simulation Wave Diagram of Booth Stage 1 Block\relax }}{22}{figure.caption.59}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {With Code Values: 000/001/010/011}}}{22}{subfigure.25.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {With Code Values: 100/101/110/111}}}{22}{subfigure.25.2}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Synthesized RTL Diagram of Triple 8-bit Operands Multiplier Circuit\relax }}{23}{figure.caption.62}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Simulation Wave Diagram of Triple 8-bit Operands Multiplier Circuit\relax }}{23}{figure.caption.63}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Synthesized RTL Diagram of Triple 16-bit Operands Multiplier Circuit\relax }}{24}{figure.caption.65}%
+\contentsline {figure}{\numberline {29}{\ignorespaces Simulation Wave Diagram of Triple 16-bit Operands Multiplier Circuit\relax }}{24}{figure.caption.66}%
+\contentsline {figure}{\numberline {30}{\ignorespaces ASMD Chart of the FSM of Different End Flag Generator\relax }}{26}{figure.caption.73}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {2 Stage End Flag Generator}}}{26}{subfigure.30.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {4 Stage End Flag Generator}}}{26}{subfigure.30.2}%
+\contentsline {figure}{\numberline {31}{\ignorespaces Synthesized RTL Diagram of 16-bit Radix-4 Booth Multiplier\relax }}{31}{figure.caption.90}%
