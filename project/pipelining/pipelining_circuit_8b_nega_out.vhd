@@ -18,7 +18,6 @@ end pipelining_circuit_8b_nega_out;
 
 architecture arch of pipelining_circuit_8b_nega_out is
 
-
     -- register for input a and b
     component operating_circuit_8b is
         port(
@@ -90,14 +89,6 @@ architecture arch of pipelining_circuit_8b_nega_out is
     signal a_reg : std_logic_vector(7 downto 0);
     signal b_reg : std_logic_vector(7 downto 0);
 
-    -- stage 1 : a * a * b
-    signal stage_1_result_before_reg   : std_logic_vector(23 downto 0);
-    signal stage_1_result_after_reg    : std_logic_vector(23 downto 0);
-
-    -- stage 2 : 1/4 (stage 1)
-    signal stage_2_result_before_reg   : std_logic_vector(23 downto 0);
-    signal stage_2_result_after_reg    : std_logic_vector(23 downto 0);
-
     -- stage 3 : (stage 2) + 1
     signal stage_3_result_before_reg   : std_logic_vector(23 downto 0);
 
@@ -124,32 +115,9 @@ begin
         clr, load, b, b_reg
     );
 
-    stage_1_operation: tri_multiplier_8b port map(
-        a => a_reg, 
-        b => b_reg, 
-        p => stage_1_result_before_reg
-    );
-
-    stage_1_register: negative_edge_register_24b port map(
-        clr, clk, stage_1_result_before_reg, stage_1_result_after_reg
-    );
-
-    stage_2_operation: right_2b_shifter_24b port map(
-        data    => stage_1_result_after_reg(23 downto 2), 
-        result  => stage_2_result_before_reg
-    );
-
-    stage_2_register: negative_edge_register_24b port map(
-        clr, clk, stage_2_result_before_reg, stage_2_result_after_reg
-    );
-
-    stage_3_operation: csa_24b_incrementer port map(
-        in_a    => stage_2_result_after_reg, 
-        sum     => stage_3_result_before_reg
-    );
-
-    stage_3_register: negative_edge_register_24b port map(
-        clr, clk, stage_3_result_before_reg, stage_3_result_after_reg
+    -- 3 clock cycles
+    operating: operating_circuit_8b port map(
+        clk, clr, a_reg, b_reg, stage_3_result_after_reg
     );
 
     stage_4_overflow_handling: overflow_as_negation_16b port map(

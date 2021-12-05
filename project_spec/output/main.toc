@@ -38,14 +38,13 @@
 \contentsline {section}{Non-pipelined Implementation}{28}{section*.74}%
 \contentsline {subsection}{Operating Circuit}{28}{section*.75}%
 \contentsline {subsection}{Output Process}{29}{section*.78}%
-\contentsline {section}{Pipelining Implementation}{30}{section*.81}%
-\contentsline {subsection}{Heading II}{30}{section*.82}%
-\contentsline {subsubsection}{Heading III}{30}{section*.83}%
-\contentsline {paragraph}{Heading IV}{30}{section*.84}%
-\contentsline {subparagraph}{\relax }{30}{section*.85}%
-\contentsline {section}{Synthesis and Analysis of the Arithmetic Circuit}{31}{section*.86}%
-\contentsline {subsection}{Heading II}{31}{section*.87}%
-\contentsline {subsubsection}{Heading III}{31}{section*.88}%
-\contentsline {paragraph}{Heading IV}{31}{section*.89}%
-\contentsline {subparagraph}{\relax }{31}{section*.90}%
-\contentsline {section}{\textbf {References}}{32}{section*.91}%
+\contentsline {section}{Pipelined Implementation}{30}{section*.81}%
+\contentsline {subsection}{8-bit Operands Implementation with Negation Overflow Handling}{30}{section*.82}%
+\contentsline {subsection}{8-bit Operands Implementation with Output Separation Overflow Handling}{30}{section*.86}%
+\contentsline {subsection}{16-bit Operands Implementation and Simulation}{33}{section*.90}%
+\contentsline {section}{Synthesis and Analysis of the Arithmetic Circuit}{34}{section*.92}%
+\contentsline {subsection}{Heading II}{34}{section*.93}%
+\contentsline {subsubsection}{Heading III}{34}{section*.94}%
+\contentsline {paragraph}{Heading IV}{34}{section*.95}%
+\contentsline {subparagraph}{\relax }{34}{section*.96}%
+\contentsline {section}{\textbf {References}}{35}{section*.97}%

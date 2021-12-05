@@ -21,7 +21,6 @@ architecture arch of pipelining_circuit_8b_sep_out is
     component operating_circuit_8b is
         port(
             clk  : in std_logic;
-            load : in std_logic;
             clr  : in std_logic;
             a           : in std_logic_vector(7 downto 0);
             b           : in std_logic_vector(7 downto 0);
@@ -64,10 +63,7 @@ architecture arch of pipelining_circuit_8b_sep_out is
     signal stage_4_higher_result_after_reg     : std_logic_vector(15 downto 0);
     signal stage_4_lower_result_after_reg     : std_logic_vector(15 downto 0);
 
-    component n_stage_end_flag_generator is
-        generic (
-            STAGE_LENGTH : natural
-        );
+    component four_stage_end_flag_generator is
         port(
             clk  : in std_logic;
             load : in std_logic;
@@ -75,7 +71,7 @@ architecture arch of pipelining_circuit_8b_sep_out is
     
             stage_end_flag          : out std_logic
         );
-    end component n_stage_end_flag_generator;
+    end component four_stage_end_flag_generator;
 
     component display_z_separation is
         port(
@@ -99,7 +95,7 @@ begin
 
     -- 3 clock cycles
     operating: operating_circuit_8b port map(
-        clk, load, clr, a_reg, b_reg, stage_3_result_after_reg
+        clk, clr, a_reg, b_reg, stage_3_result_after_reg
     );
 
     overflow_handling: overflow_as_separation port map(
@@ -117,8 +113,7 @@ begin
     );
 
     -- end_flag generation
-    end_flag_generate: n_stage_end_flag_generator 
-    generic map (4)
+    end_flag_generate: four_stage_end_flag_generator 
     port map(
         clk, load, clr, end_flag
     );

@@ -59,8 +59,34 @@ begin
             wait for 100 ns;
             r_input_clk <= '0';
     end process;     
-    
-    
+
+    -- clock2
+    clock2: process is
+        constant period: time := 100 ns;
+        begin
+            wait for period;
+            wait for period;
+            r_input_load <= '0';
+            wait for period;
+            r_input_load <= '1';
+            wait for period;
+            r_input_load <= '0';
+            wait for period;
+            r_input_load <= '1';
+            wait for period;
+            r_input_load <= '0';
+            wait for period;
+            r_input_load <= '1';
+            wait for period;
+            r_input_load <= '0';
+
+            wait for period * 12;
+            r_input_load <= '1';
+            wait for period;
+            r_input_load <= '0';
+            wait;
+    end process;  
+        
     circuit : pipelining_circuit_16b_nega_out
     port map (
         clk => r_input_clk,
@@ -77,31 +103,17 @@ begin
             4 after 300 ns,
             123 after 500 ns,
             12 after 681 ns,
-            255 after 3000 ns;
+            65535 after 2000 ns;
 
     r_input_b <=
             4 after 100 ns,
             59 after 300 ns,
             32 after 500 ns,
             6 after 810 ns,
-            255 after 3000 ns;
-
-    r_input_load <=
-            '1',
-            '0' after 200 ns,
-            '1' after 300 ns,
-            '0' after 400 ns,
-            '1' after 500 ns,
-            '0' after 600 ns,            
-            '1' after 700 ns,
-            '0' after 800 ns,
-            -- '1' after 900 ns,
-            -- '0' after 1000 ns,            
-            '1' after 3010 ns,
-            '0' after 3050 ns;
+            65535 after 2000 ns;
 
     r_input_clr <=
             '1' after 1800 ns,
-            '0' after 3000 ns;
+            '0' after 2000 ns;
 
 end Behavioural;

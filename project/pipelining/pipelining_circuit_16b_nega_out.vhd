@@ -61,10 +61,7 @@ architecture arch of pipelining_circuit_16b_nega_out is
     signal stage_4_result_before_reg    : std_logic_vector(31 downto 0);
     signal stage_4_result_after_reg     : std_logic_vector(31 downto 0);
 
-    component n_stage_end_flag_generator is
-        generic (
-            STAGE_LENGTH : natural
-        );
+    component four_stage_end_flag_generator is
         port(
             clk  : in std_logic;
             load : in std_logic;
@@ -72,7 +69,7 @@ architecture arch of pipelining_circuit_16b_nega_out is
     
             stage_end_flag          : out std_logic
         );
-    end component n_stage_end_flag_generator;
+    end component four_stage_end_flag_generator;
 begin
 
     a_register: negative_edge_register_16b port map(
@@ -98,8 +95,7 @@ begin
     );
 
     -- end_flag generation
-    end_flag_generate: n_stage_end_flag_generator 
-    generic map (4)
+    end_flag_generate: four_stage_end_flag_generator 
     port map(
         clk, load, clr, end_flag
     );
