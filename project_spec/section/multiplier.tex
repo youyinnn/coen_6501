@@ -1,7 +1,7 @@
 \section{Multiplication in Three Operands}
-The very first component of the ALU should be the circuit that calculating the result of
+The very first component of the ALU should be the circuit that calculates the result of
 \textbf{\(A^2\ast B\)}.
-Hence the multiplication of two 8-bit operands circuit should be designed first,
+Hence the multiplication of two 8-bit operands circuits should be designed first,
 then the circuit for multiplying the product of the square A with the B should be designed later.
 
 In general, the multiplication of two 8 bits operands in the shift-and-add algorithm or the radix-2 booth
@@ -12,8 +12,8 @@ the number of the partial products can be reduced to 2/n where n is the bit leng
 Not only because it’s faster, but also because it saves more area compared with the previous two algorithms.
 Hence the project chooses to implement the radix-4 booth algorithm as the multiplication component of the ALU.
 
-There is an extra partial product the circuit should consider since the booth algorithm is design for the sighed number.
-In this case, the implemented algorithm requires 2/n + 1 partial product for unsigned number to reach the final answer.
+There is an extra partial product the circuit should consider since the booth algorithm is designed for the sighed number.
+In this case, the implemented algorithm requires 2/n + 1 partial product for the unsigned number to reach the final answer.
 This will be discussed in the following sections.
 
 \subsection{Radix-4 Booth Algorithm Logic in Details}
@@ -59,7 +59,7 @@ which is presented in \tbref{tb:code_table}.
 	\label{tb:code_table}
 \end{table}
 
-The algorithm takes four blocks of code from the right to the left and retrieves the corresponding product with shifting two bits more than the previous product.
+The algorithm takes four blocks of code from the right to the left and retrieves the corresponding product by shifting two bits more than the previous product.
 Then perform the addition. The process of the algorithm is described in \figref{fig:r4b_process_1}.
 
 \begin{figure}[!ht]
@@ -78,7 +78,7 @@ by 2’s complement.
 
 Applying the algorithm to unsigned operands is a little bit different.
 Because the MSB of the operand is treated as a valid number rather than the sign,
-the operands should extend to 9-bit by adding a “0” to the MSB. Hence an extra partial product will be added into the product.
+the operands should extend to 9-bit by adding a “0” to the MSB. Hence an extra partial product will be added to the product.
 For instance, multiplicand \textit{0b010010101} which is 149 in decimal and multiplier \textit{0b011001100}
 which is 204 in decimal can be operated in the process as \figref{fig:r4b_process_2} and \figref{fig:r4b_process_2} are shown.
 
@@ -101,10 +101,10 @@ which is 204 in decimal can be operated in the process as \figref{fig:r4b_proces
 \subsection{8-bit Radix-4 Booth Multiplier Circuit Implementation}
 \subsubsection{Overall Circuit Design and RTL Description}
 
-As previous discussion, the booth multiplier component should contain the following blocks: 1.
-A 9-bit complementor for the negation of the multiplicand;
+As the previous discussion, the booth multiplier component should contain the following blocks: 1.
+A 9-bit complement generator for the negation of the multiplicand;
 2. Five booth stage units for 5 partial products;
-3. Four 16-bit adders for sum up the partial products.
+3. Four 16-bit adders to sum up the partial products.
 \figref{fig:overview_booth_rtl} presents the synthesized RTL diagram of the multiplier circuit.
 
 \begin{figure}[!ht]
@@ -114,12 +114,13 @@ A 9-bit complementor for the negation of the multiplicand;
 	\label{fig:overview_booth_rtl}
 \end{figure}
 
-The circuit will first calculates a 9-bit negation of operand multiplicand in 2's complement.
-Then pass throught all five booth stage blocks to get five 16-bit partial products. And finally sums those partial products up.
+The circuit will first calculate a 9-bit negation of operand multiplicand in 2's complement.
+Then pass through all five booth stage blocks to get five 16-bit partial products.
+And finally sums those partial products up.
 
 \subsubsection{Blocks Design}
 
-This section will discuss the design of the complementor and five of the booth stages,
+This section will discuss the design of the complement generator and five of the booth stages,
 the 16-bit CSA will be discussed in Section “Carry Select Adder”.
 
 \paragraph{The 9-bit Complement Generator for the Negation of the Multiplier}
@@ -153,7 +154,7 @@ The simulation result is shown in \figref{fig:complementor_sim}.
 
 \paragraph{Booth Stage 0}
 \figref{fig:booth_stage_0_rtl} and \expref{exp:booth_stage_0} present the hardware implementation and the logic expression of the block.
-As the figure suggested, a booth stage block takes the 8-bit operand multiplicand and its 9-bit negation and two of the right most bits of the operand multiplier
+As the figure suggested, a booth stage block takes the 8-bit operand multiplicand and its 9-bit negation and two of the rightmost bits of the operand multiplier
 as input, and composes the 16-bit extended partial product as output by a 4-to-1 mux. The width of the \(extended\_sign\_bits\) will be 6.
 The simulation result is shown in \figref{fig:booth_stage_0_sim}.
 
@@ -233,7 +234,7 @@ The simulation result is shown in \figref{fig:booth_stage_1_sim}.
 
 \paragraph{Booth Stage 2, 3, and 4}
 Booth stage 2 and 3 blocks share the same idea of booth stage 1 except they shift more bit to the right.
-As for booth stage 4 block, it only takes the MSB from the operand multiplier. \expref{exp:booth_stage_4} shows its logic.
+As for the booth stage 4 block, it only takes the MSB from the operand multiplier. \expref{exp:booth_stage_4} shows its logic.
 
 \begin{equation}
 	\begin{array}{c}
@@ -248,13 +249,13 @@ As for booth stage 4 block, it only takes the MSB from the operand multiplier. \
 
 \subsection{8-bit Triple Operands Multiplier Circuit Implementation}
 
-Once the 16-bit product of \textbf{\(A^2\)} which marked as \(product\_aa\) is calculated, it will then multiply with the 8-bit input \(B\).
-To perform multiplication with a 16-bit operand and a 8-bit operand, the circuit divides the 16-bit operand into two 8-bit operands.
+Once the 16-bit product of \textbf{\(A^2\)} which is marked as \(product\_aa\) is calculated, it will then multiply with the 8-bit input \(B\).
+To perform multiplication with a 16-bit operand and an 8-bit operand, the circuit divides the 16-bit operand into two 8-bit operands.
 This is to reuse the 8-bit multiplier block that is designed before.
 
 The product of multiplying the higher 8-bit of \(product\_aa\) and \(B\) will be marked as \(product\_haa\_b\), and it will be extended to 24 bits by shifting 8 bits rightwards.
 The product of multiplying the lower 8-bit of \(product\_aa\) and \(B\) will be marked as \(product\_laa\_b\), and it will be extended to 24 bits by adding 8 zeros to its left.
-Then adds those two extended 24-bit number together will be the result of \textbf{\(A^2 \ast B\)}.
+Then adds those two extended 24-bit numbers together will be the result of \textbf{\(A^2 \ast B\)}.
 
 \figref{fig:tri_rtl} presents the RTL description of the circuit and \figref{fig:tri_sim} presents the simulation result.
 \expref{exp:tri} shows the arithmetic process of the \textbf{\(A^2 \ast B\)}.
@@ -290,7 +291,7 @@ Then adds those two extended 24-bit number together will be the result of \textb
 
 Like the 8-bit version, the 16-bit implementation of the booth multiplier will need 9 blocks of booth stage to calculate 9 partial products.
 Because of the characteristic of the algorithm, the 16-bit version can not reuse or extend from the 8-bit version circuit designed before.
-Hence the circuit will need to bulid every block from scratch.
+Hence the circuit will need to build every block from scratch.
 \textbf{This is one of the drawbacks of the booth algorithm: lack of expandability.}
 
 \figref{fig:tri_16b_rtl} presents the RTL description of the triple 16-bit operands multiplier circuit

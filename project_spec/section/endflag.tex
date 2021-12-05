@@ -3,36 +3,28 @@
 To generate a valid \(end\_flag\) signal for the ALU, a Timed Mealy State Machine is introduced into the circuit.
 For pipelining circuit, the \(end\_flag\) will result in the output after counting 4 synchronized clock cycles
 when the \(load\) signal goes from high to low. The counting of the clock cycle is implemented by rotating a
-vector signal to avoid inrtoducing extra addition circuit.
-For non-pipelining circuit, the \(end\_flag\) will result in the output a clock later after the \(load\) signal goes from high to low.
+vector signal to avoid introducting an extra addition circuit.
+For the non-pipelined circuit, the \(end\_flag\) will result in the output of a clock later after the \(load\) signal goes from high to low.
 
 The ASMD charts are presented in \figref{fig:asmd}.
-% And the RTL description of the generator is presented in \figref{fig:end_flag_gen_rtl}.
+And the RTL description of the 4 stages \(end\_flag\) generator is presented in \figref{fig:end_flag_gen_rtl}.
 
 \begin{figure}[!ht]
 	\centering
 	\caption{ASMD Chart of the FSM of Different End Flag Generator}
 	\label{fig:asmd}
 
-	\subfloat[2 Stage End Flag Generator]{\includegraphics[width=0.3\textwidth]{./img/asmd_2.png}}
+	\subfloat[2 Stages End Flag Generator]{\includegraphics[width=0.3\textwidth]{./img/asmd_2.png}}
 	\hspace{1cm}
-	\subfloat[4 Stage End Flag Generator]{\includegraphics[width=0.6\textwidth]{./img/asmd.png}}
+	\subfloat[4 Stages End Flag Generator]{\includegraphics[width=0.6\textwidth]{./img/asmd.png}}
 
 	\figurenote{In (b), the \textquote{stege\_vector} is a 3 bit vector signal and the \textquote{FIRST} is \textquote{001}.}
 	% \figurenote{Eight code values were provided to simulate the \(extended\_pp\).}
 \end{figure}
 
-% \begin{figure}[!ht]
-% 	\centering
-% 	\caption{ASMD Chart of the FSM of the 4 Stage End Flag Generator}
-% 	\includegraphics[width=0.7\textwidth]{../img/asmd.png}
-% 	\figurenote{\textquote{stege\_vector} is a 3 bit vector signal; \textquote{FIRST} is \textquote{001}.}
-% 	\label{fig:asmd}
-% \end{figure}
-
-% \begin{figure*}[!ht]
-% 	\centering
-% 	\caption{Synthesized RTL Diagram of End Flag Generator for 4 Operation Stages}
-% 	\includegraphics[height=0.9\textheight]{../img/end_flag_gen_rtl.png}
-% 	\label{fig:end_flag_gen_rtl}
-% \end{figure*}
+\begin{figure*}[!ht]
+	\centering
+	\caption{Synthesized RTL Diagram of End Flag Generator for 4 Operation Stages}
+	\includegraphics[height=0.9\textheight]{../img/end_flag_gen_rtl.png}
+	\label{fig:end_flag_gen_rtl}
+\end{figure*}

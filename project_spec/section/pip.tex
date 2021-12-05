@@ -1,15 +1,15 @@
 \section{Pipelined Implementation}
 
-For pipelined implementation, a set of stage registers will be placed at every arithmetic operation for memorizing the out come of every stage.
+For pipelined implementation, a set of stage registers will be placed at every arithmetic operation for memorizing the outcome of every stage.
 The required operation \textbf{\(Z = \frac{1}{4} [A^2\ast B] + 1\)} can be divided into three stages of calculation with one overflow handling stage.
 Stage 1 should obtain the product of \(A\) and \(A\) and \(B\).
-Then stage 2 should perform a two bits right shifting operation on the result of stage 1, this operation represents the \(\frac{1}{4}\).
-After that, stage 3 will add number 1 on the result of stage 2.
+Then stage 2 should perform two bits right shifting operation on the result of stage 1, this operation represents the \(\frac{1}{4}\).
+After that, stage 3 will add number 1 to the result of stage 2.
 Finally, stage 4 should handle the bit width of the arithmetic result into the required width.
 
 \subsection{8-bit Operands Implementation with Negation Overflow Handling}
 
-By this design, the circuit will obtains the result in 4 sychronized clock cycles after the falling edge event of the \(load\) signal.
+By this design, the circuit will obtain the result in 4 synchronized clock cycles after the falling edge event of the \(load\) signal.
 \tbref{tb:pip_vi} shows how the registers in this pipelined circuit will latch the values.
 \figref{fig:p_8_rtl} presents the RTL description of the circuit and its arithmetic block.
 
