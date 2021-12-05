@@ -30,10 +30,10 @@
 \contentsline {figure}{\numberline {28}{\ignorespaces Synthesized RTL Diagram of Triple 16-bit Operands Multiplier Circuit\relax }}{25}{figure.caption.65}%
 \contentsline {figure}{\numberline {29}{\ignorespaces Simulation Wave Diagram of Triple 16-bit Operands Multiplier Circuit\relax }}{25}{figure.caption.66}%
 \contentsline {figure}{\numberline {30}{\ignorespaces ASMD Chart of the FSM of Different End Flag Generator\relax }}{27}{figure.caption.73}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {2 Stages End Flag Generator}}}{27}{subfigure.30.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {4 Stages End Flag Generator}}}{27}{subfigure.30.2}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {1 Stage \(End\_Flag\) Generator}}}{27}{subfigure.30.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {4 Stages \(End\_Flag\) Generator}}}{27}{subfigure.30.2}%
 \contentsline {figure}{\numberline {31}{\ignorespaces Synthesized RTL Diagram of Non-pipelined Operating Circuit\relax }}{28}{figure.caption.76}%
-\contentsline {figure}{\numberline {32}{\ignorespaces Simulation Wave Diagram of Non-pipelined Operating Circuit\relax }}{28}{figure.caption.77}%
+\contentsline {figure}{\numberline {32}{\ignorespaces Simulation Wave Diagram of Non-pipelined Operating Circuit\relax }}{29}{figure.caption.77}%
 \contentsline {figure}{\numberline {33}{\ignorespaces Synthesized RTL Diagram of Non-pipelined Circuit\relax }}{29}{figure.caption.79}%
 \contentsline {figure}{\numberline {34}{\ignorespaces Simulation Wave Diagram of Non-pipelined Circuit\relax }}{29}{figure.caption.80}%
 \contentsline {figure}{\numberline {35}{\ignorespaces Simulation Wave Diagram of the 8-bit Pipelined ALU Circuit with Negation Output\relax }}{31}{figure.caption.84}%
@@ -44,4 +44,3 @@
 \contentsline {figure}{\numberline {38}{\ignorespaces Synthesized Diagram of the 8-bit Pipelined ALU Circuit with Separation Output\relax }}{32}{figure.caption.89}%
 \contentsline {figure}{\numberline {39}{\ignorespaces Simulation Wave Diagram of the 16-bit Pipelined ALU Circuit with Negation Output\relax }}{33}{figure.caption.91}%
 \contentsline {figure}{\numberline {40}{\ignorespaces Synthesized RTL Diagram of 16-bit Radix-4 Booth Multiplier\relax }}{36}{figure.caption.98}%
-\contentsline {figure}{\numberline {41}{\ignorespaces Synthesized RTL Diagram of End Flag Generator for 4 Operation Stages\relax }}{37}{figure.caption.99}%

@@ -1,19 +1,19 @@
 \section{Non-pipelined Implementation}
 
 For non-pipelined implementation, the arithmetic logic block functions with a clock
-and an active low signal LOAD to load the operands A and B into the operand registers.
-After finishing the arithmetic operations, the result will be stored in the output register with a high EN\_FLAG signal.
-The END\_FLAG signal is used to denote whether the output is valid, it is asserted when the calculation has finished.
-The CLEAR signal will clear all the operand and output registers to ‘0’ when it is active high.
+and an active low signal \(LOAD\) to load the operands \(A\) and \(B\) into the operand registers.
+After finishing the arithmetic operations, the result will be stored in the output register with a high \(END\_FLAG\) signal.
+The \(END\_FLAG\) signal is used to denote whether the output is valid, it is asserted when the calculation has finished.
+The \(CLEAR\) signal will clear all the operand and output registers to ‘0’ when it is active high.
 
 \subsection{Operating Circuit}
 
-Once the operands A and B are loaded into the operand registers.
+Once the operands \(A\) and \(B\) are loaded into the operand registers.
 The output of these registers is then fed into the designed multiplier to perform the multiplication calculation required by the arithmetic unit.
 The output of the multiplication unit is then fed into the shifter unit.
 After being shifted by four bits to the right, the result is then fed into the 24-bit incrementor.
 The resulting result then passed into a result register pending final overflow processing.
-The result output of the overflow process is then fed into the Z-port.
+The result output of the overflow process is then fed into the \(Z\)-port.
 
 \noindent The operating circuit for the non-pipelined implementation is shown in \figref{fig:non_p_op_rtl}.
 
@@ -30,12 +30,13 @@ The test simulation results for the non-pipelined operating circuit are shown in
 	\centering
 	\caption{Simulation Wave Diagram of Non-pipelined Operating Circuit}
 	\includegraphics[width=0.9\textwidth]{../img/non_p_op_sim.png}
+	\figurenote{Sigal with suffix \textquote{\_after\_reg} means the value of the signal is an output of a register}
 	\label{fig:non_p_op_sim}
 \end{figure}
 
 \subsection{Output Process}
 
-In the non-pipelined implementation, negation output is used to meet the project requirements of 16-bit Z-port outputs,
+In the non-pipelined implementation, negation output is used to meet the project requirements of 16-bit \(Z\)-port outputs,
 which just represent the result as overflow.
 The implementation of the whole circuit is shown in \figref{fig:non_p_rtl}.
 The test simulation results for the negation output are shown in \figref{fig:non_p_sim}
@@ -44,6 +45,7 @@ The test simulation results for the negation output are shown in \figref{fig:non
 	\centering
 	\caption{Synthesized RTL Diagram of Non-pipelined Circuit}
 	\includegraphics[width=\textwidth]{../img/non_p_rtl.png}
+	\figurenote{A 1 stage \(END\_FLAG\) generator is used.}
 	\label{fig:non_p_rtl}
 \end{figure}
 
@@ -51,5 +53,6 @@ The test simulation results for the negation output are shown in \figref{fig:non
 	\centering
 	\caption{Simulation Wave Diagram of Non-pipelined Circuit}
 	\includegraphics[width=0.9\textwidth]{../img/non_p_sim.png}
+	\figurenote{Sigal with suffix \textquote{\_after\_reg} means the value of the signal is an output of a register.}
 	\label{fig:non_p_sim}
 \end{figure}

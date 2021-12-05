@@ -289,7 +289,8 @@ Then adds those two extended 24-bit numbers together will be the result of \text
 \newpage
 \subsection{16-bit Triple Operands Multiplier Circuit Implementation}
 
-Like the 8-bit version, the 16-bit implementation of the booth multiplier will need 9 blocks of booth stage to calculate 9 partial products.
+Like the 8-bit version, the 16-bit implementation of the booth multiplier will need 9 blocks of booth stage to calculate 9 partial products
+and a 17-bit negation complement generator.
 Because of the characteristic of the algorithm, the 16-bit version can not reuse or extend from the 8-bit version circuit designed before.
 Hence the circuit will need to build every block from scratch.
 \textbf{This is one of the drawbacks of the booth algorithm: lack of expandability.}

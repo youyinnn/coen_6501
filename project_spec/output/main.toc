@@ -37,7 +37,7 @@
 \contentsline {section}{End Flag Generator}{27}{section*.72}%
 \contentsline {section}{Non-pipelined Implementation}{28}{section*.74}%
 \contentsline {subsection}{Operating Circuit}{28}{section*.75}%
-\contentsline {subsection}{Output Process}{29}{section*.78}%
+\contentsline {subsection}{Output Process}{28}{section*.78}%
 \contentsline {section}{Pipelined Implementation}{30}{section*.81}%
 \contentsline {subsection}{8-bit Operands Implementation with Negation Overflow Handling}{30}{section*.82}%
 \contentsline {subsection}{8-bit Operands Implementation with Output Separation Overflow Handling}{30}{section*.86}%

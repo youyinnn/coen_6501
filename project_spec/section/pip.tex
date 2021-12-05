@@ -1,6 +1,6 @@
 \section{Pipelined Implementation}
 
-For pipelined implementation, a set of stage registers will be placed at every arithmetic operation for memorizing the outcome of every stage.
+For pipelined implementation, a set of stage registers is placed after every arithmetic operation block for memorizing the outcome of every stage.
 The required operation \textbf{\(Z = \frac{1}{4} [A^2\ast B] + 1\)} can be divided into three stages of calculation with one overflow handling stage.
 Stage 1 should obtain the product of \(A\) and \(A\) and \(B\).
 Then stage 2 should perform two bits right shifting operation on the result of stage 1, this operation represents the \(\frac{1}{4}\).
@@ -15,17 +15,18 @@ By this design, the circuit will obtain the result in 4 synchronized clock cycle
 
 \begin{table}[!ht]
 	\renewcommand{\arraystretch}{0.8}
-	\caption{A Visual Representation Table of the Pipelined Processing with Negation Overflow Handling}
+	\caption{A Visual Representation Table of the Pipelined Processe with Negation Overflow Handling}
 	\centering
 	\begin{tabular}{ >{\centering\arraybackslash}p{0.5cm} >{\centering\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{2cm} >{\centering\arraybackslash}p{2cm} >{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm} >{\centering\arraybackslash}p{3cm} }
 		\hline
 		\bfseries clk & \bfseries A Reg & \bfseries B Reg & \bfseries Stage 1 Reg & \bfseries Satge 2 Reg & \bfseries Satge 3 Reg & \bfseries Stage 4 Reg(Z) \\
 		\hline
 		0             & 12              & 3               & -                     & -                     & -                     & -                        \\
-		1             & -               & -               & 432                   & -                     & -                     & -                        \\
-		2             & -               & -               & -                     & 108                   & -                     & -                        \\
-		3             & -               & -               & -                     & -                     & 109                   & -                        \\
-		4             & -               & -               & -                     & -                     & -                     & 109                      \\
+		1             & 100             & 100             & 432                   & -                     & -                     & -                        \\
+		2             & -               & -               & 1000000               & 108                   & -                     & -                        \\
+		3             & -               & -               & -                     & 250000                & 109                   & -                        \\
+		4             & -               & -               & -                     & -                     & 250001                & 109                      \\
+		5             & -               & -               & -                     & -                     & -                     & -32768                   \\
 		\hline
 	\end{tabular}
 	\label{tb:pip_vi}
@@ -40,6 +41,7 @@ If the \(clk\) signal was asserted, all registers will be reset and \(end\_flag\
 	\centering
 	\caption{Simulation Wave Diagram of the 8-bit Pipelined ALU Circuit with Negation Output}
 	\includegraphics[width=\textwidth]{../img/p_8_sim.png}
+	\figurenote{Sigal with suffix \textquote{\_after\_reg} means the value of the signal is an output of a register.}
 	\label{fig:p_8_sim}
 \end{figure}
 
@@ -85,6 +87,7 @@ The handler takes those two data and transfers them to \(Z\) port alternately by
 	\centering
 	\caption{Simulation Wave Diagram of the 8-bit Pipelined ALU Circuit with Separation Output}
 	\includegraphics[width=\textwidth]{../img/p_8_sep_sim.png}
+	\figurenote{Sigal with suffix \textquote{\_after\_reg} means the value of the signal is an output of a register. The value of \(Z\) will retrieve from the previous two registers alternately.}
 	\label{fig:p_8_sep_sim}
 \end{figure}
 
@@ -108,5 +111,6 @@ since all details were presented in the previous sections.
 	\centering
 	\caption{Simulation Wave Diagram of the 16-bit Pipelined ALU Circuit with Negation Output}
 	\includegraphics[width=\textwidth]{../img/p_16_sim.png}
+	\figurenote{Sigal with suffix \textquote{\_after\_reg} means the value of the signal is an output of a register.}
 	\label{fig:p_16_sim}
 \end{figure}

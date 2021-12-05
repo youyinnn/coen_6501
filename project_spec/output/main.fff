@@ -4,11 +4,3 @@
 \includegraphics[width=\textwidth]{../img/overview_booth_16b_rtl.png}
 \label{fig:overview_booth_16b_rtl}
 \end{figure*}
-\efloatseparator
- 
-\begin{figure*}[!ht]
-\centering
-\caption{Synthesized RTL Diagram of End Flag Generator for 4 Operation Stages}
-\includegraphics[height=0.9\textheight]{../img/end_flag_gen_rtl.png}
-\label{fig:end_flag_gen_rtl}
-\end{figure*}
