@@ -1,50 +1,41 @@
 \contentsline {section}{Introduction}{7}{section*.4}%
-\contentsline {subsection}{Heading II}{7}{section*.5}%
-\contentsline {subsubsection}{Heading III}{7}{section*.6}%
-\contentsline {paragraph}{Heading IV}{7}{section*.7}%
-\contentsline {subparagraph}{\relax }{7}{section*.8}%
-\contentsline {section}{Project Requirement}{8}{section*.9}%
-\contentsline {subsection}{Heading II}{8}{section*.10}%
-\contentsline {subsubsection}{Heading III}{8}{section*.11}%
-\contentsline {paragraph}{Heading IV}{8}{section*.12}%
-\contentsline {subparagraph}{\relax }{8}{section*.13}%
-\contentsline {section}{Carry Select Adder}{9}{section*.14}%
-\contentsline {subsection}{Full Adder}{9}{section*.15}%
-\contentsline {subsection}{Two to one multiplexer}{10}{section*.19}%
-\contentsline {subsection}{4-bit Ripple Carry Adder}{11}{section*.23}%
-\contentsline {subsection}{4-bit Carry Select Adder}{12}{section*.26}%
-\contentsline {subsection}{16-bit Carry Select Adder}{14}{section*.29}%
-\contentsline {subsection}{24-bit Carry Select Adder}{15}{section*.32}%
-\contentsline {subsection}{24-bit CSA Incrementor}{16}{section*.35}%
-\contentsline {section}{Multiplication in Three Operands}{17}{section*.38}%
-\contentsline {subsection}{Radix-4 Booth Algorithm Logic in Details}{17}{section*.39}%
-\contentsline {subsubsection}{Example in Signed Number Multiplication}{17}{section*.40}%
-\contentsline {subsubsection}{Example in Unsigned Number Multiplication}{18}{section*.44}%
-\contentsline {subsection}{8-bit Radix-4 Booth Multiplier Circuit Implementation}{19}{section*.47}%
-\contentsline {subsubsection}{Overall Circuit Design and RTL Description}{19}{section*.48}%
-\contentsline {subsubsection}{Blocks Design}{19}{section*.50}%
-\contentsline {paragraph}{The 9-bit Complement Generator for the Negation of the Multiplier}{19}{section*.51}%
-\contentsline {paragraph}{Booth Stage 0}{20}{section*.54}%
-\contentsline {paragraph}{Booth Stage 1}{22}{section*.57}%
-\contentsline {paragraph}{Booth Stage 2, 3, and 4}{23}{section*.60}%
-\contentsline {subsection}{8-bit Triple Operands Multiplier Circuit Implementation}{23}{section*.61}%
-\contentsline {subsection}{16-bit Triple Operands Multiplier Circuit Implementation}{25}{section*.64}%
-\contentsline {section}{Overflow Handling}{26}{section*.67}%
-\contentsline {subsection}{Heading II}{26}{section*.68}%
-\contentsline {subsubsection}{Heading III}{26}{section*.69}%
-\contentsline {paragraph}{Heading IV}{26}{section*.70}%
-\contentsline {subparagraph}{\relax }{26}{section*.71}%
-\contentsline {section}{End Flag Generator}{27}{section*.72}%
-\contentsline {section}{Non-pipelined Implementation}{28}{section*.74}%
-\contentsline {subsection}{Operating Circuit}{28}{section*.75}%
-\contentsline {subsection}{Output Process}{28}{section*.78}%
-\contentsline {section}{Pipelined Implementation}{30}{section*.81}%
-\contentsline {subsection}{8-bit Operands Implementation with Negation Overflow Handling}{30}{section*.82}%
-\contentsline {subsection}{8-bit Operands Implementation with Output Separation Overflow Handling}{30}{section*.86}%
-\contentsline {subsection}{16-bit Operands Implementation and Simulation}{33}{section*.90}%
-\contentsline {section}{Synthesis and Analysis of the Arithmetic Circuit}{34}{section*.92}%
-\contentsline {subsection}{Heading II}{34}{section*.93}%
-\contentsline {subsubsection}{Heading III}{34}{section*.94}%
-\contentsline {paragraph}{Heading IV}{34}{section*.95}%
-\contentsline {subparagraph}{\relax }{34}{section*.96}%
-\contentsline {section}{\textbf {References}}{35}{section*.97}%
+\contentsline {section}{Project Requirement}{8}{section*.6}%
+\contentsline {section}{Carry Select Adder}{9}{section*.8}%
+\contentsline {subsection}{Full Adder}{9}{section*.9}%
+\contentsline {subsection}{Two to one multiplexer}{10}{section*.13}%
+\contentsline {subsection}{4-bit Ripple Carry Adder}{11}{section*.17}%
+\contentsline {subsection}{4-bit Carry Select Adder}{12}{section*.20}%
+\contentsline {subsection}{16-bit Carry Select Adder}{14}{section*.23}%
+\contentsline {subsection}{24-bit Carry Select Adder}{15}{section*.26}%
+\contentsline {subsection}{24-bit CSA Incrementor}{16}{section*.29}%
+\contentsline {section}{Multiplication in Three Operands}{17}{section*.32}%
+\contentsline {subsection}{Radix-4 Booth Algorithm Logic in Details}{17}{section*.33}%
+\contentsline {subsubsection}{Example in Signed Number Multiplication}{17}{section*.34}%
+\contentsline {subsubsection}{Example in Unsigned Number Multiplication}{18}{section*.38}%
+\contentsline {subsection}{8-bit Radix-4 Booth Multiplier Circuit Implementation}{19}{section*.41}%
+\contentsline {subsubsection}{Overall Circuit Design and RTL Description}{19}{section*.42}%
+\contentsline {subsubsection}{Blocks Design}{19}{section*.44}%
+\contentsline {paragraph}{The 9-bit Complement Generator for the Negation of the Multiplier}{19}{section*.45}%
+\contentsline {paragraph}{Booth Stage 0}{20}{section*.48}%
+\contentsline {paragraph}{Booth Stage 1}{22}{section*.51}%
+\contentsline {paragraph}{Booth Stage 2, 3, and 4}{23}{section*.54}%
+\contentsline {subsection}{8-bit Triple Operands Multiplier Circuit Implementation}{23}{section*.55}%
+\contentsline {subsection}{16-bit Triple Operands Multiplier Circuit Implementation}{25}{section*.58}%
+\contentsline {section}{Overflow Handling}{26}{section*.61}%
+\contentsline {subsection}{Method 1: Negation Output}{26}{section*.62}%
+\contentsline {subsubsection}{Overflow Detection}{26}{section*.63}%
+\contentsline {subsubsection}{Handler Implementation}{26}{section*.66}%
+\contentsline {subsection}{Method 2: Display Z Separately with Two Clock Cycles}{26}{section*.69}%
+\contentsline {section}{End Flag Generator}{28}{section*.72}%
+\contentsline {section}{Non-pipelined Implementation}{29}{section*.74}%
+\contentsline {subsection}{Operating Circuit}{29}{section*.75}%
+\contentsline {subsection}{Output Process}{30}{section*.78}%
+\contentsline {section}{Pipelined Implementation}{31}{section*.81}%
+\contentsline {subsection}{8-bit Operands Implementation with Negation Overflow Handler}{31}{section*.82}%
+\contentsline {subsection}{8-bit Operands Implementation with Output Separation Overflow Handler}{32}{section*.86}%
+\contentsline {subsection}{16-bit Operands Implementation and Simulation}{35}{section*.90}%
+\contentsline {section}{Synthesis and Analysis of the Arithmetic Circuit}{36}{section*.92}%
+\contentsline {subsection}{Heading II}{36}{section*.93}%
+\contentsline {subsubsection}{Heading III}{36}{section*.94}%
+\contentsline {paragraph}{Heading IV}{36}{section*.95}%
+\contentsline {subparagraph}{\relax }{36}{section*.96}%

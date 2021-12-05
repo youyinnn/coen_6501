@@ -1,5 +1,6 @@
-\contentsline {table}{\numberline {1}{\ignorespaces Full Adder Truth Table\relax }}{9}{table.caption.16}%
-\contentsline {table}{\numberline {2}{\ignorespaces 2-to-1 Multiplexer Truth Table\relax }}{11}{table.caption.20}%
-\contentsline {table}{\numberline {3}{\ignorespaces Code Table of Radix-4 Booth Algorithm\relax }}{17}{table.caption.42}%
-\contentsline {table}{\numberline {4}{\ignorespaces A Visual Representation Table of the Pipelined Processe with Negation Overflow Handling\relax }}{30}{table.caption.83}%
-\contentsline {table}{\numberline {5}{\ignorespaces A Visual Representation Table of the Pipelined Processing with Output Separation Overflow Handling\relax }}{32}{table.caption.87}%
+\contentsline {table}{\numberline {1}{\ignorespaces Components of the ALU Circuit\relax }}{7}{table.caption.5}%
+\contentsline {table}{\numberline {2}{\ignorespaces Full Adder Truth Table\relax }}{9}{table.caption.10}%
+\contentsline {table}{\numberline {3}{\ignorespaces 2-to-1 Multiplexer Truth Table\relax }}{11}{table.caption.14}%
+\contentsline {table}{\numberline {4}{\ignorespaces Code Table of Radix-4 Booth Algorithm\relax }}{17}{table.caption.36}%
+\contentsline {table}{\numberline {5}{\ignorespaces A Visual Representation Table of the Pipelined Processe with Negation Overflow Handler\relax }}{32}{table.caption.83}%
+\contentsline {table}{\numberline {6}{\ignorespaces A Visual Representation Table of the Pipelined Processing with Output Separation Overflow Handler\relax }}{34}{table.caption.87}%

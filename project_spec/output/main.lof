@@ -1,46 +1,53 @@
-\contentsline {figure}{\numberline {1}{\ignorespaces Synthesized RTL Diagram of Full Adder Block\relax }}{10}{figure.caption.17}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Simulation Wave Diagram of Full Adder Block\relax }}{10}{figure.caption.18}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Synthesized RTL Diagram of 2-to-1 Multiplexer Block\relax }}{11}{figure.caption.21}%
-\contentsline {figure}{\numberline {4}{\ignorespaces Simulation Wave Diagram of 2-to-1 Multiplexer Block\relax }}{11}{figure.caption.22}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Synthesized RTL Diagram of 4-bit Ripple Carry Adder Block\relax }}{12}{figure.caption.24}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Simulation Wave Diagram of 4-bit Ripple Carry Adder Block\relax }}{12}{figure.caption.25}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Synthesized RTL Diagram of 4-bit Carry Select Adder Block\relax }}{13}{figure.caption.27}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Simulation Wave Diagram of 4-bit Carry Select Adder Block\relax }}{14}{figure.caption.28}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Synthesized RTL Diagram of 16-bit Carry Select Adder Block\relax }}{14}{figure.caption.30}%
-\contentsline {figure}{\numberline {10}{\ignorespaces Simulation Wave Diagram of 16-bit Carry Select Adder Block\relax }}{15}{figure.caption.31}%
-\contentsline {figure}{\numberline {11}{\ignorespaces Synthesized RTL Diagram of 24-bit Carry Select Adder Block\relax }}{15}{figure.caption.33}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Simulation Wave Diagram of 24-bit Carry Select Adder Block\relax }}{16}{figure.caption.34}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Synthesized RTL Diagram of 24-bit Incrementor Block\relax }}{16}{figure.caption.36}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Simulation Wave Diagram of 24-bit Incrementor Block\relax }}{16}{figure.caption.37}%
-\contentsline {figure}{\numberline {15}{\ignorespaces The Decoded Code Blocks of the Signed Multiplier\relax }}{18}{figure.caption.41}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Process of the Algorithm for Signed Number\relax }}{18}{figure.caption.43}%
-\contentsline {figure}{\numberline {17}{\ignorespaces The Decoded Code Blocks of the Unsigned Multiplier\relax }}{19}{figure.caption.45}%
-\contentsline {figure}{\numberline {18}{\ignorespaces Process of the Slgorithm for Unisgned Number\relax }}{19}{figure.caption.46}%
-\contentsline {figure}{\numberline {19}{\ignorespaces Synthesized RTL Diagram of 8-bit Radix-4 Booth Multiplier\relax }}{20}{figure.caption.49}%
-\contentsline {figure}{\numberline {20}{\ignorespaces Synthesized RTL Diagram of Complement Generator\relax }}{20}{figure.caption.52}%
-\contentsline {figure}{\numberline {21}{\ignorespaces Simulation Wave Diagram of Complement Generator\relax }}{21}{figure.caption.53}%
-\contentsline {figure}{\numberline {22}{\ignorespaces Synthesized RTL Diagram of Booth Stage 0 Block\relax }}{21}{figure.caption.55}%
-\contentsline {figure}{\numberline {23}{\ignorespaces Simulation Wave Diagram of Booth Stage 0 Block\relax }}{22}{figure.caption.56}%
-\contentsline {figure}{\numberline {24}{\ignorespaces Synthesized RTL Diagram of Booth Stage 1 Block\relax }}{22}{figure.caption.58}%
-\contentsline {figure}{\numberline {25}{\ignorespaces Simulation Wave Diagram of Booth Stage 1 Block\relax }}{23}{figure.caption.59}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {With Code Values: 000/001/010/011}}}{23}{subfigure.25.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {With Code Values: 100/101/110/111}}}{23}{subfigure.25.2}%
-\contentsline {figure}{\numberline {26}{\ignorespaces Synthesized RTL Diagram of Triple 8-bit Operands Multiplier Circuit\relax }}{24}{figure.caption.62}%
-\contentsline {figure}{\numberline {27}{\ignorespaces Simulation Wave Diagram of Triple 8-bit Operands Multiplier Circuit\relax }}{24}{figure.caption.63}%
-\contentsline {figure}{\numberline {28}{\ignorespaces Synthesized RTL Diagram of Triple 16-bit Operands Multiplier Circuit\relax }}{25}{figure.caption.65}%
-\contentsline {figure}{\numberline {29}{\ignorespaces Simulation Wave Diagram of Triple 16-bit Operands Multiplier Circuit\relax }}{25}{figure.caption.66}%
-\contentsline {figure}{\numberline {30}{\ignorespaces ASMD Chart of the FSM of Different End Flag Generator\relax }}{27}{figure.caption.73}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {1 Stage \(End\_Flag\) Generator}}}{27}{subfigure.30.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {4 Stages \(End\_Flag\) Generator}}}{27}{subfigure.30.2}%
-\contentsline {figure}{\numberline {31}{\ignorespaces Synthesized RTL Diagram of Non-pipelined Operating Circuit\relax }}{28}{figure.caption.76}%
-\contentsline {figure}{\numberline {32}{\ignorespaces Simulation Wave Diagram of Non-pipelined Operating Circuit\relax }}{29}{figure.caption.77}%
-\contentsline {figure}{\numberline {33}{\ignorespaces Synthesized RTL Diagram of Non-pipelined Circuit\relax }}{29}{figure.caption.79}%
-\contentsline {figure}{\numberline {34}{\ignorespaces Simulation Wave Diagram of Non-pipelined Circuit\relax }}{29}{figure.caption.80}%
-\contentsline {figure}{\numberline {35}{\ignorespaces Simulation Wave Diagram of the 8-bit Pipelined ALU Circuit with Negation Output\relax }}{31}{figure.caption.84}%
-\contentsline {figure}{\numberline {36}{\ignorespaces Synthesized RTL Diagram of the 8-bit Operands Pipelined ALU Circuit and the Arithmetic Operation Block\relax }}{31}{figure.caption.85}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Top Design of the Circuit}}}{31}{subfigure.36.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Arithmetic Operation Block}}}{31}{subfigure.36.2}%
-\contentsline {figure}{\numberline {37}{\ignorespaces Simulation Wave Diagram of the 8-bit Pipelined ALU Circuit with Separation Output\relax }}{32}{figure.caption.88}%
-\contentsline {figure}{\numberline {38}{\ignorespaces Synthesized Diagram of the 8-bit Pipelined ALU Circuit with Separation Output\relax }}{32}{figure.caption.89}%
-\contentsline {figure}{\numberline {39}{\ignorespaces Simulation Wave Diagram of the 16-bit Pipelined ALU Circuit with Negation Output\relax }}{33}{figure.caption.91}%
-\contentsline {figure}{\numberline {40}{\ignorespaces Synthesized RTL Diagram of 16-bit Radix-4 Booth Multiplier\relax }}{36}{figure.caption.98}%
+\contentsline {figure}{\numberline {1}{\ignorespaces The RTL Diagram of the Required ALU\relax }}{8}{figure.caption.7}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Synthesized RTL Diagram of Full Adder Block\relax }}{10}{figure.caption.11}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Simulation Wave Diagram of Full Adder Block\relax }}{10}{figure.caption.12}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Synthesized RTL Diagram of 2-to-1 Multiplexer Block\relax }}{11}{figure.caption.15}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Simulation Wave Diagram of 2-to-1 Multiplexer Block\relax }}{11}{figure.caption.16}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Synthesized RTL Diagram of 4-bit Ripple Carry Adder Block\relax }}{12}{figure.caption.18}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Simulation Wave Diagram of 4-bit Ripple Carry Adder Block\relax }}{12}{figure.caption.19}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Synthesized RTL Diagram of 4-bit Carry Select Adder Block\relax }}{13}{figure.caption.21}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Simulation Wave Diagram of 4-bit Carry Select Adder Block\relax }}{14}{figure.caption.22}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Synthesized RTL Diagram of 16-bit Carry Select Adder Block\relax }}{14}{figure.caption.24}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Simulation Wave Diagram of 16-bit Carry Select Adder Block\relax }}{15}{figure.caption.25}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Synthesized RTL Diagram of 24-bit Carry Select Adder Block\relax }}{15}{figure.caption.27}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Simulation Wave Diagram of 24-bit Carry Select Adder Block\relax }}{16}{figure.caption.28}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Synthesized RTL Diagram of 24-bit Incrementor Block\relax }}{16}{figure.caption.30}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Simulation Wave Diagram of 24-bit Incrementor Block\relax }}{16}{figure.caption.31}%
+\contentsline {figure}{\numberline {16}{\ignorespaces The Decoded Code Blocks of the Signed Multiplier\relax }}{18}{figure.caption.35}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Process of the Algorithm for Signed Number\relax }}{18}{figure.caption.37}%
+\contentsline {figure}{\numberline {18}{\ignorespaces The Decoded Code Blocks of the Unsigned Multiplier\relax }}{19}{figure.caption.39}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Process of the Slgorithm for Unisgned Number\relax }}{19}{figure.caption.40}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Synthesized RTL Diagram of 8-bit Radix-4 Booth Multiplier\relax }}{20}{figure.caption.43}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Synthesized RTL Diagram of Complement Generator\relax }}{20}{figure.caption.46}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Simulation Wave Diagram of Complement Generator\relax }}{21}{figure.caption.47}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Synthesized RTL Diagram of Booth Stage 0 Block\relax }}{21}{figure.caption.49}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Simulation Wave Diagram of Booth Stage 0 Block\relax }}{22}{figure.caption.50}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Synthesized RTL Diagram of Booth Stage 1 Block\relax }}{22}{figure.caption.52}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Simulation Wave Diagram of Booth Stage 1 Block\relax }}{23}{figure.caption.53}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {With Code Values: 000/001/010/011}}}{23}{subfigure.26.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {With Code Values: 100/101/110/111}}}{23}{subfigure.26.2}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Synthesized RTL Diagram of Triple 8-bit Operands Multiplier Circuit\relax }}{24}{figure.caption.56}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Simulation Wave Diagram of Triple 8-bit Operands Multiplier Circuit\relax }}{24}{figure.caption.57}%
+\contentsline {figure}{\numberline {29}{\ignorespaces Synthesized RTL Diagram of Triple 16-bit Operands Multiplier Circuit\relax }}{25}{figure.caption.59}%
+\contentsline {figure}{\numberline {30}{\ignorespaces Simulation Wave Diagram of Triple 16-bit Operands Multiplier Circuit\relax }}{25}{figure.caption.60}%
+\contentsline {figure}{\numberline {31}{\ignorespaces Synthesized RTL Diagram of the Zero Detector\relax }}{26}{figure.caption.64}%
+\contentsline {figure}{\numberline {32}{\ignorespaces Simulation Wave Diagram of the Zero Detector\relax }}{26}{figure.caption.65}%
+\contentsline {figure}{\numberline {33}{\ignorespaces Synthesized RTL Diagram of the Overflow Handler of Method 1\relax }}{27}{figure.caption.67}%
+\contentsline {figure}{\numberline {34}{\ignorespaces Simulation Wave Diagram of the Overflow Handler of Method 1\relax }}{27}{figure.caption.68}%
+\contentsline {figure}{\numberline {35}{\ignorespaces Synthesized RTL Diagram of the Overflow Handler of Method 2\relax }}{27}{figure.caption.70}%
+\contentsline {figure}{\numberline {36}{\ignorespaces Simulation Wave Diagram of the Overflow Handler of Method 2\relax }}{28}{figure.caption.71}%
+\contentsline {figure}{\numberline {37}{\ignorespaces ASMD Chart of the FSM of Different End Flag Generator\relax }}{29}{figure.caption.73}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {1 Stage \(End\_Flag\) Generator}}}{29}{subfigure.37.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {4 Stages \(End\_Flag\) Generator}}}{29}{subfigure.37.2}%
+\contentsline {figure}{\numberline {38}{\ignorespaces Synthesized RTL Diagram of Non-pipelined Operating Circuit\relax }}{30}{figure.caption.76}%
+\contentsline {figure}{\numberline {39}{\ignorespaces Simulation Wave Diagram of Non-pipelined Operating Circuit\relax }}{30}{figure.caption.77}%
+\contentsline {figure}{\numberline {40}{\ignorespaces Synthesized RTL Diagram of Non-pipelined Circuit\relax }}{31}{figure.caption.79}%
+\contentsline {figure}{\numberline {41}{\ignorespaces Simulation Wave Diagram of Non-pipelined Circuit\relax }}{31}{figure.caption.80}%
+\contentsline {figure}{\numberline {42}{\ignorespaces Simulation Wave Diagram of the 8-bit Pipelined ALU Circuit with Negation Output\relax }}{32}{figure.caption.84}%
+\contentsline {figure}{\numberline {43}{\ignorespaces Synthesized RTL Diagram of the 8-bit Operands Pipelined ALU Circuit and the Arithmetic Operation Block\relax }}{33}{figure.caption.85}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Top Design of the Circuit}}}{33}{subfigure.43.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Arithmetic Operation Block}}}{33}{subfigure.43.2}%
+\contentsline {figure}{\numberline {44}{\ignorespaces Simulation Wave Diagram of the 8-bit Pipelined ALU Circuit with Separation Output\relax }}{34}{figure.caption.88}%
+\contentsline {figure}{\numberline {45}{\ignorespaces Synthesized Diagram of the 8-bit Pipelined ALU Circuit with Separation Output\relax }}{34}{figure.caption.89}%
+\contentsline {figure}{\numberline {46}{\ignorespaces Simulation Wave Diagram of the 16-bit Pipelined ALU Circuit with Negation Output\relax }}{35}{figure.caption.91}%
+\contentsline {figure}{\numberline {47}{\ignorespaces Synthesized RTL Diagram of 16-bit Radix-4 Booth Multiplier\relax }}{37}{figure.caption.97}%

@@ -1,12 +1,49 @@
 \section{Introduction}
-\maskcite{cervantes1999}
-En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor.
-\subsection{Heading II}
-Una olla de algo más vaca que carnero, salpicón las más noches, duelos y quebrantos los sábados, lantejas los viernes, algún palomino de añadidura los domingos, consumían las tres partes de su hacienda.
-\subsubsection{Heading III}
-El resto della concluían sayo de velarte, calzas de velludo para las fiestas, con sus pantuflos de lo mesmo, y los días de entresemana se honraba con su vellorí de lo más fino.
-\paragraph{Heading IV}
-Tenía en su casa una ama que pasaba de los cuarenta, y una sobrina que no llegaba a los veinte, y un mozo de campo y plaza, que así ensillaba el rocín como tomaba la podadera.
-Frisaba la edad de nuestro hidalgo con los cincuenta años; era de complexión recia, seco de carnes, enjuto de rostro, gran madrugador y amigo de la caza.
-\subparagraph{Heading V}
-Quieren decir que tenía el sobrenombre de Quijada, o Quesada, que en esto hay alguna diferencia en los autores que deste caso escriben; aunque por conjeturas verosímiles se deja entender que se llamaba Quijana.
+
+This is the project report of the course \textbf{COEN 6501: Digital Design and Synthesis}.
+The project requires an implementation of an ALU circuit design that perform the equation of \textbf{\(Z = \frac{1}{4} [A^2\ast B] + 1\)}.
+More details of the requirements will be discussed in the next section.
+Breaking down the project requirements, the team should implement the following component designs to complete the ALU:
+
+\begin{table}[!ht]
+	\renewcommand{\arraystretch}{0.8}
+	\caption{Components of the ALU Circuit}
+	\centering
+	\begin{tabular}{ >{\centering\arraybackslash}p{7cm} >{\centering\arraybackslash}p{7cm} }
+		\hline
+		\bfseries Functional Components        & \bfseries Other Components \\
+		\hline
+		n-bit adder design                     & 2-bit right shifter        \\
+		n-bit multiplier with 2 and 3 operands & n-bit incrementor          \\
+		overflow handler                       & negative edge registers    \\
+		\(END\_FLAG\) generator                &                            \\
+		\hline
+	\end{tabular}
+	\label{tb:cac}
+\end{table}
+
+As per adder design, the team chose the \textbf{\textquote{Carry Select Adder}} implementation.
+This adder design is suitable for bit width extension.
+As per multiplier design, the team chose the \textbf{\textquote{Radix-4 Booth Algorithm}} implementation
+which is an elegant design for reducing both area occupation and delay.
+
+As per the overflow handler, the team provides two solutions:
+1. giving a negation which is impossible for the demanded equation to indicate the overflow;
+2. dividing the full result into the higher part and the lower part and outputting them to the \(Z\) port alternately within two clock cycles.
+
+As per the \(END\_FLAG\) generator, the team chose to implement a FSM for indicating the valid \(END\_FLAG\) signal.
+
+As per the register, falling edge clock event sensitive register will be used in the project,
+the registers for input \(A\) and \(B\) should use \(LOAD\) signal as the clock event which means those two registers are asynchronous,
+the rest of the registers should use \(Clock\) signal as the clock event.
+
+After completing all component designs, the ALU will be implemented in both pipelined and non-pipelined designs.
+
+\noindent The project is designed, implemented, simulated, and synthesized with the environments of:
+\begin{itemize}
+	\item \textit{\textbf{ModelSim} SE-64 6.6g May 23 2012 Linux 3.10.0-1160.45.1.el7.x86\_64}
+	\item \textit{\textbf{Precision RTL Synthesis}  64-bit 2016.1.0.15 (Production Release)}
+	\item \textit{\textbf{GHDL} 2.0.0-dev (1.0.0.r849.gc56db233) [Dunoon edition] Compiled with GNAT Version: Community 2019 (20190517-83)}
+\end{itemize}
+
+\noindent The synthesized report is based on the \textquote{2VP20ff896} device provided by \textit{Precision}.

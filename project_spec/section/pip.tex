@@ -7,7 +7,7 @@ Then stage 2 should perform two bits right shifting operation on the result of s
 After that, stage 3 will add number 1 to the result of stage 2.
 Finally, stage 4 should handle the bit width of the arithmetic result into the required width.
 
-\subsection{8-bit Operands Implementation with Negation Overflow Handling}
+\subsection{8-bit Operands Implementation with Negation Overflow Handler}
 
 By this design, the circuit will obtain the result in 4 synchronized clock cycles after the falling edge event of the \(load\) signal.
 \tbref{tb:pip_vi} shows how the registers in this pipelined circuit will latch the values.
@@ -15,7 +15,7 @@ By this design, the circuit will obtain the result in 4 synchronized clock cycle
 
 \begin{table}[!ht]
 	\renewcommand{\arraystretch}{0.8}
-	\caption{A Visual Representation Table of the Pipelined Processe with Negation Overflow Handling}
+	\caption{A Visual Representation Table of the Pipelined Processe with Negation Overflow Handler}
 	\centering
 	\begin{tabular}{ >{\centering\arraybackslash}p{0.5cm} >{\centering\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{2cm} >{\centering\arraybackslash}p{2cm} >{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm} >{\centering\arraybackslash}p{3cm} }
 		\hline
@@ -55,7 +55,7 @@ If the \(clk\) signal was asserted, all registers will be reset and \(end\_flag\
 	\label{fig:p_8_rtl}
 \end{figure}
 
-\subsection{8-bit Operands Implementation with Output Separation Overflow Handling}
+\subsection{8-bit Operands Implementation with Output Separation Overflow Handler}
 
 With separation overflow handling discussed before, the full result can be obtained after three stages of calculation with two overflow handling stages.
 Before the full data reach the \(Z\) port, the 24-bit result will be separated into 2 parts: the higher part stored in one register and the lower part stored in another register.
@@ -68,7 +68,7 @@ The handler takes those two data and transfers them to \(Z\) port alternately by
 
 \begin{table}[!ht]
 	\renewcommand{\arraystretch}{0.8}
-	\caption{A Visual Representation Table of the Pipelined Processing with Output Separation Overflow Handling}
+	\caption{A Visual Representation Table of the Pipelined Processing with Output Separation Overflow Handler}
 	\centering
 	\begin{tabular}{ >{\centering\arraybackslash}p{0.5cm} >{\centering\arraybackslash}p{5cm} >{\centering\arraybackslash}p{2.8cm}  >{\centering\arraybackslash}p{2.8cm} >{\centering\arraybackslash}p{2.8cm} }
 		\hline
