@@ -20,7 +20,7 @@ The equation between delay and maximum frequency is as follows:
 
 
 \subsection{Timing Information}
-\subsubsection{Radix-4 Booth Multiplier}
+\subsubsection{8-bit Radix-4 Booth Multiplier}
 The timing analysis was performed with Xilinx ISE.
 The default settings were applied since there were no timing constraints used.
 The longest delay was found between mp(3) and p(14) at 15.793 ns.
@@ -42,11 +42,11 @@ The longest delay was found between in\_a(0) and sum(22) at 9.675 ns.
 By using the equation presented above, the maximum frequency is 103.36 MHz.
 The full timing report from Xilinx ISE is shown in \appref{sec:ap_6}.
 
-\subsubsection{Implementation Circuit}
+\subsubsection{8-bit Implementation Circuit}
 The full timing report from Xilinx ISE for non-pipelined version and pipelined version regarding
 the timing source values are shown in \appref{sec:ap_7}, \appref{sec:ap_8}, and \appref{sec:ap_9}.
 
-\subsection{Area and Power Results for the Non-Pipelined Version}
+\subsection{Area and Power Results for the 8-bit Non-Pipelined Version}
 \subsubsection{Implementation with Negation Output}
 \paragraph{Area}
 
@@ -60,7 +60,7 @@ and resource used is shown in \appref{sec:ap_1}.
 
 \begin{table}[!ht]
 	\renewcommand{\arraystretch}{1.3}
-	\caption{Power Information for Non-pipelined Version}
+	\caption{Power Information for 8-bit Non-pipelined Version}
 	\centering
 	\begin{tabular}{ p{4cm} p{4cm} p{4cm} }
 		\hline
@@ -75,7 +75,7 @@ and resource used is shown in \appref{sec:ap_1}.
 	\label{tb:non_p_power}
 \end{table}
 
-\subsection{Area and Power Results for the Pipelined Version}
+\subsection{Area and Power Results for the 8-bit Pipelined Version}
 \subsubsection{Implementation with Negation Output}
 \paragraph{Area}
 When synthesizing the pipelined negation output version, the total number of slices used was 380 or 4.09\% 
@@ -87,7 +87,7 @@ The power information was performed with Xilinx ISE. The results are shown in th
 
 \begin{table}[!ht]
 	\renewcommand{\arraystretch}{1.3}
-	\caption{Power Information for Pipelined Version with Negation Output}
+	\caption{Power Information for 8-bit Pipelined Version with Negation Output}
 	\centering
 	\begin{tabular}{ p{4cm} p{4cm} p{4cm} }
 		\hline
@@ -113,7 +113,7 @@ The power information was performed with Xilinx ISE. The results are shown in th
 
 \begin{table}[!ht]
 	\renewcommand{\arraystretch}{1.3}
-	\caption{Power Information for Pipelined Version with Separation Output}
+	\caption{Power Information for 8-bit Pipelined Version with Separation Output}
 	\centering
 	\begin{tabular}{ p{4cm} p{4cm} p{4cm} }
 		\hline
