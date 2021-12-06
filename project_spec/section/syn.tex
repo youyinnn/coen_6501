@@ -9,7 +9,44 @@ which also details the area usage and can perform timing analysis if needed.
 Xilinx ISE is used for getting the timing and power information.
 % Also, the timing analysis is done by Xilinx ISE, the result of which is shown in Appendix X.
 
-\subsection{Results for the Non-Pipelined Version}
+For timing information, two main operation modules of the arithmetic circuit are considered.
+The reciprocal of the largest delay is taken to determine the maximum frequency.
+The equation between delay and maximum frequency is as follows:
+
+\begin{equation}
+	\frac{1}{T_{delay}} = Frequency
+	\label{exp:dl}
+\end{equation}
+
+
+\subsection{Timing Information}
+\subsubsection{Radix-4 Booth Multiplier}
+The timing analysis was performed with Xilinx ISE.
+The default settings were applied since there were no timing constraints used.
+The longest delay was found between mp(3) and p(14) at 15.793 ns.
+By using the equation presented above, the maximum frequency is 63.32 MHz.
+The full timing report from Xilinx ISE is shown in \appref{sec:ap_4}.
+
+\subsubsection{CSA}
+\paragraph{16-bit CSA}
+The timing analysis was performed with Xilinx ISE.
+The default settings were applied since there were no timing constraints used.
+The longest delay was found between in\_a(0) and carryout at 8.490 ns.
+By using the equation presented above, the maximum frequency is 117.79 MHz.
+The full timing report from Xilinx ISE is shown in \appref{sec:ap_5}.
+
+\paragraph{24-bit CSA}
+The timing analysis was performed with Xilinx ISE.
+The default settings were applied since there were no timing constraints used.
+The longest delay was found between in\_a(0) and sum(22) at 9.675 ns.
+By using the equation presented above, the maximum frequency is 103.36 MHz.
+The full timing report from Xilinx ISE is shown in \appref{sec:ap_6}.
+
+\subsubsection{Implementation Circuit}
+The full timing report from Xilinx ISE for non-pipelined version and pipelined version regarding
+the timing source values are shown in \appref{sec:ap_7}, \appref{sec:ap_8}, and \appref{sec:ap_9}.
+
+\subsection{Area and Power Results for the Non-Pipelined Version}
 \subsubsection{Implementation with Negation Output}
 \paragraph{Area}
 
@@ -38,7 +75,7 @@ and resource used is shown in \appref{sec:ap_1}.
 	\label{tb:non_p_power}
 \end{table}
 
-\subsection{Results for the Pipelined Version}
+\subsection{Area and Power Results for the Pipelined Version}
 \subsubsection{Implementation with Negation Output}
 \paragraph{Area}
 When synthesizing the pipelined negation output version, the total number of slices used was 380 or 4.09\% 

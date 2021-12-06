@@ -1,0 +1,132 @@
+--------------------------------------------------------------------------------
+Release 10.1 Trace  (lin64)
+Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+
+/nfs/sw_cmc/x86_64.EL7/tools/xilinx_10.1/ISE/bin/lin64/unwrapped/trce
+pipelining_circuit_8b_sep_out_out pipelining_circuit_8b_sep_out.pcf -v 10 -o
+pipelining_circuit_8b_sep_out_out
+
+Design file:              pipelining_circuit_8b_sep_out_out.ncd
+Physical constraint file: pipelining_circuit_8b_sep_out.pcf
+Device,package,speed:     xc2vp20,ff896,-7 (PRODUCTION 1.94 2008-01-09)
+Report level:             verbose report, limited to 10 items per constraint
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock load
+------------+------------+------------+------------------+--------+
+            |  Setup to  |  Hold to   |                  | Clock  |
+Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
+------------+------------+------------+------------------+--------+
+a(0)        |   -0.343(F)|    1.080(F)|load_int          |   0.000|
+a(1)        |    0.103(F)|    0.727(F)|load_int          |   0.000|
+a(2)        |   -0.102(F)|    0.872(F)|load_int          |   0.000|
+a(3)        |   -0.009(F)|    0.796(F)|load_int          |   0.000|
+a(4)        |   -0.370(F)|    1.106(F)|load_int          |   0.000|
+a(5)        |   -0.332(F)|    1.075(F)|load_int          |   0.000|
+a(6)        |   -0.344(F)|    1.080(F)|load_int          |   0.000|
+a(7)        |    0.132(F)|    0.693(F)|load_int          |   0.000|
+b(0)        |    0.422(F)|    0.447(F)|load_int          |   0.000|
+b(1)        |    0.493(F)|    0.395(F)|load_int          |   0.000|
+b(2)        |    0.212(F)|    0.631(F)|load_int          |   0.000|
+b(3)        |    0.366(F)|    0.519(F)|load_int          |   0.000|
+b(4)        |    0.624(F)|    0.300(F)|load_int          |   0.000|
+b(5)        |    0.244(F)|    0.611(F)|load_int          |   0.000|
+b(6)        |   -0.071(F)|    0.858(F)|load_int          |   0.000|
+b(7)        |    0.514(F)|    0.386(F)|load_int          |   0.000|
+clr         |    3.319(F)|   -1.655(F)|load_int          |   0.000|
+------------+------------+------------+------------------+--------+
+
+Clock clk to Pad
+------------+------------+------------------+--------+
+            | clk (edge) |                  | Clock  |
+Destination |   to PAD   |Internal Clock(s) | Phase  |
+------------+------------+------------------+--------+
+end_flag    |    6.489(F)|clk_int           |   0.000|
+z(0)        |    7.015(F)|clk_int           |   0.000|
+z(1)        |    6.694(F)|clk_int           |   0.000|
+z(2)        |    6.691(F)|clk_int           |   0.000|
+z(3)        |    6.704(F)|clk_int           |   0.000|
+z(4)        |    6.424(F)|clk_int           |   0.000|
+z(5)        |    6.841(F)|clk_int           |   0.000|
+z(6)        |    7.539(F)|clk_int           |   0.000|
+z(7)        |    7.166(F)|clk_int           |   0.000|
+z(8)        |    6.438(F)|clk_int           |   0.000|
+z(9)        |    7.024(F)|clk_int           |   0.000|
+z(10)       |    7.017(F)|clk_int           |   0.000|
+z(11)       |    6.599(F)|clk_int           |   0.000|
+z(12)       |    6.321(F)|clk_int           |   0.000|
+z(13)       |    7.068(F)|clk_int           |   0.000|
+z(14)       |    6.231(F)|clk_int           |   0.000|
+z(15)       |    5.675(F)|clk_int           |   0.000|
+------------+------------+------------------+--------+
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |         |         |         |    2.142|
+load           |         |         |         |   27.165|
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock load
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |         |         |         |    1.596|
+---------------+---------+---------+---------+---------+
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+clr            |z(0)           |    6.115|
+clr            |z(1)           |    5.384|
+clr            |z(2)           |    5.798|
+clr            |z(3)           |    6.013|
+clr            |z(4)           |    6.151|
+clr            |z(5)           |    6.563|
+clr            |z(6)           |    5.968|
+clr            |z(7)           |    5.854|
+clr            |z(8)           |    5.022|
+clr            |z(9)           |    5.889|
+clr            |z(10)          |    5.727|
+clr            |z(11)          |    6.330|
+clr            |z(12)          |    5.039|
+clr            |z(13)          |    6.379|
+clr            |z(14)          |    4.655|
+clr            |z(15)          |    4.769|
+---------------+---------------+---------+
+
+
+Analysis completed Mon Dec  6 11:49:22 2021 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 284 MB
+
+
+

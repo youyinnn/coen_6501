@@ -36,17 +36,29 @@
 \contentsline {subsection}{16-bit Operands Implementation and Simulation}{34}{section*.90}%
 \contentsline {section}{Synthesis and Analysis of the Arithmetic Circuit}{35}{section*.92}%
 \contentsline {subsection}{Introduction}{35}{section*.93}%
-\contentsline {subsection}{Results for the Non-Pipelined Version}{35}{section*.94}%
-\contentsline {subsubsection}{Implementation with Negation Output}{35}{section*.95}%
-\contentsline {paragraph}{Area}{35}{section*.96}%
-\contentsline {paragraph}{Power}{35}{section*.97}%
-\contentsline {subsection}{Results for the Pipelined Version}{35}{section*.99}%
-\contentsline {subsubsection}{Implementation with Negation Output}{35}{section*.100}%
-\contentsline {paragraph}{Area}{35}{section*.101}%
-\contentsline {paragraph}{Power}{35}{section*.102}%
-\contentsline {subsubsection}{Implementation with Separation Output}{35}{section*.104}%
-\contentsline {paragraph}{Power}{36}{section*.105}%
-\contentsline {section}{Appendices}{37}{section*.107}%
-\contentsline {subsection}{Area Report for Non-Pipelined Version with Negation Output}{37}{section*.108}%
-\contentsline {subsection}{Area Report for Pipelined Version with Negation Output}{39}{section*.109}%
-\contentsline {subsection}{Area Report for Pipelined Version with Separation Output}{41}{section*.110}%
+\contentsline {subsection}{Timing Information}{35}{section*.94}%
+\contentsline {subsubsection}{Radix-4 Booth Multiplier}{35}{section*.95}%
+\contentsline {subsubsection}{CSA}{35}{section*.96}%
+\contentsline {paragraph}{16-bit CSA}{35}{section*.97}%
+\contentsline {paragraph}{24-bit CSA}{35}{section*.98}%
+\contentsline {subsubsection}{Implementation Circuit}{35}{section*.99}%
+\contentsline {subsection}{Area and Power Results for the Non-Pipelined Version}{36}{section*.100}%
+\contentsline {subsubsection}{Implementation with Negation Output}{36}{section*.101}%
+\contentsline {paragraph}{Area}{36}{section*.102}%
+\contentsline {paragraph}{Power}{36}{section*.103}%
+\contentsline {subsection}{Area and Power Results for the Pipelined Version}{36}{section*.105}%
+\contentsline {subsubsection}{Implementation with Negation Output}{36}{section*.106}%
+\contentsline {paragraph}{Area}{36}{section*.107}%
+\contentsline {paragraph}{Power}{36}{section*.108}%
+\contentsline {subsubsection}{Implementation with Separation Output}{37}{section*.110}%
+\contentsline {paragraph}{Power}{37}{section*.111}%
+\contentsline {section}{Appendices}{38}{section*.113}%
+\contentsline {subsection}{Area Report for Non-Pipelined Version with Negation Output}{38}{section*.114}%
+\contentsline {subsection}{Area Report for Pipelined Version with Negation Output}{40}{section*.115}%
+\contentsline {subsection}{Area Report for Pipelined Version with Separation Output}{42}{section*.116}%
+\contentsline {subsection}{Timing Analysis Report for 8-bit Radix-4 Booth Multiplier Component}{44}{section*.117}%
+\contentsline {subsection}{Timing Analysis Report for 16-bit CSA Component}{47}{section*.118}%
+\contentsline {subsection}{Timing Analysis Report for 24-bit CSA Component}{52}{section*.119}%
+\contentsline {subsection}{Timing Analysis Report for Non-pipelined Implementation with Negation Output}{61}{section*.120}%
+\contentsline {subsection}{Timing Analysis Report for Pipelined Implementation with Negation Output}{62}{section*.121}%
+\contentsline {subsection}{Timing Analysis Report for Pipelined Implementation with Separation Output}{64}{section*.122}%
