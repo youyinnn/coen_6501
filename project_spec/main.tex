@@ -37,9 +37,17 @@
 \usepackage{amsmath}
 \usepackage{csquotes}
 
+\usepackage{listings}
+
+\usepackage{lipsum}
+\usepackage{setspace}
+
+\renewcommand{\baselinestretch}{1.7} 
+
 \newcommand{\figref}[1]{\hyperref[#1]{Figure \ref{#1}}}
 \newcommand{\tbref}[1]{\hyperref[#1]{Table \ref{#1}}}
 \newcommand{\expref}[1]{\hyperref[#1]{Expression (\ref{#1})}}
+\newcommand{\appref}[1]{Appendix \nameref{#1}}
 
 
 \title{COEN 6501 Project Fall 2021 Specification}
@@ -92,6 +100,9 @@
 
 \newpage
 \import{./section/}{syn.tex}
+
+\newpage
+\import{./section/}{appendix.tex}
 
 % \newpage
 % \renewcommand\refname{\textbf{References}}

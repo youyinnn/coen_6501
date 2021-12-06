@@ -35,7 +35,7 @@ The RTL description of the implementation is shown in \figref{fig:neg_rtl} and t
 \begin{figure}[!ht]
 	\centering
 	\caption{Synthesized RTL Diagram of the Overflow Handler of Method 1}
-	\includegraphics[width=0.9\textwidth]{../img/neg_rtl.png}
+	\includegraphics[width=0.7\textwidth]{../img/neg_rtl.png}
 	\label{fig:neg_rtl}
 \end{figure}
 
@@ -57,7 +57,6 @@ Then the circuit will output those two parts to \(Z\) alternately by the clock c
 The drawback of this method is obvious: \textbf{the result will need two clock cycles to be fully obtained}.
 Hence the input of the ALU circuit should have a clock of the time interval between every set of \(A\) and \(B\) input
 to avoid output overlaps.
-
 This method acts like a 2 states FSM which RTL description is shown in \figref{fig:sep_display_rtl}.
 The simulation result of block is shown in \figref{fig:sep_display_sim}.
 
@@ -71,6 +70,6 @@ The simulation result of block is shown in \figref{fig:sep_display_sim}.
 \begin{figure}[!ht]
 	\centering
 	\caption{Simulation Wave Diagram of the Overflow Handler of Method 2}
-	\includegraphics[width=0.9\textwidth]{../img/sep_display_sim.png}
+	\includegraphics[width=0.8\textwidth]{../img/sep_display_sim.png}
 	\label{fig:sep_display_sim}
 \end{figure}

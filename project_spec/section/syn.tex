@@ -1,5 +1,92 @@
 \section{Synthesis and Analysis of the Arithmetic Circuit}
-\subsection{Heading II}
-\subsubsection{Heading III}
-\paragraph{Heading IV}
-\subparagraph{Heading V}
+
+\subsection{Introduction}
+
+The arithmetic circuit is synthesized for implementation on a field-programmable grid array (FPGA).
+Xilinx Virtex-II Pro is used as the FPGA in this project.
+Mentor Graphics PrecisionRTL is used to generate and synthesize the circuits,
+which also details the area usage and can perform timing analysis if needed.
+Xilinx ISE is used for getting the timing and power information.
+% Also, the timing analysis is done by Xilinx ISE, the result of which is shown in Appendix X.
+
+\subsection{Results for the Non-Pipelined Version}
+\subsubsection{Implementation with Negation Output}
+\paragraph{Area}
+
+When synthesizing the non-pipelined version, the total number of slices used was 377 or 4.06\% 
+of all available logic slices. The full report from Mentor Graphics PrecisionRTL regarding the area
+and resource used is shown in \appref{sec:ap_1}.
+
+\paragraph{Power}
+
+\noindent The power information was performed with Xilinx ISE. The results are shown in the \tbref{tb:non_p_power}.
+
+\begin{table}[!ht]
+	\renewcommand{\arraystretch}{1.3}
+	\caption{Power Information for Non-pipelined Version}
+	\centering
+	\begin{tabular}{ p{4cm} p{4cm} p{4cm} }
+		\hline
+		\bfseries Source & \bfseries Voltage(\(V\)) & \bfseries Power(\(W\)) \\
+		\hline
+		Vccint           & 1.5                      & 0.06                   \\
+		Vccaux           & 2.5                      & 0.025                  \\
+		Vcco25           & 2.5                      & 0.003                  \\
+		\hline
+		                 &                          & Total power: 0.088W    \\
+	\end{tabular}
+	\label{tb:non_p_power}
+\end{table}
+
+\subsection{Results for the Pipelined Version}
+\subsubsection{Implementation with Negation Output}
+\paragraph{Area}
+When synthesizing the pipelined negation output version, the total number of slices used was 380 or 4.09\% 
+of all available logic slices. The full report from Mentor Graphics PrecisionRTL regarding the area
+and resource used is shown in \appref{sec:ap_2}.
+
+\paragraph{Power}
+The power information was performed with Xilinx ISE. The results are shown in the \tbref{tb:p__neg_power}.
+
+\begin{table}[!ht]
+	\renewcommand{\arraystretch}{1.3}
+	\caption{Power Information for Pipelined Version with Negation Output}
+	\centering
+	\begin{tabular}{ p{4cm} p{4cm} p{4cm} }
+		\hline
+		\bfseries Source & \bfseries Voltage(\(V\)) & \bfseries Power(\(W\)) \\
+		\hline
+		Vccint           & 1.5                      & 0.06                   \\
+		Vccaux           & 2.5                      & 0.025                  \\
+		Vcco25           & 2.5                      & 0.003                  \\
+		\hline
+		                 &                          & Total power: 0.088W    \\
+	\end{tabular}
+	\label{tb:p__neg_power}
+\end{table}
+
+\subsubsection{Implementation with Separation Output}
+
+When synthesizing the pipelined separation output version, the total number of slices used was 379 or 4.08\% 
+of all available logic slices. The full report from Mentor Graphics PrecisionRTL regarding the area
+and resource used is shown in \appref{sec:ap_3}.
+
+\paragraph{Power}
+The power information was performed with Xilinx ISE. The results are shown in the \tbref{tb:p_sep_power}.
+
+\begin{table}[!ht]
+	\renewcommand{\arraystretch}{1.3}
+	\caption{Power Information for Pipelined Version with Separation Output}
+	\centering
+	\begin{tabular}{ p{4cm} p{4cm} p{4cm} }
+		\hline
+		\bfseries Source & \bfseries Voltage(\(V\)) & \bfseries Power(\(W\)) \\
+		\hline
+		Vccint           & 1.5                      & 0.06                   \\
+		Vccaux           & 2.5                      & 0.025                  \\
+		Vcco25           & 2.5                      & 0.003                  \\
+		\hline
+		                 &                          & Total power: 0.088W    \\
+	\end{tabular}
+	\label{tb:p_sep_power}
+\end{table}
