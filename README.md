@@ -4,7 +4,7 @@
 
 #### Structure Reference
 
-``` bash
+```bash
 /project/
 	/carry_select_adder/
 		/componments/					-- gates fa muxs
@@ -43,7 +43,7 @@
 | Task                                    |        J.H         |        DW.Z        |        YL.Y        |        XS.F        |
 | --------------------------------------- | :----------------: | :----------------: | :----------------: | :----------------: |
 | 16b/24b/32b Carry Select Adder          |                    | :heavy_check_mark: | :heavy_check_mark: |                    |
-| CSA Testbench                           | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                    |
+| CSA Testbench                           |                    | :heavy_check_mark: | :heavy_check_mark: |                    |
 | 8b/16b Radix 4 Booth Multiplier         | :heavy_check_mark: |                    |                    |                    |
 | Booth Multiplier Testbench              | :heavy_check_mark: |                    |                    |                    |
 | 1/4(Right 2 b Shifter) Operation        | :heavy_check_mark: |                    |                    |                    |
@@ -55,11 +55,16 @@
 | Non-Pipelining Implementation           |                    | :heavy_check_mark: | :heavy_check_mark: |                    |
 | Non-Pipelining Implementation Testbench |                    | :heavy_check_mark: | :heavy_check_mark: |                    |
 
-##### Project Documentation
+##### Project Report
 
-| Task        | J.H  | DW.Z | YL.Y | XS.F |
-| ----------- | :--: | :--: | :--: | :--: |
-| Abstraction |      |      |      |      |
-| ...         |      |      |      |      |
-| ....        |      |      |      |      |
-
+| Task                 |        J.H         |        DW.Z        |        YL.Y        |        XS.F        |
+| -------------------- | :----------------: | :----------------: | :----------------: | :----------------: |
+| Introduction         | :heavy_check_mark: |                    |                    | :heavy_check_mark: |
+| Requirement          |                    |                    |                    | :heavy_check_mark: |
+| CSA                  |                    | :heavy_check_mark: | :heavy_check_mark: |                    |
+| Multiplier           | :heavy_check_mark: |                    |                    |                    |
+| Overflow Handler     | :heavy_check_mark: |                    |                    | :heavy_check_mark: |
+| End Flag Gen         | :heavy_check_mark: |                    |                    | :heavy_check_mark: |
+| Non-pipelined Impl   |                    | :heavy_check_mark: | :heavy_check_mark: |                    |
+| Pipelined Impl       | :heavy_check_mark: |                    |                    |                    |
+| Synthesis & Analysis | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
